@@ -1,0 +1,1045 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="homepage" extends="extend-json-default" namespace="/data/homepage">
+		<action name="mineData" class="com.nci.dcs.homepage.todo.action.TodoAction"
+			method="getMineData">
+			<result type="json">
+				<param name="root">todoModules</param>
+			</result>
+		</action>
+		<action name="reportData" class="com.nci.dcs.homepage.report.action.ReportAction"
+			method="getMineData">
+			<result type="json">
+				<param name="root">reportModules</param>
+			</result>
+		</action>
+		<action name="reportTitle" class="com.nci.dcs.homepage.report.action.ReportAction"
+			method="getAllData">
+			<result type="json">
+				<param name="root">reportModules</param>
+			</result>
+		</action>
+		<action name="reportDetail" class="com.nci.dcs.homepage.report.action.ReportAction"
+			method="getReportData">
+			<result type="json">
+				<param name="root">reportModules</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="common" extends="extend-json-default" namespace="/data/common">
+		<action name="upload" class="com.nci.dcs.base.action.FileUploadAction"
+			method="upload">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+				<param name="contentType">text/html</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">ajaxFormResult</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="delFile" class="com.nci.dcs.base.action.FileUploadAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fileinfo" class="com.nci.dcs.base.action.FileUploadAction"
+			method="info">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="download" class="com.nci.dcs.base.action.FileUploadAction"
+			method="download">
+			<result type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+			</result>
+		</action>
+	</package>
+	<!-- 设备管理-sim卡 -->
+	<package name="sbglsim" extends="extend-json-default" namespace="/data/sbgl/sim">
+			<action name="simsbzt" class="com.nci.dcs.em.action.SimDeviceAction"
+					method="simsbzt">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+			<action name="simsbsfs" class="com.nci.dcs.em.action.SimDeviceAction"
+					method="simsbsfs">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+			<action name="simsbsfj" class="com.nci.dcs.em.action.SimDeviceAction"
+					method="simsbsfj">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+			<action name="simsbty" class="com.nci.dcs.em.action.SimDeviceAction"
+					method="simsbty">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+		<action name="changeStatus" class="com.nci.dcs.em.action.SimDeviceAction"
+			method="changeStatus">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="list" class="com.nci.dcs.em.action.SimDeviceAction"
+			method="list">
+			<result name="success">/data/dzjg/sbgl/simsb/simList.jsp</result>
+			</action>
+			<action name="search"
+			class="com.nci.dcs.em.action.SimDeviceAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+			</action>
+			<action name="input" class="com.nci.dcs.em.action.SimDeviceAction"
+			method="input">
+			<result name="add">
+				/data/dzjg/sbgl/simsb/simAdd.jsp
+			</result>
+			</action>
+			<action name="add" class="com.nci.dcs.em.action.SimDeviceAction"
+			method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+			</action>
+			<action name="view"
+			class="com.nci.dcs.em.action.SimDeviceAction" method="view">
+			<result name="success">/data/dzjg/sbgl/simsb/simView.jsp</result>
+			</action>
+			<action name="searchHistory" class="com.nci.dcs.em.action.DeviceRecordAction"
+			method="searchHistory">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+			</action>
+			<action name="export" class="com.nci.dcs.em.action.SimDeviceAction" method="exportExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excel.inputStream</param>
+				<param name="contentDisposition">attachment;filename=${excel.name}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			</action>
+			<action name="del" class="com.nci.dcs.em.action.SimDeviceAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+			</action>
+	</package>
+	<!-- 设备管理-移动执法终端 -->
+	<package name="sbglydzd" extends="extend-json-default" namespace="/data/sbgl/ydzf">
+			
+			<action name="zfsbzt" class="com.nci.dcs.em.action.YwLawDeviceAction"
+					method="zfsbzt">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+			<action name="zfsbsfs" class="com.nci.dcs.em.action.YwLawDeviceAction"
+					method="zfsbsfs">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+			<action name="zfsbsfj" class="com.nci.dcs.em.action.YwLawDeviceAction"
+					method="zfsbsfj">
+					<result type="json">
+						<param name="root">rlist</param>
+					</result>
+			</action>
+	
+	
+	
+			<action name="list" class="com.nci.dcs.em.action.YwLawDeviceAction"
+			method="list">
+			<result name="success">/data/dzjg/sbgl/ydzfzdxxgl/ydzfzdList.jsp</result>
+			</action>
+			<action name="search"
+			class="com.nci.dcs.em.action.YwLawDeviceAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+			</action>
+			<action name="add"
+			class="com.nci.dcs.em.action.YwLawDeviceAction" method="add">
+			<result name="success">/data/dzjg/sbgl/ydzfzdxxgl/ydzdAdd.jsp</result>
+			</action>
+			<action name="addydzd"
+			class="com.nci.dcs.em.action.YwLawDeviceAction" method="addLawDevice">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+			</action>
+			<action name="view"
+			class="com.nci.dcs.em.action.YwLawDeviceAction" method="view">
+			<result name="success">/data/dzjg/sbgl/ydzfzdxxgl/ydzdView.jsp</result>
+			</action>
+			<action name="searchHistory" class="com.nci.dcs.em.action.DeviceRecordAction"
+			method="searchHistory">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+			</action>
+			<action name="changeStatus" class="com.nci.dcs.em.action.YwLawDeviceAction"
+			method="changeStatus">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+			</action>
+			<action name="export" class="com.nci.dcs.em.action.YwLawDeviceAction" method="exportExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excel.inputStream</param>
+				<param name="contentDisposition">attachment;filename=${excel.name}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			</action>
+			<action name="del" class="com.nci.dcs.em.action.YwLawDeviceAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+			</action>
+			<action name="changeSimNum" class="com.nci.dcs.em.action.YwLawDeviceAction"
+			method="changeSimNum">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+			</action>
+			<action name="findSim" class="com.nci.dcs.em.action.YwLawDeviceAction"
+			method="findSim">
+			<result type="json">
+				<param name="root">dicts</param>
+				<param name="excludeNullProperties">true</param>  
+			</result>
+			</action>
+	</package>
+	<!-- 设备管理-电子监管设备（腕表） -->
+	<package name="sbgl" extends="extend-json-default" namespace="/data/sbgl/jgsb">
+	<action name="fxrytj" class="com.nci.dcs.em.action.DeviceFxryAction"
+			method="fxrytj">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+	</action>
+	<action name="jgsbfxrytj" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="jgsbfxrytj">
+			<result type="json">
+				<param name="root">rlist</param>
+			</result>
+	</action>
+	<action name="pdrytj" class="com.nci.dcs.em.action.DeviceFxryAction"
+			method="pdrytj">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+	</action>
+	<action name="jgsbzt" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="jgsbzt">
+			<result type="json">
+				<param name="root">rlist</param>
+			</result>
+	</action>
+	<action name="jgsbsfs" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="jgsbsfs">
+			<result type="json">
+				<param name="root">rlist</param>
+			</result>
+	</action>
+	<action name="jgsbsfj" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="jgsbsfj">
+			<result type="json">
+				<param name="root">rlist</param>
+			</result>
+	</action>
+	<action name="list" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="list">
+			<result name="success">/data/dzjg/sbgl/jgsb/jgsbList.jsp</result>
+	</action>
+	<action name="search" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+	</action>
+	<action name="input" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="input">
+			<result name="add">
+				/data/dzjg/sbgl/jgsb/jgsbAdd.jsp
+			</result>
+	</action>
+	<action name="add" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+	</action>
+	<action name="view" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="view">
+			<result name="success">/data/dzjg/sbgl/jgsb/jgsbView.jsp</result>
+	</action>
+	<action name="searchHistory" class="com.nci.dcs.em.action.DeviceRecordAction"
+			method="searchHistory">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+	</action>
+	<action name="changeStatus" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="changeStatus">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+	</action>
+	<action name="import" class="com.nci.dcs.em.action.DzjgsbDeviceAction" method="importExcel">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+	</action>
+	<action name="export" class="com.nci.dcs.em.action.DzjgsbDeviceAction" method="exportExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excel.inputStream</param>
+				<param name="contentDisposition">attachment;filename=${excel.name}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+	</action>
+	<action name="del" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+	</action>
+	<action name="changeSimNum" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="changeSimNum">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+	<action name="findSim" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+	method="findSim">
+	<result type="json">
+		<param name="root">dicts</param>
+		<param name="excludeNullProperties">true</param>  
+	</result>
+	</action>
+		<action name="equipableMachine" class="com.nci.dcs.em.action.DzjgsbDeviceAction"
+			method="queryEquipableMachine">
+			<result type="json">
+				<param name="root">dto</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 移动执法终端 -->
+	<package name="ydzf" extends="extend-json-default" namespace="/data/ydzf">
+		<action name="list"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="list">
+			<result name="success">/data/dzjg/pzgl/ydzfzdxxgl/ydzfzdList.jsp
+			</result>
+		</action>
+		<action name="view"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="view">
+			<result name="success">/data/dzjg/pzgl/ydzfzdxxgl/ydzdView.jsp</result>
+		</action>
+		<action name="add"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="add">
+			<result name="add">/data/dzjg/pzgl/ydzfzdxxgl/ydzfzdList.jsp
+			</result>
+			<result name="success">/data/dzjg/pzgl/ydzfzdxxgl/ydzdEdit.jsp</result>
+		</action>
+		<action name="check"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="checkBeforeAdd">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="del"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="delete">
+			<result name="success">/data/dzjg/pzgl/ydzfzdxxgl/ydzdList.jsp</result>
+		</action>
+		<action name="search"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="excel"
+			class="com.nci.dcs.em.action.LawEnforcementManagerAction" method="createFile">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<!-- 指纹仪 -->
+	<package name="zwy" extends="extend-json-default" namespace="/data/zwy">
+		<action name="list"
+			class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction" method="list">
+			<result name="success">/data/jzgl/zwygl/zwyList.jsp
+			</result>
+		</action>
+		<action name="view"
+			class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction" method="view">
+			<result type="json">
+				<param name="root">lawEn</param>
+			</result>
+		</action>
+		<action name="add"
+			class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="del"
+			class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction" method="delete">
+			<result name="success">/data/jzgl/zwygl/zwyList.jsp</result>
+		</action>
+		<action name="search"
+			class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="excel"
+			class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction" method="createFile">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<action name="selectMachine" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="selectMachine">
+			<result type="json">
+				<param name="root">machineList</param>
+			</result>
+		</action>
+		<action name="collectPrint" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="collectPrint">
+			<result name="success" type="json">
+				<param name="root">personId</param>
+			</result>
+		</action>
+		<action name="collectPrint2" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="collectFingers">
+			<result name="success" type="json">
+				<param name="root">personId</param>
+			</result>
+		</action>
+		<action name="getMFingers" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="getMFingers">
+			<result name="success" type="json">
+				<param name="root">resList</param>
+			</result>
+		</action>
+		<action name="pickPrint" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="getFingerPrintPicture">
+			<result name="success" type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="deletePrint" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="deletePrint">
+			<result name="success" type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="collectFace" class="com.nci.dcs.jzgl.fingerprint.action.FingerPrintManagerAction"
+			method="collectFacePicture">
+			<result name="success" type="json">
+				<param name="root">resList</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 配置管理-监管设备 -->
+	<package name="jgsb" extends="extend-json-default" namespace="/data/dzjg/jgsb">
+	
+		<action name="list" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="list">
+			<result name="success">/data/dzjg/pzgl/jgsb/jgsbList.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchHistory" class="com.nci.dcs.em.action.SuperviseDevicePairAction"
+			method="searchHistory">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="equipableMachine" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="queryEquipableMachine">
+			<result type="json">
+				<param name="root">dto</param>
+			</result>
+		</action>
+		<action name="input" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="input">
+			<result name="add">
+				/data/dzjg/pzgl/jgsb/jgsbAdd.jsp
+			</result>
+			<result name="edit">
+				/data/dzjg/pzgl/jgsb/jgsbEdit.jsp
+			</result>
+		</action>
+		<action name="add" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="checkDevicePair" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="checkDevicePair">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="update" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="update">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="view">
+			<result name="success">/data/dzjg/pzgl/jgsb/jgsbView.jsp</result>
+		</action>
+		<action name="del" class="com.nci.dcs.em.action.SuperviseDeviceAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="import" class="com.nci.dcs.em.action.SuperviseDeviceAction" method="importExcel">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="export" class="com.nci.dcs.em.action.SuperviseDeviceAction" method="exportExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excel.inputStream</param>
+				<param name="contentDisposition">attachment;filename=${excel.name}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 系统设置 -->
+	<package name="xtsz" extends="extend-json-default" namespace="/data/xtsz">
+		<action name="input" class="com.nci.dcs.em.action.SysSettingAction"
+			method="input">
+			<result name="success">/data/dzjg/pzgl/xtmrzsz/mrszList.jsp</result>
+		</action>
+		<action name="update" class="com.nci.dcs.em.action.SysSettingAction"
+			method="update">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/data/xtsz</param>
+				<param name="actionName">input</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.em.action.SysSettingAction"
+			method="view">
+			<result name="success">/data/dzjg/pzgl/xtmrzsz/mrszView.jsp</result>
+		</action>
+		<action name="map" class="com.nci.dcs.em.action.SysSettingAction"
+			method="enable">
+			<result name="success">/data/dzjg/pzgl/xtmrzsz/chinaMap.jsp</result>
+		</action>
+		<action name="fxryList" class="com.nci.dcs.em.action.FxrySysSettingAction"
+			method="list">
+			<result name="success">/data/dzjg/pzgl/jzrysz/jzryszList.jsp</result>
+		</action>
+		<action name="fxryView" class="com.nci.dcs.em.action.FxrySysSettingAction"
+			method="view">
+			<result name="success">/data/dzjg/pzgl/jzrysz/jzryszView.jsp</result>
+		</action>
+		<action name="fxryEdit" class="com.nci.dcs.em.action.FxrySysSettingAction"
+			method="view">
+			<result name="success">/data/dzjg/pzgl/jzrysz/jzryszEdit.jsp</result>
+		</action>
+		<action name="fxrySave" class="com.nci.dcs.em.action.FxrySysSettingAction"
+			method="input">
+			<result name="success">/data/dzjg/pzgl/jzrysz/jzryszEdit.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.em.action.FxrySysSettingAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="jjbjsz" class="com.nci.dcs.data.action.JjszAction"
+			method="jjbjsz">
+			<result name="success">/data/dzjg/pzgl/jjpcsz/sjsz.jsp</result>
+		</action>		
+		<action name="sfsjjbjsz" class="com.nci.dcs.data.action.JjszAction"
+			method="jjbjsz">
+			<result name="success">/data/dzjg/pzgl/jjpcsz/sfsxz.jsp</result>
+		</action>
+		<action name="postData" class="com.nci.dcs.data.action.JjszAction"
+			method="postData">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="getdzwl" class="com.nci.dcs.data.action.JjszAction"
+			method="getdzwl">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="list" class="com.nci.dcs.data.action.JjszAction"
+			method="list">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="convertpoint" class="com.nci.dcs.data.action.JjszAction"
+			method="convertpoint">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="Convert54ToWgs84" class="com.nci.dcs.data.action.JjszAction"
+			method="Convert54ToWgs84">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="convertpoints" class="com.nci.dcs.data.action.JjszAction"
+			method="convertpoints">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="convert54To84points" class="com.nci.dcs.data.action.JjszAction"
+			method="convert54To84points">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="getfxrydzwl" class="com.nci.dcs.data.action.JjszAction"
+			method="getfxrydzwl">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="savefxry" class="com.nci.dcs.data.action.JjszAction"
+			method="savefxry">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="deletefxry" class="com.nci.dcs.data.action.JjszAction"
+			method="deletefxry">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="getData" class="com.nci.dcs.data.action.JjszAction"
+			method="getData">
+			<result type="json">
+			  <param name="root">list</param>
+			</result>
+		</action>
+		<action name="deleteData" class="com.nci.dcs.data.action.JjszAction"
+			method="deleteData">
+			<result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>
+		<action name="qxxz" class="com.nci.dcs.data.action.JjszAction" method="qxxz">
+		    <result name="success">/data/dzjg/pzgl/jjpcsz/qxxz.jsp</result>
+		</action>	    
+	    <action name="getfxryInfo" class="com.nci.dcs.data.action.JjszAction" method="getfxryList">
+		    <result type="json">
+			  <param name="root">datas</param>
+			</result>
+		</action>
+		<action name="getfxrypolyon" class="com.nci.dcs.data.action.JjszAction" method="getfxrypolyon">
+		    <result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>			
+	     <action name="addjjbjfxry" class="com.nci.dcs.data.action.JjszAction" method="addfxry">
+	        <result type="json">
+			  <param name="root">result</param>
+			</result>
+		</action>	
+	</package>
+	<package name="dwjk" extends="extend-json-default" namespace="/data/dwjk">
+		<action name="cityView" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="add">
+			<result name="success">/data/dzjg/dwjk/dwjkcity.jsp</result>
+		</action>
+		<action name="history" class="com.nci.dcs.em.dwjk.action.LocateAction" 
+			method="view">
+			<result type="json">
+				<param name="root">datas</param>
+			</result>
+		</action>
+		<action name="cityViewResult" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="cityView">
+			<result type="json">
+				<param name="root">datas</param>
+			</result>
+		</action>
+		<action name="countyView" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="countyView">
+			<result type="json">
+				<param name="root">datas</param>
+			</result>
+		</action>
+		<action name="countyViewControl" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="countyViewControl">
+			<result name="success">
+				/data/dzjg/dwjk/dwjk-view.jsp
+			</result>
+		</action>
+		<action name="zycountyViewControl" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="countyViewControl">
+			<result name="success">
+				/data/dzjg/dwjk/zydwjk-view.jsp
+			</result>
+		</action>
+		<action name="locationDetail" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="locationDetail">
+			<result name="success">
+				/data/dzjg/dwjk/dwjk-gis.jsp
+			</result>
+		</action>
+		<action name="zylocationDetail" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="locationDetail">
+			<result name="success">
+				/data/dzjg/dwjk/zydwjk.jsp
+			</result>
+		</action>
+		<action name="searchGIS" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="searchGIS">
+			<result type="json">
+				<param name="root">dataPage</param>
+			</result>
+		</action>
+		<action name="getAlarmDetailOnGis" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="getAlarmDetailOnGis">
+			<result type="json">
+				<param name="root">datas</param>
+			</result>
+		</action>
+		<action name="getAllXYById" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="getAllXYById">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<!-- add by yang on 2016/08/12 -->
+		<action name="countryChart" class="com.nci.dcs.em.dwjk.action.LocateAction" method="toCountryChart">
+			<result name="success">/data/dzjg/dwjk/dwjkchart.jsp</result>
+		</action>
+		<action name="chartData" class="com.nci.dcs.em.dwjk.action.LocateAction" method="getChartData">
+			<result type="json">
+				<param name="root">chartDatas</param>
+			</result>
+		</action>
+		<!-- end -->
+		<!-- add by yang on 2016/08/31 -->
+		<action name="searchFxryList" class="com.nci.dcs.em.dwjk.action.LocateAction"
+			method="searchFxryList">
+			<result type="json">
+				<param name="root">dataPage</param>
+			</result>
+		</action>
+		<!-- end -->
+	</package>
+	<package name="alarm" extends="extend-json-default" namespace="/data/alarm">
+		<action name="getUntreatedAlarmInfos" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="getUntratedInfos">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="dealAlarm" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="dealAlarm">
+			<result type="json">
+				<param name="root">datas</param>
+			</result>
+		</action>
+		<action name="writeContent" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="writeContent">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="getAlarmInfo" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="getAlarmInfo">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="getSfsSta" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="getSfsSta">
+			<result type="json">
+				<param name="root">pageData</param>
+			</result>
+		</action>
+		<!-- 待办中批量处理报警 -->
+		<action name="todoDeal" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="todoDealAlarm">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<!-- 未处理报警类别汇总 -->
+		<action name="untreatedInfoStatictis" class="com.nci.dcs.em.dwjk.action.AlarmAction"
+			method="getUntreatedInfoStatictis">
+			<result type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+	</package>
+	<package name="fxry" extends="extend-json-default" namespace="/data/fxry">
+		<action name="getFxryCrimeInfo" class="com.nci.dcs.em.dwjk.action.FxryBasicinfoAction"
+			method="getFxryCrimeInfo">
+			<result type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		<action name="drawPersonOnMap" class="com.nci.dcs.em.dwjk.action.FxryBasicinfoAction"
+			method="drawPersonOnMap">
+			<result type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+	</package>
+	<!-- 历史报警信息管理 -->
+	<package name="bjxxgl" extends="extend-json-default" namespace="/data/dzjg/lsbjxxgl">
+		<action name="list" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="list">
+			<result name="success">/data/dzjg/lsbjxxgl/bjxxList.jsp</result>
+		</action>
+		<action name="view" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="view">
+			<!-- <result name="success">/data/dzjg/lsbjxxgl/bjxxView.jsp</result> -->
+			<result type="json">
+				<param name="root">alarmInfo</param>
+			</result>
+		</action>
+		<action name="getOrgAlarm" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="getAlarmByOrg">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="getCountByPerson" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="getCountByPerson">
+			<result type="json">
+				<param name="root">personAlarCount</param>
+			</result>
+		</action>
+		
+		<action name="getCountByPersonAlarm" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="getCountByPersonAlarm">
+			<result type="json">
+				<param name="root">personAlarCount1</param>
+			</result>
+		</action>
+		
+		<action name="search" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="excel" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="createFile">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excel.inputStream</param>
+				<param name="contentDisposition">attachment;filename=${excel.name}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<action name="todo" class="com.nci.dcs.em.action.AlarmInfoManagerAction"
+			method="todoList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	<!-- 报警类型设置管理 -->
+    <package name="bjlxsz" extends="extend-json-default" namespace="/data/dzjg/bjlxsz">
+		<action name="list" class="com.nci.dcs.em.action.AlarmTypeManagerAction" method="list">
+			<result name="success">/data/dzjg/pzgl/bjlxsz/bjlxszList.jsp</result>
+		</action>
+		<action name="update" class="com.nci.dcs.em.action.AlarmTypeManagerAction" method="update">
+			<result name="success">/data/dzjg/pzgl/bjlxsz/bjlxszList.jsp</result>
+		</action>	
+		
+		<action name="view" class="com.nci.dcs.em.action.AlarmTypeManagerAction" method="view">
+			 <result type="json">
+			    <param name="root">entity</param>
+			 </result>
+		</action>			
+		<action name="del" class="com.nci.dcs.em.action.AlarmTypeManagerAction" method="delete">
+			<result name="success">/data/dzjg/pzgl/ydzfzdxxgl/ydzdList.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.em.action.AlarmTypeManagerAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="excel" class="com.nci.dcs.em.action.AlarmTypeManagerAction" method="createFile">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	<!-- 综合查询 -->
+	<package name="zhcx" extends="extend-json-default" namespace="/data/dzjg/zhcx">
+		<!-- 初始化页面 -->
+		<action name="list" class="com.nci.dcs.em.zhcx.action.ZhcxFxryMessageAction"
+			method="list">
+			<result name="success">/data/dzjg/zhcx/zhcx.jsp
+			</result>
+		</action>
+		<!-- 查询信息 -->
+		<action name="search" class="com.nci.dcs.em.zhcx.action.ZhcxFxryMessageAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<!-- 导出 -->
+		<action name="excel" class="com.nci.dcs.em.zhcx.action.ZhcxFxryMessageAction"
+			method="createFile">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excel.inputStream</param>
+				<param name="contentDisposition">attachment;filename=${excel.name}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="monitor" extends="extend-json-default" namespace="/data/monitor">
+		<action name="reportServer" class="com.nci.dcs.monitor.server.action.ServiceMonitorAction" method="list">
+			<result name="success">/data/monitor/report.jsp</result>
+		</action>
+		<action name="report" class="com.nci.dcs.monitor.server.action.ServiceMonitorAction" method="report">
+			<result type="json">
+				<param name="root">zlmap</param>
+			</result>
+		</action>
+		<action name="listServer" class="com.nci.dcs.monitor.server.action.ServiceMonitorAction" method="list">
+			<result name="success">/data/monitor/server.jsp</result>
+		</action>
+		<action name="searchServer" class="com.nci.dcs.monitor.server.action.ServiceMonitorAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchLbsServer" class="com.nci.dcs.monitor.server.action.LbsServiceMonitorAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchNetwork" class="com.nci.dcs.monitor.server.action.NetworkMonitorAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchDataBase" class="com.nci.dcs.monitor.server.action.DataBaseMonitorAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- syt -->
+	<package name="zhcxAll" extends="extend-json-default" namespace="/data/zhcxAll">
+		<action name="cityMultipleQuery" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction" method="list">
+			<result name="success">/data/zhcx/cityMultipleQuery.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction" method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchTongji" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction" method="searchTongji">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="contrastDate" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction" method="contrastDate">
+			<result type="json">
+				<param name="root">zlmap</param>
+			</result>
+		</action>
+		<action name="searchTongjiByFilters" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction" method="searchTongjiByFilters">
+			<result type="json">
+				<param name="root">listRef</param>
+			</result>
+		</action>
+		
+		<action name="unAlarmSearch" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoUnAlarmAction" method="unAlarmSearch">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchTongjiUnAlarm" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoUnAlarmAction" method="searchTongjiUnAlarm">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchTongjiByFiltersUnAlarm" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoUnAlarmAction" method="searchTongjiByFiltersUnAlarm">
+			<result type="json">
+				<param name="root">listRef</param>
+			</result>
+		</action>
+		<!-- 查询导出 -->
+		<action name="exportExcel" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction"
+			method="exportExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		<!-- 统计导出 -->
+		<action name="exportTongJiExcel" class="com.nci.dcs.em.zhcx.action.ZhcxFxryAllinfoAction"
+			method="exportTongJiExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+	</package>
+	<!-- syt end -->
+</struts>

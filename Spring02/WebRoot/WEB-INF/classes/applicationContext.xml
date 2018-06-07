@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"  
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+<!-- 对List类型的属性注入 -->      
+<bean id="colBean" class="com.tarena.dao.CollectionBean">
+<property name="names">
+<list>
+<value>Tom</value>
+<value>Andy</value>
+</list>
+</property>
+<property name="age">
+<list>
+<value>23</value>
+<value>24</value>
+</list>
+</property>
+<property name="dates">
+<list>
+<bean class="java.util.Date"></bean>
+<bean class="java.util.Date"></bean>
+</list>
+</property>
+<property name="cities">
+<set>
+<value>北京</value>
+<value>上海</value>
+<value>广州</value>
+</set>
+</property>
+<property name="map">
+<map>
+<entry key="Tom" value="1"></entry>
+<entry key="Andy" value="5"></entry>
+<entry key="Mac" value="8"></entry>
+</map>
+</property>
+<property name="cfg">
+<props>
+<prop key="driver">oracle.jdbc.OracleDriver</prop>
+<prop key="user">jsd1403</prop>
+<prop key="pwd">jsd1403</prop>
+</props>
+</property>
+</bean>
+<!-- 引用方式注入集合 -->
+<util:list id="names">
+<value>Tom</value>
+<value>Andy</value>
+</util:list>
+<util:set id="cities">
+<value>北京</value>
+<value>上海</value>
+</util:set>
+<util:map id="map">
+<entry key="Tom" value="1" ></entry>
+<entry key="Andy" value="2"></entry>
+</util:map>
+<util:properties id="cfg">
+<prop key="user">jsd1403</prop>
+</util:properties>
+<util:list id="date">
+<bean class="java.util.Date"></bean>
+<bean class="java.util.Date"></bean>
+</util:list>
+<util:list id="age">
+<value>13</value>
+<value>18</value>
+<value>23</value>
+</util:list>
+<bean id="collectionBean2" class="com.tarena.dao.CollectionBean">
+<property name="names" ref="names"></property>
+<property name="cities" ref="cities"></property>
+<property name="map" ref="map"></property>
+<property name="cfg" ref="cfg"></property>
+<property name="dates" ref="date"></property>
+<property name="age" ref="age"></property>
+</bean>
+<bean id="messageBean" class="com.tarena.dao.MessageBean">
+</bean>
+<bean id="demoBean1" class="com.tarena.dao.DemoBean1">
+<property name="error" value="#{messageBean.msg}"></property>
+</bean>
+
+
+<util:properties id="db" location="classpath:db.properties"> 
+</util:properties>
+<bean id="jdbc" class="com.tarena.dao.Jdbc">
+<property name="driver" value="#{db['driver']}"></property>
+<property name="url" value="#{db.url}"></property>
+<property name="user" value="#{db.user}"></property>
+<property name="pwd" value="#{db.pwd}"></property>
+</bean>
+<bean id="people" class="com.tarena.dao.People" autowire="byType">
+</bean>
+<bean id="stu" class="com.tarena.dao.Student" ></bean>
+</beans>
+
+

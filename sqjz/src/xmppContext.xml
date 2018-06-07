@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+	default-lazy-init="false">
+
+	<!-- =============================================================== -->
+	<!-- 通讯端定义 -->
+	<!-- =============================================================== -->
+	<!-- XMPP与前置机session管理器，用于连接的保持 -->
+	<bean id="xmppClientManage" class="com.nci.sfj.client.XmppClientManage">
+	</bean>
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.net.SocketAddress">
+					<bean class="org.apache.mina.integration.beans.InetSocketAddressEditor" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- XMPP消息处理器 -->
+	<bean id="xmppHandler" class="com.nci.sfj.xmpp.handler.XmppIoHandler" />
+	<!-- XMPP消息过滤器 -->
+	<bean id="filterChainBuilder"
+		class="org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder">
+		<property name="filters">
+			<map>
+				<entry key="executor">
+					<bean class="org.apache.mina.filter.executor.ExecutorFilter" />
+				</entry>
+				<entry key="codec">
+					<bean class="org.apache.mina.filter.codec.ProtocolCodecFilter">
+						<constructor-arg>
+							<bean class="com.nci.sfj.xmpp.codec.XmppCodecFactory" />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="log">
+					<bean class="com.nci.sfj.xmpp.filter.LoggingFilter">
+					</bean>
+				</entry>
+				<entry key="activeTest" value-ref="activeTest" />
+			</map>
+		</property>
+	</bean>
+	<!-- XMPP心跳过滤器 -->
+	<bean id="activeTest" class="org.apache.mina.filter.keepalive.KeepAliveFilter">
+		<constructor-arg>
+			<bean class="com.nci.sfj.xmpp.activetest.XMPPKeepAliveMessageFactory"></bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean
+				class="com.nci.sfj.xmpp.activetest.XMPPKeepAliveRequestTimeoutHandler"></bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean
+				class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+				<property name="staticField"
+					value="org.apache.mina.core.session.IdleStatus.BOTH_IDLE"></property>
+			</bean>
+		</constructor-arg>
+		<property name="forwardEvent" value="true"></property>
+		<property name="requestInterval" value="30"></property>
+		<property name="requestTimeout" value="10"></property>
+	</bean>
+	<!-- XMPP客户端链接类 -->
+	<bean id="ioConnector" class="org.apache.mina.transport.socket.nio.NioSocketConnector">
+		<property name="handler" ref="xmppHandler"></property>
+		<property name="filterChainBuilder" ref="filterChainBuilder"></property>
+	</bean>
+	<bean id="xmppBusinessService" class="com.nci.sfj.business.service.XmppBusinessService"></bean>
+	<!-- XMPP业务消息处理分发工具 -->
+	<bean id="businessHandleScheduler" class="com.nci.sfj.business.service.BusinessHandleScheduler">
+		<constructor-arg value="20"></constructor-arg>
+		<constructor-arg value="10"></constructor-arg>
+		<constructor-arg ref="xmppBusinessService"></constructor-arg>
+	</bean>
+	<!-- XMPP消息发送线程 -->
+	<bean id="sender" class="com.nci.sfj.xmpp.sender.XmppSender">
+	</bean>
+	<bean id="dzwlService" class="com.nci.dcs.data.service.DzwlService"></bean>
+	<bean id="xmppService" class="com.nci.dcs.webservices.dxpt.service.XmppService" />
+	<!-- 设备异常定时器 -->
+	<bean id="deviceErrorTimer" class="com.nci.sfj.business.job.DeviceErrorJob" />
+	<bean id="deviceErrorJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="deviceErrorTimer" />
+		<property name="targetMethod" value="startTimer" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="deviceErrorTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="deviceErrorJob" />
+		<property name="startDelay" value="00000" />
+		<property name="repeatInterval" value="600000" />
+	</bean>
+	<!-- 主动LBS定位 -->
+	<bean id="deviceLBSTimer" class="com.nci.sfj.business.job.DeviceLBSJob"></bean>
+	<bean id="deviceLBSJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="deviceLBSTimer">
+		</property>
+		<property name="targetMethod" value="startTimer">
+		</property>
+	</bean>
+	<bean id="deviceLBSTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="deviceLBSJob"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 0/10 * * * ? * </value>
+		</property>
+	</bean>
+
+	<!-- 主动定位配置开始 -->
+	<!-- 主动定位消息发送线程 -->
+	<bean id="locationSender" class="com.nci.sfj.location.sender.LocationSender"></bean>
+	<!-- 主动定位消息编码过滤器 -->
+	<bean id="loccodec" class="org.apache.mina.filter.codec.ProtocolCodecFilter">
+		<constructor-arg>
+			<bean class="com.nci.sfj.location.codec.LocationCodecFactory"></bean>
+		</constructor-arg>
+	</bean>
+	<!-- 主动定位心跳过滤器 -->
+	<bean id="locActiveTest" class="org.apache.mina.filter.keepalive.KeepAliveFilter">
+		<constructor-arg>
+			<bean
+				class="com.nci.sfj.location.activetest.LocationKeepAliveMessageFactory"></bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean
+				class="com.nci.sfj.location.activetest.LocationKeepAliveRequestTimeoutHandler"></bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean
+				class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+				<property name="staticField"
+					value="org.apache.mina.core.session.IdleStatus.BOTH_IDLE"></property>
+			</bean>
+		</constructor-arg>
+		<property name="forwardEvent" value="true"></property>
+		<property name="requestInterval" value="30"></property>
+		<property name="requestTimeout" value="15"></property>
+	</bean>
+	<!-- 主动定位超时重发过滤器 -->
+	<bean id="locTimerOut" class="com.nci.sfj.location.timeout.RequestTimerOutFilter">
+		<constructor-arg>
+			<bean id="cngpMessageFactory" class="com.nci.sfj.location.LocationMessageFactory">
+				<property name="period">
+					<value>20</value>
+				</property>
+				<property name="resendTime">
+					<value>3</value>
+				</property>
+			</bean>
+		</constructor-arg>
+	</bean>
+	<!-- 主动定位过滤器 -->
+	<bean id="locFilterChainBuilder"
+		class="org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder">
+		<property name="filters">
+			<map>
+				<entry key="codec" value-ref="loccodec" />
+				<entry key="log">
+					<bean class="com.nci.sfj.xmpp.filter.LoggingFilter">
+					</bean>
+				</entry>
+				<entry key="locActiveTest" value-ref="locActiveTest" />
+				<entry key="locTimerOut" value-ref="locTimerOut" />
+			</map>
+		</property>
+	</bean>
+	<!-- 主动定位消息处理器 -->
+	<bean id="locServerHandler" class="com.nci.sfj.location.LocationServerHandler" />
+	<!-- 主动定位客户端链接类 -->
+	<bean id="locConnector" class="org.apache.mina.transport.socket.nio.NioSocketConnector">
+		<property name="handler" ref="locServerHandler"></property>
+		<property name="filterChainBuilder" ref="locFilterChainBuilder"></property>
+		<property name="connectTimeoutMillis">
+			<value>20</value>
+		</property>
+		<property name="sessionConfig.bothIdleTime">
+			<value>170</value>
+		</property>
+		<property name="sessionConfig.keepAlive">
+			<value>true</value>
+		</property>
+
+	</bean>
+	<bean name="locConnectionFactory"
+		class="com.nci.sfj.location.connect.LocationConnectionFactory" />
+	<bean name="locSubmitWrapper" class="com.nci.sfj.location.LocationMessageFactory" />
+	<!-- 主动定位链接池 -->
+	<bean name="locConnectionPool" class="com.nci.sfj.location.connect.ConnectionPool"
+		factory-method="getPool">
+		<constructor-arg index="0" value="loc"></constructor-arg>
+		<constructor-arg index="1" ref="locConnectionFactory"></constructor-arg>
+		<constructor-arg index="2" value="3"></constructor-arg>
+		<constructor-arg index="3" value="0"></constructor-arg>
+	</bean>
+	<!-- window -->
+	<bean name="locSlipWindow" class="com.nci.sfj.location.connect.DefaultWindow"
+		scope="prototype">
+		<property name="windowSize">
+			<value>16</value>
+		</property>
+		<property name="factory" ref="locSubmitWrapper"></property>
+	</bean>
+	<!-- 主动定位配置结束 -->
+</beans>

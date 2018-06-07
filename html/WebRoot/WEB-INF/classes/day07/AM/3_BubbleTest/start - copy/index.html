@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bubble Test</title>
+		<link rel="stylesheet" href="example.css"/>
+		<script>
+			function highlight(elem,event)
+			{
+				elem.style.backgroundColor = 'Yellow';
+				var obj=event.srcElement||event.target;
+				alert("this: "+elem.className+"  src:"+obj.className);
+				elem.style.backgroundColor = '';
+				//event.cancelBubble=true;
+			}
+		</script><!--取消冒泡处理，要想浏览器都可以，必须从调用者取得event-->
+	</head>
+	<body>
+<div class="d1" onclick=" highlight(this,event)"><div class="d2" ><div class="d3" >
+</div>
+</div>
+</div>
+	</body>
+</html>

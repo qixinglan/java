@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.AccountMapper">
+<select id="findByPage" parameterType="com.tarena.dao.accountPage" resultType="com.tarena.dao.Account">
+select * from(
+select t.*,rownum n from(
+select * from account 
+<where>
+<if test="loginname!=null &amp;&amp; loginname!=''">
+ login_name=#{loginname}
+</if>
+<if test="status!=null &amp;&amp; status!=''">
+and status=#{status}
+</if>
+<if test="realname!=null &amp;&amp; realname!=''">
+and real_name=#{realname}
+</if>
+<if test="idcardno!=null &amp;&amp; idcardno!=''">
+and idcard_no=#{idcardno}
+</if>
+</where>
+order by account_id)t 
+where rownum &lt;#{end})  
+where n&gt;#{begin}
+</select>
+<select id="findTotalRows"	parameterType="com.tarena.dao.accountPage" resultType="int">
+select count(*) from account
+<where>
+<if test="loginname!=null &amp;&amp; loginname!=''">
+ login_name=#{loginname}
+</if>
+<if test="status!=null &amp;&amp; status!=''">
+and status=#{status}
+</if>
+<if test="realname!=null &amp;&amp; realname!=''">
+and real_name=#{realname}
+</if>
+<if test="idcardno!=null &amp;&amp; idcardno!=''">
+and idcard_no=#{idcardno}
+</if>
+</where>
+</select>
+<update id="updateToPause" parameterType="int">
+update account set status='1',pause_date=sysdate where account_id=#{id}
+</update>
+<update id="updateToOpen" parameterType="int">
+update account set status='0',pause_date=null where account_id=#{id}
+</update>
+<update id="deleteAccount" parameterType="int">
+update account set status='2',close_date=sysdate where account_id=#{id}
+</update>
+<insert id="toAddAccount" parameterType="com.tarena.dao.Account">
+insert into Account values(
+account_seq.nextval,
+#{recommender_id,jdbcType=INTEGER},
+#{login_name,jdbcType=VARCHAR},
+#{login_passwd,jdbcType=VARCHAR},
+#{status,jdbcType=VARCHAR},
+#{create_date,jdbcType=TIMESTAMP},
+#{pause_date,jdbcType=TIMESTAMP},
+#{close_date,jdbcType=TIMESTAMP},
+#{real_name,jdbcType=VARCHAR},
+#{idcard_no,jdbcType=VARCHAR},
+#{birthdate,jdbcType=DATE},
+#{gender,jdbcType=VARCHAR},
+#{occupation,jdbcType=VARCHAR},
+#{telephone,jdbcType=VARCHAR},
+#{email,jdbcType=VARCHAR},
+#{mailaddress,jdbcType=VARCHAR}, 
+#{zipcode,jdbcType=VARCHAR},
+#{qq,jdbcType=VARCHAR},
+#{last_login_time,jdbcType=TIMESTAMP},
+#{last_login_ip,jdbcType=INTEGER}
+)
+</insert>
+<select id="findById" parameterType="int" resultType="com.tarena.dao.Account">
+select a.*,b.idcard_no recommender_idcardno from account a left join  account b on a.recommender_id=b.account_id 
+where a.account_id=#{id}
+</select>
+<update id="fixAccount" parameterType="com.tarena.dao.Account">
+update account set 
+recommender_id=#{recommender_id,jdbcType=INTEGER},
+real_name=#{real_name,jdbcType=VARCHAR},
+gender=#{gender,jdbcType=VARCHAR},
+occupation=#{occupation,jdbcType=VARCHAR},
+telephone=#{telephone,jdbcType=VARCHAR},
+email=#{email,jdbcType=VARCHAR},
+mailaddress=#{mailaddress,jdbcType=VARCHAR}, 
+zipcode=#{zipcode,jdbcType=VARCHAR},
+qq=#{qq,jdbcType=VARCHAR}
+where account_id=#{account_id}
+</update>
+<select id="findByIdcard_no" parameterType="String" resultType="com.tarena.dao.Account">
+select * from account where idcard_no=#{idcard_no}
+</select>
+</mapper>

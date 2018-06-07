@@ -1,0 +1,152 @@
+/* ---------------------
+	公共样式
+	common.css
+	author: qj
+	date: 2012-03-26
+   --------------------- */
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, lable, textarea, p, blockquote, img {
+	margin:0;
+	padding:0;
+}
+img {
+	border:none;
+	float:none;
+}
+address, caption, cite, code, dfn, em, th, var {
+	font-style:normal;
+	font-weight:400;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+}
+body {
+	margin:0;
+	font:12px Verdana, Arial, Helvetica, sans-serif, "����";
+	color:#42515A;
+	/*background:url(../images/pbg.jpg) top repeat-x;*/
+	word-break:break-all;
+}
+select, input {
+	vertical-align:middle;
+	padding:1px 0;
+}
+label {
+	cursor:hand;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 13px;
+	/* font-size: 100%; */
+	font-family: inherit;
+}
+ul, li {
+	list-style:none;
+}
+/* ---------------------------------------
+    font
+   --------------------------------------- */
+body {
+	font: normal normal normal 14px "宋体", Arial, Verdana, sans-serif;
+	background-color:#FFF;
+
+}
+/**
+ * 链接的公共样式
+ */
+a,input {
+	outline:none;
+}/* 在 FF 中 */
+a,input {
+blr:expression(this.onFocus=this.blur());
+}/* 在 IE 中 */
+a:link, a {
+    color:#000000;
+    text-decoration:none;
+}
+a:visited {
+	
+	text-decoration:none;
+}
+
+a:hover {
+	color: #FED949;
+}
+.fl-r {
+	float:right;
+}
+.fl-l {
+	float:left;
+}
+/* -------------------------------------
+   text-align 
+   ------------------------------------- */
+.alignRight {
+	text-align: right !important;
+}
+.alignCenter {
+	text-align: center !important;
+}
+.alignLeft {
+	text-align: left !important;
+}
+/* -------------------------------------
+    vertical-align 
+   ------------------------------------- */
+.valignTop {
+	vertical-align: top !important;
+}
+.valignMiddle {
+	vertical-align: middle !important;
+}
+.valignBottom {
+	vertical-align: bottom !important;
+}
+/* -------------------------------------
+    清理元素 
+   ------------------------------------- */
+.clear {
+	clear: both;
+}
+/* -------------------------------------
+   隐藏元素
+   ------------------------------------- */
+.hidden {
+	display: none;
+}
+.visibility{ }
+
+/* -------------------------------------
+   鼠标样式
+   ------------------------------------- */
+.hand {
+	cursor: pointer
+}
+/*粗体*/
+.bold {
+	font-weight:bold;
+}
+/*绿色*/
+.green {
+	color:#008000
+}
+/*红色*/
+.red {
+	color:#F00
+}
+/*橙色*/
+.orange {
+	color:#FF8000
+}
+/*灰色*/
+.gray {
+	color:gray
+}
+.w180{ width:180px !important;}
+.w200{ width:200px !important;}
+.w220{ width:220px !important;}

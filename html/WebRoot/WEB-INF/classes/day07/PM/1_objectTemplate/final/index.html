@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head><title>自我介绍</title>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="index.css"/>
+		<script>
+			//Step1:使用function Student(name,age)包裹原Hmm对象的定义
+			function Student(name,age){
+				//Step2:去掉创建对象的语句，把所有hmm换成this，把所有实际的内容，换成对应的参数。
+				//var hmm = new Object();
+				this.name = name;
+				this.age = age;
+				this.intrSelf = function () {
+					var dialog = document.getElementById("dialog");
+					dialog.innerHTML = "i am " + this.name + ",i am " + this.age + " years old.";
+					dialog.style.display="block";
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<div id="parentDiv">
+			<div id="lilei" onclick="new Student('Li Lei',18).intrSelf();">
+			</div>
+			<div id="hmm" onclick="new Student('Han Meimei',19).intrSelf();">
+			</div>
+			<div id="dialog">
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Array</title>
+		<meta charset="utf-8"/>
+		<script>
+			//Step0:初始化数组a为1，2，3，b为123,12,23
+			var a = new Array(1);
+			a=[1,2,3];
+			var b = [123,12,23];
+	document.write("<h1>初始化数组a为:" + a.toString() + "</h1>");
+	document.write("<h1>初始化数组b为:" + b.toString() + "</h1>");
+	//Step1:使用concat，在数组a后拼接数组b,将拼接后的结果保存到c
+	var c=a.concat(b);
+	document.write("<h1>a和b拼接后形成新数组c为：" + c.toString() + "</h1>");
+	//Step2:使用slice，获得c中第二个索引，到第四个索引的元素。前包含后不包含。结果放在新数组c2_4中。
+	var c2_4 = c.slice(2,4);
+	document.write("<h1>c中第二个索引，到第四个索引的元素为：" + c2_4.toString() + "（前包含后不包含）</h1>");
+	//Step3:使用sort方法按默认规则对数组b自身排序，排序结果直接改变b的元素结构。
+	c.sort();
+	document.write("<h1>使用sort方法按默认规则对数组c自身排序后，c为：" + c.toString() + "（直接作用于原数组上）</h1>");
+	//Step4:使用sort方法参数重载，修改默认的排序规则，让数组按照数字大小排序，而不是字符串排序。
+	c.sort(function (a, b) {									
+					return a - b; });
+	document.write("<h1>使用sort方法参数重载，对数组c升序排序后，c为：" + c.toString() + "（直接作用于原数组上）</h1>");
+	//Step5:颠倒排序方法的正负值对数组c倒序：
+	var sortFunDESC = function(a,b){
+					return b-a;}
+	c.sort(sortFunDESC);
+	document.write("<h1>使用sort方法参数重载，对数组c降序排序后，c为：" + c.toString() + "（直接作用于原数组上）</h1>");
+	//Step6:使用reverse，原样翻转整个数组，不负责判断排序
+	c.reverse();
+	document.write("<h1>使用reverse方法，对降序排序后的数组c翻转后，c为：" + c.toString() + "（直接作用于原数组上）</h1>");
+	/*MISSION COMPLETE*/
+		</script>
+	</head>
+	<body>	    
+	</body>
+</html>

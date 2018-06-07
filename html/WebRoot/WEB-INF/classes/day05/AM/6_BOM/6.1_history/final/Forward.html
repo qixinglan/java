@@ -1,0 +1,16 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script>
+			document.write("可用高度：" + screen.availHeight);
+			document.write("可用宽度：" + screen.availWidth);
+			document.write("<h1>"+new Date()+"</h1>");
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Back" onclick="history.go(-1);"/>
+		<input type="button" value="刷新" onclick="history.go(0);"/>
+		<input type="button" value="Go to TTS" onclick="location.href='http://tts7.tarena.com.cn';"/>
+	</body>
+</html>

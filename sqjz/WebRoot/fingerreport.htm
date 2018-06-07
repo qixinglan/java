@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body onload="ini()">
+<script language="javascript" src="/sqjz/js/jquery.min.js"></script>
+<script language="javascript" src="/sqjz/js/custom/fields.js" type="text/javascript"></script>
+<script language="javascript" src="/sqjz/data/jzgl/dagl/mission/mission.js"	type="text/javascript"></script>
+<script language="javascript" src="/sqjz/js/dialog/lhgdialog.min.js?skin=blue" type="text/javascript"></script>
+<SCRIPT>
+        function ini()
+        {
+        	var api =frameElement.api;
+        	var fxryId = api.data.fxryId;
+        	//var fxryId = api.opener.document.getElementById("fxryid").value;
+        	$.ajax({
+        		type: "POST",
+        	    async:false,
+        	    url: "data/zwy/getMFingers.action",
+        	    data: "fxryId="+fxryId,
+        	    
+        		success:function(data){
+        			var fpo =document.all.sfzhyCtl;
+                    fpo.P_inzwtz1 = data[0];
+                    fpo.P_inzwtz2 = data[1];
+                    fpo.P_inzwtz3 = data[2];
+                    fpo.P_inzwtz4 = data[3];
+                    fpo.P_inzwtz5 = data[4];
+                    fpo.P_inzwtz6 = data[5];
+                    fpo.P_inzwtz7 = data[6];
+                    fpo.P_inzwtz8 = data[7];
+                    fpo.P_inzwtz9 = data[8];
+                    fpo.P_inzwtz10 = data[9];
+                    
+                    var res = fpo.GetFPic('1');
+                    if(res==1){
+                    	$.dialog.confirm("签到成功！",function(){
+                    		$.ajax({
+                        		type: "POST",
+                        	    async:false,
+                        	    url: "data/jzgl/dagl/mission/report.action?ids="+fxryId,
+                        	    data: "ids="+fxryId,
+                        	    succcess: function(){
+                        	    	api.reload(frameElement.parent);
+               						api.close();
+                        	    }
+               				})
+                    	});
+                    	//$.dailymission.zwbd(fxryId);
+                    	
+                    	//
+                    }else{
+                    	$.dialog.alert("签到失败！");
+                    }
+        		}
+            });
+            
+
+        }
+</SCRIPT>
+<OBJECT id='sfzhyCtl'  border="0" classid='clsid:439B8C29-D4E5-4B78-A389-88FDFCD7770B' height="30"></OBJECT>
+   
+</body>
+</html>

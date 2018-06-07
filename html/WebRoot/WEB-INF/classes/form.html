@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>增加管理员</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+<form method="get">
+<h1 align="center">增加管理员</h1>
+	<table style="width:600px">
+	
+		<tr>
+		<td style="width:80px ">姓名:</td>
+		<td style="width:180px"><input type="text" name="user" maxlength="10"  value="请填写姓名"/>*</td><td>
+		</td></tr>
+		<tr>
+		<td>密码:</td>
+		<td><input type="password" name="pwd"  maxlength="6" />*</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>重复密码:</td>
+		<td><input type="password" maxlength="6"/>*</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>性别:</td>
+		<td><input id="radM" type="radio" name="sex" value="M" checked/><label for="radM")>男士</label>
+		<input id="radF" type="radio" name="sex" value="F"/><label for="radF">女士</label>
+		</td>
+		 <!-- radion用于单选按钮，name可以重复就是用于这种特殊情况，且name相同还有特殊作用，可以分组，在这分组之后只能多选一 -->
+		<td></td>
+		</tr>
+		<tr>
+		<td>角色:</td>
+		<td>
+		<fieldset>
+		<legend>请选择</legend>
+		<input id="sa" type="checkbox" name="role" value="sa"/><label for="sa">超级管理员</label><br/>
+		<input id="stu"type="checkbox"" name="role" value="stu"/><label for="stu">学生管理员</label><br/>
+		<input id="teac" type="checkbox"" name="role" value="teac"/><label for="teac">教师管理员</label>
+		</fieldset>
+		</td>
+		<td>至少选择一个</td>
+		</tr>
+		<tr>
+		<td>状态:</td>
+		<td>
+		<select name="status">
+		<option value="enable">启用</option>
+		<option value="disable" selected>停用</option>
+		<option value="deleted">删除</option>
+		</select>
+		</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>所属中心:</td>
+		<td>
+		<select name="center" size="4" multiple>
+		<option value="ggc">中关村</option>
+		<option value="dmh" >大明湖</option>
+		<option value="tam" selected>天安门</option>
+		<option value="hzxh">杭州西湖</option>
+		<option value="cc">长春</option>
+		<option value="sjz">石家庄</option>
+		</select>
+		</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>上传头像:</td>
+		<td>
+		<input type="file"/>
+		</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>描述:</td>
+		<td>
+		<textarea style="width:90%;height:48px;resize:none"">
+		</textarea>
+		</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>
+		<input type="submit" value="提交"/>
+		<input type="reset" value="重填"/>
+		</td>
+		<td>
+		
+		</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.tarena.dao.EmpDao">
+
+	<!-- 保存一条员工数据 -->
+	<insert id="save"
+		parameterType="com.tarena.entity.Emp">
+		<selectKey keyProperty="empno"
+		 order="BEFORE" resultType="java.lang.Integer">
+			select emp_seq.nextval from dual
+		</selectKey>
+		insert into t_emp values(
+			#{empno},
+			#{ename,jdbcType=VARCHAR},
+			#{job,jdbcType=VARCHAR},
+			#{mgr,jdbcType=NUMERIC},
+			#{hiredate,jdbcType=DATE},
+			#{sal,jdbcType=NUMERIC},
+			#{comm,jdbcType=NUMERIC},
+			#{deptno,jdbcType=NUMERIC}
+		)
+	</insert>
+	
+	<!-- 使用嵌套查询，在查询一条员工数据时，关联查询出对应的部门 -->
+	<select id="findById"
+		parameterType="java.lang.Integer"
+		resultMap="empMap">
+		select * from t_emp where empno=#{id}
+	</select>
+	<select id="findDept"
+		parameterType="java.lang.Integer"
+		resultType="com.tarena.entity.Dept">
+		select * from t_dept where deptno=#{deptno}
+	</select>
+	<resultMap type="com.tarena.entity.Emp" id="empMap">
+		<association property="dept" column="deptno"
+			javaType="com.tarena.entity.Dept" select="findDept">
+		</association>
+	</resultMap>
+	
+	<!-- 使用嵌套结果，在查询一条员工数据时，关联查询出对应的部门 -->
+	<select id="findById2"
+		parameterType="java.lang.Integer"
+		resultMap="empMap2">
+		select e.*,d.* from t_emp e
+		inner join t_dept d on e.deptno=d.deptno
+		where e.empno=#{id}
+	</select>
+	<resultMap type="com.tarena.entity.Emp" id="empMap2">
+		<association property="dept" column="deptno"
+			javaType="com.tarena.entity.Dept" select="findDept">
+		</association>
+	</resultMap>	
+	
+	<!-- 查询全部的员工 -->
+	<select id="findAll" 
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+	</select>	
+	
+	<!-- 修改员工 -->
+	<update id="update" parameterType="com.tarena.entity.Emp">
+		update t_emp set
+			ename=#{ename,jdbcType=VARCHAR},
+			job=#{job,jdbcType=VARCHAR},
+			sal=#{sal,jdbcType=NUMERIC}
+		where empno=#{empno,jdbcType=NUMERIC}
+	</update>
+	
+	<!-- 删除员工 -->
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from t_emp where empno=#{id}
+	</delete>
+	
+</mapper>

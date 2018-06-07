@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    <sqlMap>
+    
+    <resultMap class="vo.Province" id="pp">
+    <result property="pname" column="pname"/>
+    <result property="pid" column="pid"/>
+    <result property="cityList" column="cityList" select="selectCityByPid"/>
+    </resultMap>
+    
+    <select id="selectCity" parameterClass="int" resultClass="pp">
+    select * from province
+    </select>
+    
+    
+    </sqlMap>

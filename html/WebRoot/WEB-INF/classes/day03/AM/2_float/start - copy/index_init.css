@@ -1,0 +1,38 @@
+body{margin:0 auto; width:960px;}
+/* styles for the intro section */
+#intro{height:4em; text-align: center; line-height:4em; }
+
+/* styles for navigation */
+#nav { 
+	background-color: #751c54; 
+	height: 3em; 
+	color:#fff; 
+	text-align:center;
+	line-height:3em;
+}
+
+/* styles for the products section */
+#products { 
+    padding: 1em;
+	border:4px double orange; 
+	background-color:#FFF
+}
+
+/* styles for the testimonials box */
+#test { 
+	background-color: #FFBC53; 
+	padding: 1em; 
+  	border-radius: 20px; 
+}
+#copyright { 
+    color:#663333; 
+	font-size: .8em; 
+	text-align: center; 
+	height:50px;
+	line-height:50px;
+	border:1px solid red;
+} 
+
+#content{
+	padding-top:20px;
+}

@@ -1,0 +1,142 @@
+/* 
+	styles for the psuedo-trigger box 
+*/
+div.mcdropdown {
+	display: inline;
+	white-space: nowrap;
+	width: 100%;
+	background: #fff;
+	height: 21px;
+	line-height: 21px;
+	
+	margin: 0;
+	padding: 0;
+}
+
+/* style either the input or div where the plug-in is attached to */
+div.mcdropdown input {
+	border: 1px #bdbdbd solid;
+	border-right:0 !important;
+	background-color: #fff;
+	height: 28px !important;
+	_height: 28px;
+	/*width:120px ;*/
+	line-height: 28px !important;
+	padding: 0px;
+	padding-left:3px;
+	margin:auto;
+	margin-bottom:8px
+	/*margin-top:0px !important;*/
+	
+}
+
+div.mcdropdown a {
+	background: transparent url(../images/trigger.gif) no-repeat 0px 0px;
+	width: 28px;
+	height: 28px;
+	_height: 28px;
+	text-decoration: none;
+	font-size: 0pt;
+	outline: 0;
+	display: inline-block;
+	vertical-align:middle;
+	/*margin-left:2px;*/
+	
+}
+
+div.mcdropdown a:hover,div.mcdropdown a:focus {
+	background-position: -29px 0 !important;
+}
+
+div.mcdropdown a:active {
+	background-position: -29 0 !important;
+	outline: none; /* hide dotted outline in Firefox */
+}
+
+div.mcdropdownDisabled a {
+	filter: alpha(opacity =   40);
+	-moz-opacity: 0.4;
+	opacity: 0.4;
+	-khtml-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-moz-user-focus: ignore;
+	-moz-user-input: disabled;
+}
+
+div.mcdropdownDisabled input {
+	cursor: default;
+}
+
+div.mcdropdownDisabled a:hover,div.mcdropdownDisabled a:focus {
+	background-position: 0 0!important;
+	cursor: default;
+}
+.triggerIcon1{
+		background: transparent url(../images/trigger.gif) no-repeat -17px 0 !important;
+}
+.triggerIcon{
+	background: transparent url(../images/search-trigger.gif) no-repeat 0px 0px !important;
+}
+.date_triggerIcon{
+	background: transparent url(../images/date-trigger.gif) no-repeat -17px 0 !important;
+}
+
+.clear_triggerIcon{
+	 margin-left:-43px;
+	 width:15px !important;
+	 margin-top:6px;
+	 height:15px !important;
+	background: transparent url(../images/clear-trigger.png) no-repeat 0px 0 !important;
+}
+
+div.tcdropdown {
+	display: inline;
+	white-space: nowrap;
+	width: 100%;
+	background: #fff;
+	height: 21px;
+	line-height: 21px;
+	
+	margin: 0;
+	padding: 0;
+}
+
+/* style either the input or div where the plug-in is attached to */
+div.tcdropdown input {
+	border: 1px #bdbdbd solid;
+	border-right:0 !important;
+	background-color: #fff;
+	height: 26px !important;
+	_height: 21px;
+	width:135px ;
+	line-height: 26px !important;
+	padding: 0px;
+	padding-left:3px;
+	margin:auto;
+	
+}
+
+div.tcdropdown a {
+	background: transparent url(../images/trigger.gif) no-repeat 0px 0px;
+	width: 28px;
+	height: 28px;
+	_height: 28px;
+	text-decoration: none;
+	font-size: 0pt;
+	outline: 0;
+	display: inline-block;
+	vertical-align:middle;
+	margin-left:2px;
+	
+}
+
+div.tcdropdown a:hover,div.tcdropdown a:focus {
+	background-position: -29px 0 !important;
+}
+
+div.tcdropdown a:active {
+	background-position: -29 0 !important;
+	outline: none; /* hide dotted outline in Firefox */
+}
+

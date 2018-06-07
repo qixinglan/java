@@ -1,0 +1,68 @@
+/* 全局样式 */
+body{font-size: 12px;}
+div{margin: 0px auto;}
+#main{
+    border:5px solid #8ac1db;
+    height: 410px;
+    width: 950px;    
+    position:relative;
+}
+#data{width:910px; height: 340px; }
+#datalist{
+    width: 910px;
+    margin: 5px auto;    
+    background-color:#fff;
+    border-collapse:collapse;
+}
+td,th{ border: 1px solid #CCC; }
+td{height: 32px;text-align: center; }
+th{ height: 35px; background: #fbedce; }
+#datalist tr:hover{ background-color:#f7f9fd; }
+
+/* 操作信息提示框 */
+#operate_result_info
+{
+    width: 400px;
+    height:70px;
+    line-height: 70px;
+    padding-left: 40px;
+    position: absolute;
+    top: 90px;
+    left: 30%;
+    background-color: #fdecec;
+    border: 1px solid #f57676;
+    display:none;
+}
+#operate_result_info img{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#operate_result_info span{
+	padding-left:20px;
+	font-size:16px;
+	background-position:left;
+	background-repeat:no-repeat;
+}
+span.success{
+    color: #af6606;    
+    background-image: url(images/ok.png);
+}
+span.fail{
+    color: #f00; 
+    background-image: url(images/warning.png);
+}
+input.btn_modify, input.btn_delete{
+    margin-left: 3px;
+    width: 55px;
+    cursor: pointer;
+    color: #000;
+    border:0;
+}
+input.btn_modify{
+    background: url(images/modification.png) no-repeat left;
+}
+input.btn_delete{
+    background: url(images/delete.png) no-repeat left;
+}

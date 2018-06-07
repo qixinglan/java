@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head><title>自我介绍</title>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="index.css"/>
+		<script>
+			//实现继承：
+			function Person(){
+				this.makeFriends=function(friend){
+					var dialog = document.getElementById("dialog");
+					dialog.innerHTML = "我和"+friend+"是好朋友";
+					dialog.style.display="block";
+				}
+			}
+			//直接写=person等于只那了person模板的内容，没继承到person.prototype中可能的内容。
+			Student.prototype=new Person();
+
+			//Step1:使用function Student(name,age)包裹原Hmm对象的定义
+			function Student(name,age){
+				//Step2:去掉创建对象的语句，把所有hmm换成this，把所有实际的内容，换成对应的参数。
+				//var hmm = new Object();
+				this.name = name;
+				this.age = age;
+				this.intrSelf = function () {
+					var dialog = document.getElementById("dialog");
+					dialog.innerHTML = "i am " + this.name + ",i am " + this.age + " years old.";
+					dialog.style.display="block";
+				};
+			}
+
+			//子类重写父类方法：
+			Student.prototype.makeFriends=function(friend){
+				var dialog = document.getElementById("dialog");
+					dialog.innerHTML = friend+"is my good friend";
+					dialog.style.display="block";
+			}
+
+			//"静态"方法：只存储一份，节省空间！
+			Student.staticFun=function(){
+				var dialog = document.getElementById("dialog");
+				dialog.innerHTML = "我们明天月考！";
+				dialog.style.display="block";
+			}
+			//"共享方法"：只存储一份，节省空间！
+			Student.prototype.sharedFun=function(){
+				var dialog = document.getElementById("dialog");
+				dialog.innerHTML = "我们明天月考！";
+				dialog.style.display="block";
+			}
+
+			function lileiClick(){			
+				var lilei=new Student('Li Lei',18);
+				//如果不是调用，而是有人擅自篡改呢？
+				/*lilei.intrSelf=function(){
+					var dialog = document.getElementById("dialog");
+					dialog.innerHTML = "我不想上学了！";
+					dialog.style.display="block";
+				};
+				*/
+				//静态方法只能用构造函数直接调用
+				//Student.staticFun();
+				//共享方法只能用对象实例调用
+				lilei.sharedFun();
+				//如果Lilei非要改变intrSelf，那么使用prototype.intrSelf修改行不行?
+				Student.prototype.intrSelf=function(){
+					var dialog = document.getElementById("dialog");
+					dialog.innerHTML = "我不想上学了！";
+					dialog.style.display="block";
+				};
+				lilei.intrSelf();
+			}
+			function hanmmClick(){				
+				var hanmm=new Student('Han Meimei',19);
+				hanmm.intrSelf();
+				//Student.staticFun();
+				//hanmm.sharedFun();
+				//这种定义只对hanmm一人有作用，而其它实例不受影响
+				//另，不允许对象强制使用prototype修改shareFun方法
+				/*hanmm.shareFun=function(){
+					var dialog = document.getElementById("dialog");
+					dialog.innerHTML = "快考试了，一点儿都没复习呢！";
+					dialog.style.display="block";
+				}
+				hanmm.shareFun();*/
+				//调用继承方法：
+				hanmm.makeFriends("lilei");
+			}
+		</script>
+	</head>
+	<body>
+		<div id="parentDiv">
+			<div id="lilei" onclick="lileiClick()">
+			</div>
+			<div id="hmm" onclick="hanmmClick()">
+			</div>
+			<div id="dialog">
+			</div>
+		</div>
+	</body>
+</html>

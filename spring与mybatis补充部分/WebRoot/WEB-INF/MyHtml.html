@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  <script type="text/javascript">
+    function fun(){
+var  table=document.getElementById("table");
+var length=table.rows.length;
+for(var i=0;i<length;i++)
+table.deleteRow(0);
+  }
+  </script>
+
+  <body>
+  <table border=‘1’  onclick="fun()" id="table">
+  <tr>
+  <td>1</td><td>1</td>
+  </tr>'
+   <tr>
+     <td>2</td><td>2</td>
+   </tr>
+    <tr>
+      <td>3</td><td>3</td>
+    </tr>
+  </table>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="jggl" extends="extend-json-default" namespace="/data/jggl">
+		<action name="list" class="com.nci.dcs.official.action.OrganizationAction"
+			method="list">
+			<result name="success">/data/bggl/jggl/jgxxList.jsp</result>
+		</action>
+		<action name="add" class="com.nci.dcs.official.action.OrganizationAction"
+			method="add">
+			<result name="success">/data/bggl/jggl/jgxxAdd.jsp</result>
+		</action>
+		<action name="view" class="com.nci.dcs.official.action.OrganizationAction"
+			method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="edit" class="com.nci.dcs.official.action.OrganizationAction"
+			method="edit">
+			<result name="success">/data/bggl/jggl/jgxxEdit.jsp</result>
+		</action>
+		<action name="get" class="com.nci.dcs.official.action.OrganizationAction"
+			method="get">
+			<result type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		<action name="save" class="com.nci.dcs.official.action.OrganizationAction"
+			method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="del" class="com.nci.dcs.official.action.OrganizationAction"
+			method="delete">
+		</action>
+		<action name="perList" class="com.nci.dcs.official.action.PersonsAction"
+			method="list">
+			<result name="success">/data/bggl/jggl/personList.jsp</result>
+		</action>
+		<action name="perAdd" class="com.nci.dcs.official.action.PersonsAction"
+			method="add">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="perSave" class="com.nci.dcs.official.action.PersonsAction"
+			method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="perView" class="com.nci.dcs.official.action.PersonsAction"
+			method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="perEdit" class="com.nci.dcs.official.action.PersonsAction"
+			method="view">
+			<result name="success">/data/bggl/jggl/personAdd.jsp</result>
+		</action>
+		<action name="excel" class="com.nci.dcs.official.action.PersonsAction"
+			method="excel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="search" class="com.nci.dcs.official.action.OrganizationAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="jgtree" class="com.nci.dcs.official.action.OrganizationAction"
+			method="jgtree">
+			<result type="json">
+				<param name="root">jsonTree</param>
+			</result>
+		</action>
+		<action name="json" class="com.nci.dcs.official.action.OrganizationAction"
+			method="json">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="perSearch" class="com.nci.dcs.official.action.PersonsAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="perJson" class="com.nci.dcs.official.action.PersonsAction"
+			method="json">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="map" class="com.nci.dcs.official.action.OrganizationAction"
+			method="getPosition">
+			<result name="success">/data/bggl/jggl/chinaMap.jsp</result>
+		</action>
+		<action name="reload" class="com.nci.dcs.official.action.OrganizationAction"
+			method="reload">
+			<result name="success" type="redirectAction">json</result>
+		</action>
+	</package>
+	<package name="rygl" extends="extend-json-default" namespace="/data/rygl">
+		<action name="list" class="com.nci.dcs.official.action.OrganizationAction"
+			method="list">
+			<result name="success">/data/bggl/rygl/ryxxList.jsp</result>
+		</action>
+		<action name="perSearch" class="com.nci.dcs.official.action.PersonsAction"
+			method="searchRYLB">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="perDel" class="com.nci.dcs.official.action.PersonsAction"
+			method="deleteRY">
+		</action>
+	</package>
+	<package name="fileoper" extends="extend-json-default"
+		namespace="/data/fileoper">
+		<action name="list" class="com.nci.dcs.official.action.FileOperAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="upload" class="com.nci.dcs.official.action.FileOperAction"
+			method="upload">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fileoper" class="com.nci.dcs.official.action.FileOperAction"
+			method="fileoper">
+		</action>
+		<action name="deletefile" class="com.nci.dcs.official.action.FileOperAction"
+			method="delete">
+		</action>
+		<action name="checkFile" class="com.nci.dcs.official.action.FileOperAction"
+			method="checkFile">
+			<result type="json">
+				<param name="root">msg</param>
+			</result>
+		</action>
+		<action name="download" class="com.nci.dcs.official.action.FileOperAction"
+			method="filedDownload">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+
+				<param name="inputName">inputStream</param>
+
+				<param name="contentDisposition">attachment;filename="${downFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+	<package name="dynamicreport" extends="extend-json-default"
+		namespace="/data/dynamicreport">
+		<action name="list" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="report" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="report">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="reply" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="reply">
+			<result name="success">/data/bggl/dtgl/view.jsp</result>
+		</action>
+		<action name="delete" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="edit" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="update">
+			<result type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		<action name="downloadAttach" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="downloadAttach">
+			<result name="success" type="stream">
+				<param name="contentType">text/plain</param>
+
+				<param name="inputName">inputStream</param>
+
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		<action name="upAttach" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="upAttach">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="delattach" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="delattach">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="commitSbxx" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="commitSbxx">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+
+		<action name="view" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+
+		<action name="search" class="com.nci.dcs.official.action.DynamicreportAction"
+			method="search">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+
+		<action name="savePfxx"
+			class="com.nci.dcs.official.action.DynamicreportreplyAction" method="savePfxx">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="searchPfxx"
+			class="com.nci.dcs.official.action.DynamicreportreplyAction" method="searchPfxx">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+	</package>
+	<package name="tzgl" extends="extend-json-default" namespace="/data/tzgl">
+		<action name="list" class="com.nci.dcs.official.action.NoticeAction"
+			method="list">
+			<result name="success">/data/bggl/tzgl/list.jsp</result>
+		</action>
+		<action name="postData" class="com.nci.dcs.official.action.NoticeAction"
+			method="postData">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="addNotice" class="com.nci.dcs.official.action.NoticeAction"
+			method="addNotice">
+			<result name="success">/data/bggl/tzgl/add.jsp</result>
+		</action>
+		<action name="getData" class="com.nci.dcs.official.action.NoticeAction"
+			method="getData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="search" class="com.nci.dcs.official.action.NoticeAction"
+			method="search">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="delNotice" class="com.nci.dcs.official.action.NoticeAction"
+			method="delNotice">
+		</action>
+		<action name="xfNotice" class="com.nci.dcs.official.action.NoticeAction"
+			method="xfNotice">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="qsqkView" class="com.nci.dcs.official.action.NoticeAction"
+			method="qsqkView">
+			<result name="success">/data/bggl/tzgl/qsqkView.jsp</result>
+		</action>
+		<action name="noticeReceive" class="com.nci.dcs.official.action.NoticereceiveAction"
+			method="noticeReceive">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+
+		<action name="unknown" class="com.nci.dcs.official.action.NoticeAction"
+			method="getUnknownData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+</struts>

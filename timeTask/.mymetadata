@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="timeTask"
+  id="myeclipse.1465089533756"
+  context-root="/timeTask"
+  j2ee-spec="6.0"
+  archive="timeTask.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

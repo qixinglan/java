@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.ServiceMapper">
+<select id="findService" parameterType="com.tarena.dao.ServicePage" resultType="hashmap">
+select * from(
+select t.*,rownum n from(
+select s.*,a.idcard_no,a.real_name,c.name,c.descr from service s 
+inner join account a on s.account_id=a.account_id 
+inner join cost c on s.cost_id=c.cost_id 
+<where>
+<if test="os_username!=null &amp;&amp; os_username!=''">
+and s.os_username=#{os_username}
+</if>
+<if test="unix_host!=null &amp;&amp; unix_host!=''">
+and s.unix_host=#{unix_host}
+</if>
+<if test="idcard_no!=null &amp;&amp; idcard_no!=''">
+and a.idcard_no=#{idcard_no}
+</if>
+<if test="status!=null &amp;&amp; status!=''">
+and s.status=#{status}
+</if>
+</where>
+order by s.service_id)t 
+where rownum &lt;#{end})  
+where n&gt;#{begin}
+</select>
+<select id="findTotalRows" resultType="int" parameterType="com.tarena.dao.ServicePage">
+select count(*) from service s 
+inner join account a on s.account_id=a.account_id 
+inner join cost c on s.cost_id=c.cost_id 
+<where>
+<if test="os_username!=null &amp;&amp; os_username!=''">
+and s.os_username=#{os_username}
+</if>
+<if test="unix_host!=null &amp;&amp; unix_host!=''">
+and s.unix_host=#{unix_host}
+</if>
+<if test="idcard_no!=null &amp;&amp; idcard_no!=''">
+and a.idcard_no=#{idcard_no}
+</if>
+<if test="status!=null &amp;&amp; status!=''">
+and s.status=#{status}
+</if>
+</where>
+</select>
+<update id="updateToOpen" parameterType="int">
+update service set status='0',pause_date=null where service_id=#{id}
+</update>
+<update id="updateToPause" parameterType="int">
+update service set status='1',pause_date=sysdate where service_id=#{id}
+</update>
+<update id="updateToDelete" parameterType="int">
+update service set status='2',close_date=sysdate where service_id=#{id}
+</update>
+<select id="findById" parameterType="int" resultType="com.tarena.dao.Service">
+select * from service where service_id=#{id}
+</select>
+<update id="updateToPauseByAccount_id" parameterType="int">
+update service set status='1',pause_date=sysdate where account_id=#{account_id}
+</update>
+<update id="updateToDeleteByAccount_id" parameterType="int">
+update service set status='2',close_date=sysdate where account_id=#{account_id}
+</update>
+<insert id="insertService" parameterType="com.tarena.dao.Service">
+insert into service values(
+service_seq.nextval,
+#{account_id,jdbcType=INTEGER},
+#{unix_host,jdbcType=VARCHAR},
+#{os_username,jdbcType=VARCHAR},
+#{login_passwd,jdbcType=VARCHAR},
+'0',
+sysdate,
+#{pause_date,jdbcType=TIMESTAMP},
+#{close_date,jdbcType=TIMESTAMP},
+#{cost_id,jdbcType=INTEGER}
+)
+</insert>
+<insert id="updateService" parameterType="com.tarena.dao.Service">
+insert into SERVICE_UPDATE_BAK values(
+service_bak_seq.nextval,
+#{service_id},
+#{cost_id}
+)
+</insert>
+</mapper>

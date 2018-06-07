@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<title>下拉框示例代码</title>
+		
+		<!-- 
+			必须引入的文件：jquery-1.4.2.js、jquery.util.js、jquery.simple.tree.js、jquery.simple.tree.css。
+		 -->
+		<script type="text/javascript" src="../../jquery.js"></script>
+		<script type="text/javascript" src="../../jquery.util.js"></script>
+		<script type="text/javascript" src="../../triggerfield/js/jquery.triggerfield.js"></script>
+		<script type="text/javascript" src="../../simpletree/js/jquery.simple.tree.js"></script>
+		<script type="text/javascript" src="../js/jquery.combobox.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../triggerfield/css/jquery.triggerfield.css" />
+		<link rel="stylesheet" type="text/css" href="../../simpletree/css/jquery.simple.tree.css" />
+		
+		<!-- 
+			按照如下代码初始化树，可以选择的属性为：
+		 -->
+		<script>
+			$(function(){
+				// 构建下拉框。
+				var myTreeCombox = $("#myTreeCombox").treecombo({
+				    multiSelected: false,
+				    emptyText     : '--全部--',
+					url		      : 'simpleTreeData.htm',
+					valueAttr		: 'id',
+					labelFieldName	: 'myTreeComboxLabel'
+				});
+				
+				// 显示下拉框选中的值。
+				$("#showComboxValue").click(function(){
+					alert($("#myTreeCombox").val());
+				});
+			});
+		</script>
+	</head>
+	<body style="margin: 50px; padding: 50px;">
+		<br />
+		<br />
+		<br />
+		<!-- 下拉选择树。 -->
+		
+			<table>
+				<tr>
+					<td>
+						<label>
+							下拉选择树：&nbsp;
+						</label>
+					</td>
+					<td>
+						<!-- 此处如果设置为readonly则只能选择，否则支持autocomplete -->
+						<input type="text" id="myTreeCombox" name="myTreeCombox" defValue="10_01_01"/>
+					</td>
+				</tr>
+			</table>
+		
+		<br />
+		<br />
+		<br />
+		<!-- 显示选中值按钮。 注意：此处建议明确button type以保证浏览器兼容性，若为submit则回车键会触发按钮点击-->
+		<button id="showComboxValue" class="but" type="button">显示下拉框选中值</button>
+	</body>
+</html>

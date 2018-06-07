@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 编码设置 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 上传文件大小限制 100M-->
+	<constant name="struts.multipart.maxSize" value="104857600" />
+	<!-- 国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="messageResouce"></constant>
+	<!-- 上传文件时临时目录 -->
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<!-- 在Struts中配置IOC-->
+	<constant name="struts.objectFactory" value="spring" /> 
+	<!-- 去掉Struts标签中多余html代码-->
+	<constant name="struts.ui.theme" value="simple" /> 
+	<!-- 允许struts2访问静态类-->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" /> 
+	
+	<package name="extend-json-default" extends="json-default" namespace="/">		
+		<interceptors>
+			<interceptor name="logInterceptor" class="com.nci.dcs.interceptor.LogInterceptor"></interceptor>
+			<interceptor-stack name="loginDefaultStack">
+				<interceptor-ref name="logInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack">  
+					<param name="exception.logEnabled">true</param>  
+					<param name="exception.logLevel">error</param>  
+				</interceptor-ref>  
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginDefaultStack"></default-interceptor-ref>
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="scriptError">/goError.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+		 	<exception-mapping result="error" exception="java.lang.Exceptions"></exception-mapping> 
+			<exception-mapping result="error" exception="java.lang.Throwable"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+ 
+	<include file="struts/struts-*.xml" />
+</struts>

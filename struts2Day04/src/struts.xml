@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+<package name="one" namespace="/hello" extends="struts-default">
+<action name="struts2" class="com.tarena.action.Action" method="helloStruts2">
+<result name="ok">/WEB-INF/jsp/helloStruts2.jsp</result>
+</action>
+<action name="ognl" class="com.tarena.action.Action" method="helloStruts">
+<result name="ok">/WEB-INF/jsp/helloStruts2.jsp</result>
+</action>
+<action name="struts201" class="com.tarena.action.Action" >
+<result >/WEB-INF/jsp/helloStruts2.jsp</result>
+</action>
+<action name="struts202" >
+<result>/WEB-INF/jsp/login.jsp</result>
+</action>
+</package>
+<package name="two" namespace="/login" extends="struts-default">
+<action name="login" class="com.tarena.action.Action" method="login"></action>
+</package>
+<package name="three" namespace="/ognl" extends="struts-default">
+<action name="ognl" class="com.tarena.action.Action1" method="ognl">
+<result name="ok">/WEB-INF/jsp/ognl.jsp</result>
+</action>
+</package>
+</struts>

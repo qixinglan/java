@@ -1,0 +1,172 @@
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml">
+				<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<title>使用正则表达式验证注册页面</title>
+				<script src="../js/jquery.js"></script>
+				<script >
+				function checkUser(){
+				var regexp=/^[a-z A-Z]{1}\w{3,15}$/;
+				var value=$("#user").val();
+				if(regexp.test(value)){
+					$("#user_prompt").html("用户名正确");
+					return true;
+					}
+				else{
+					$("#user_prompt").css("color","red");
+					return false;
+				}
+				}
+				
+				var pwd;
+				function checkPwd(){
+				var regexp=/^\w{4,10}$/;
+				var value=$("#pwd").val();
+				if(regexp.test(value)){
+					$("#pwd_prompt").html("密码正确");
+					pwd=value;
+					return true;
+					}
+				else{
+					$("#pwd_prompt").css("color","red");
+					return false;
+				}
+				}
+				function checkRepwd(){
+				var regexp=/^\w{4,10}$/;
+				var value=$("#repwd").val();
+				if(pwd==value){
+					$("#repwd_prompt").html("密码正确");
+					return true;
+					}
+				else{
+					$("#repwd_prompt").html("密码错误");
+					return false;
+				}
+				
+				}
+				function checkEmail(){
+					var reg= /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+					var value=$("#email").val();
+				if(reg.test(value)){
+					$("#email_prompt").html("邮箱格式正确");
+					return true;
+					}
+				else{
+					$("#email_prompt").html("请填写正确邮箱");
+					return false;
+				}
+				}
+				function checkMobile(){
+					var reg= /^1\d{10}$/;
+					var value=$("#mobile").val();
+				if(reg.test(value)){
+					$("#mobile_prompt").html("手机号码格式正确");
+					return true;
+					}
+				else{
+					$("#mobile_prompt").html("请填写正确的手机号");
+					return false;
+				}
+				
+				}
+				function checkBirth(){
+					var reg= /^\d{4}-\d{1,2}-\d{1,2}$/;
+					var value=$("#birth").val();
+					
+				if(reg.test(value)){
+					var s=value.split("-");
+					var a=parseInt(s[0]);
+					var b=parseInt(s[1]);
+					var c=parseInt(s[2]);
+					if(a>=1900&&a<=2009&&b<=12&&b>=1&&c<=31&&c>0){
+						$("#birth_prompt").html("生日格式正确");
+						return true;
+					}
+					else{
+					$("#birth_prompt").html("请填写正确的生日");
+					return false;
+					}
+					}
+				else{
+					$("#birth_prompt").html("请填写正确的生日");
+					return false;
+				}
+				}
+				function sub(){
+					checkUser();
+					checkPwd();
+				 	checkRepwd();
+				 	checkEmail();
+				 	checkMobile();
+				 	checkBirth();
+				}
+				
+				
+				
+				
+				
+				
+				
+			
+	</script>
+	</head>
+	
+	<body>
+	<table class="main" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td><img src="images/logo.jpg" alt="logo" /><img src="images/banner.jpg" alt="banner" /></td>
+	  </tr>
+	  <tr>
+	    <td class="hr_1">新用户注册</td>
+	  </tr>
+	  <tr>
+	    <td style="height:10px;"></td>
+	  </tr>
+	  <form action="" method="get" name="myform">
+	  <tr>
+	    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="left">用户名：</td>
+	    <td class="center"><input id="user" type="text" class="in" onblur="checkUser()" /></td>
+	    <td><div id="user_prompt">用户名由英文字母和数字组成的4-16位字符，以字母开头</div></td>
+	  </tr>
+	  <tr>
+	    <td class="left">密码：</td>
+	    <td class="center"><input id="pwd" type="password" class="in"  onblur="checkPwd()"/></td>
+	    <td><div id="pwd_prompt">密码由英文字母和数字组成的4-10位字符</div></td>
+	  </tr>
+	  <tr>
+	    <td class="left">确认密码：</td>
+	    <td class="center"><input id="repwd" type="password" class="in"  onblur="checkRepwd()"/></td>
+	    <td><div id="repwd_prompt"></div></td>
+	  </tr>
+	   <tr>
+	    <td class="left">电子邮箱：</td>
+	    <td class="center"><input id="email" type="text" class="in"  onblur="checkEmail()"/></td>
+	    <td><div id="email_prompt"></div></td>
+	  </tr>
+	    <tr>
+	    <td class="left">手机号码：</td>
+	    <td class="center"><input id="mobile" type="text" class="in" onblur="checkMobile()" /></td>
+	    <td><div id="mobile_prompt"></div></td>
+	  </tr>
+	  <tr>
+	    <td class="left">生日：</td>
+	    <td class="center"><input id="birth" type="text" class="in"  onblur="checkBirth()"/></td>
+	    <td><div id="birth_prompt">生日格式为1980-5-12或1988-05-04的形式</div></td>
+	  </tr>
+	   <tr>
+	    <td class="left">&nbsp;</td>
+	    <td class="center"><input id="sub" type="submit" onclick="sub()"/></td>
+	    <td>&nbsp;</td>
+	  </tr>
+	</table>
+	</td>
+	  </tr>
+	  </form>
+	</table>
+	
+	</body>
+	</html>
+				

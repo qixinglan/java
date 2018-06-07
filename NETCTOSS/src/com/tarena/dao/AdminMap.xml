@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.AdminMapper">
+<select id="findAdmin" 
+		parameterType="com.tarena.dao.AdminPage" 
+		resultMap="adminMap">
+		select * from (
+			select a.*,ROWNUM r from (
+				select * from admin_info
+				where admin_id in (
+					select a.admin_id
+					from admin_info a
+					left join admin_role ar on a.admin_id=ar.admin_id
+					left join role_info ri on ri.role_id=ar.role_id
+					left join role_module rm on rm.role_id=ri.role_id
+					<where>
+						<if test="roleName!=null &amp;&amp; roleName.length()>0">
+							and ri.name like '%'||#{roleName}||'%'
+						</if>
+						<if test="moduleId!=null">
+							and rm.module_id=#{moduleId}
+						</if>
+					</where>
+				)
+				order by admin_id
+			) a
+		) where r&lt;#{end} and r>#{begin}
+	</select>
+	<select id="selectRoles" 
+		parameterType="int" 
+		resultType="com.tarena.dao.Role">
+		select * from role_info where role_id in (
+			select role_id from admin_role
+			where admin_id=#{id}
+		)
+	</select>
+	<resultMap id="adminMap" type="com.tarena.dao.Admin">
+		<id column="admin_id" property="admin_id" />
+		<collection ofType="com.tarena.dao.Role"
+			property="roles" javaType="java.util.ArrayList"
+			column="admin_id" select="selectRoles">
+		</collection>
+	</resultMap>
+<select id="findTotalRows" parameterType="com.tarena.dao.AdminPage" resultType="int">
+select count(*) from admin_info
+where admin_id in (
+					select a.admin_id
+					from admin_info a
+					left join admin_role ar on a.admin_id=ar.admin_id
+					left join role_info ri on ri.role_id=ar.role_id
+					left join role_module rm on rm.role_id=ri.role_id
+					<where>
+						<if test="roleName!=null &amp;&amp; roleName.length()>0">
+							and ri.name like '%'||#{roleName}||'%'
+						</if>
+						<if test="moduleId!=null">
+							and rm.module_id=#{moduleId}
+						</if>
+					</where>
+				)
+					order by admin_id
+			
+</select>
+<update id="resttingPassword" parameterType="hashmap">
+update admin_info set password=#{defaultPassword}where admin_id in
+<foreach collection="ids" 
+			open="(" close=")" separator="," item="id">
+			#{id}
+		</foreach>
+</update>
+<select id="findTotalRole" resultType="com.tarena.dao.Role">
+select * from role_info
+</select>
+<insert id="insertAdmin" parameterType="com.tarena.dao.Admin">
+<selectKey keyProperty="admin_id" order="BEFORE" resultType="int">
+	select admin_seq.nextval from dual
+	</selectKey>
+insert into admin_info values(
+#{admin_id,jdbcType=INTEGER},
+#{admin_code,jdbcType=VARCHAR},
+#{password,jdbcType=VARCHAR},	
+#{name,jdbcType=VARCHAR},
+#{telephone,jdbcType=VARCHAR},
+#{email,jdbcType=VARCHAR},	
+sysdate
+)
+</insert>
+<insert id="insertAdminRole" parameterType="hashmap">
+insert into admin_role values(#{admin_id},#{role_id})
+</insert>
+<select id="findById" parameterType="int" resultMap="adminMap">
+select * from admin_info where admin_id=#{id}
+</select>
+<update id="fixAdmin" parameterType="com.tarena.dao.Admin">
+update admin_info set name=#{name,jdbcType=VARCHAR},admin_code=#{admin_code,jdbcType=VARCHAR},
+telephone=#{telephone,jdbcType=VARCHAR},
+email=#{email,jdbcType=VARCHAR} where admin_id=#{admin_id}
+</update>
+<delete id="deleteAdminRole" parameterType="int">
+delete from admin_role where admin_id=#{admin_id}
+</delete>
+<delete id="deleteAdminById" parameterType="int">
+delete from admin_info where admin_id=#{admin_id}
+</delete>
+<select id="findByAdmin_code" parameterType="string" resultType="com.tarena.dao.Admin">
+select * from admin_info where admin_code=#{admin_code}
+</select>
+<select id="findModulesByAdmin_id" parameterType="int" resultType="com.tarena.dao.Module">
+select * from module_info where module_id in(
+select m.module_id from admin_info a
+left join admin_role ar on a.admin_id=ar.admin_id
+left join role_info r on ar.role_id=r.role_id
+left join role_module rm on r.role_id=rm.role_id
+left join module_info m on m.module_id=rm.module_id
+where a.admin_id=#{admin_id})order by module_id
+</select>
+</mapper>

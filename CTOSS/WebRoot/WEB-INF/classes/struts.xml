@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+<!-- 设置公共package -->
+<package name="commmon" extends="json-default">
+<interceptors>
+<interceptor name="loginCheck" class="com.tarena.interceptor.LoginInterceptor"></interceptor>
+<interceptor-stack name="MyStack">
+<interceptor-ref name="loginCheck"></interceptor-ref>
+<interceptor-ref name="defaultStack"></interceptor-ref>
+</interceptor-stack>
+</interceptors>
+<default-interceptor-ref name="MyStack"></default-interceptor-ref>
+<global-results>
+<result name="login" type="redirectAction">
+<param name="namespace">
+/login
+</param>
+<param name="actionName">
+toLogin
+</param>
+</result>
+</global-results>
+</package>
+
+
+
+
+
+<package name="one" namespace="/cost" extends="commmon">
+
+<action name="findCost" class="com.tarena.action.CostAction" method="findCost">
+<result name="success">/WEB-INF/cost/findCost.jsp</result>
+</action>
+
+<action name="deleteCost" class="com.tarena.action.CostAction" method="deleteCost">
+<result name="success" type="redirectAction">findCost</result>
+</action>
+
+<action name="addCost" class="com.tarena.action.CostAction" method="addCost">
+<result name="success">/WEB-INF/cost/addCost.jsp</result>
+</action>
+
+<action name="checkCostName" class="com.tarena.action.CostAction" method="checkCostName">
+<result name="success" type="json">
+<param name="root">repeat</param>
+</result>
+</action>
+
+</package>
+
+
+
+<package name="two" namespace="/login" extends="struts-default">
+<action name="toLogin" class="com.tarena.action.LoginAction" method="toLogin">
+<result name="ok">/WEB-INF/main/login.jsp</result>
+</action>
+<action name="login" class="com.tarena.action.LoginAction" method="login">
+<result name="success">/WEB-INF/main/index.jsp</result>
+<result name="fail">/WEB-INF/main/login.jsp</result>
+</action>
+<action name="createImage" class="com.tarena.action.LoginAction" method="createImage">
+<result name="image" type="stream">imageStream</result>
+</action>
+</package>
+</struts>

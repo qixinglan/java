@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+<package name="cost" namespace="/cost" extends="struts-default">
+<!-- Spring整合Struts2，主要是整合Action类，
+因此Action需要由Spring容器创建，所以这里的class
+不再写类名，而是Action组件的id -->
+<action name="findCost" class="costAction">
+<result>
+/WEB-INF/cost/findCost.jsp
+</result>
+</action>
+</package>
+</struts>

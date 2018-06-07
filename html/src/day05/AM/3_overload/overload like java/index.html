@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>重载</title>
+	<meta charset="utf-8"/>
+		<script>	
+		//Step1:在script中增加两个方法
+		//Step2:上下两个方法颠倒
+		//Step3：在两个方法下方，使用万能的toString方法打印一下myMethod方法	
+		function myMethod(n){
+			alert(n*n);
+			//alert("我执行的是method(n)");
+		}
+		function myMethod(n,m){
+			alert(n+m);
+			//alert("我执行的是method(n,m)");
+		}
+		</script>
+	</head>
+	<body>
+	    <input type="button" value="计算平方" onclick="myMethod(12);" />
+		<input type="button" value="计算加法" onclick="myMethod(13,45);" />
+	</body>
+</html>

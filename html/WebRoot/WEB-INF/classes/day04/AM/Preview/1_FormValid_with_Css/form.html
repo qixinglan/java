@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="form.js"></script>
+	<link rel="Stylesheet" href="myStyle.css" />
+ </head>
+ <body>
+	<form>8
+            <h2>增加管理员</h2>
+            <table width="600px">
+                <tr>
+                    <td width="60px" height="35px">姓名：</td>
+                    <td width="180px"><input type="text" id="userName" name="userName" onblur="validateUserName(this,'userName_msg')" onfocus="inputFocus(this,'userName_msg');"/><span>*</span></td>
+                    <td width="320px">
+						<div class="vali_Info" id="userName_msg">10个字符以内的字母、数字和下划线的组合</div>
+					</td>
+                </tr>
+                <tr>                	
+                    <td height="60px">密码：</td>		    
+                    <td width="180px"><input type="password" id="password" name="password"  onblur="validateUserPwd(this,'password_msg')" onfocus="inputFocus(this,'password_msg');"/><span>*</span></td>
+                    <td><div class="vali_Info" id="password_msg">6位数字</div></td>
+                </tr>
+                <tr>
+                    <td height="35"></td>
+                    <td colspan="2">
+                        <input type="submit" value="保存"/>
+                        <input type="reset" value="重填" />
+                    </td>
+                </tr>				
+	    </table>
+	    <input type="hidden" name="id" value="253"/>
+	</form>
+ </body>
+</html>

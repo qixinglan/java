@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="NETCTOSS-SSH"
+  id="myeclipse.1435827898070"
+  context-root="/NETCTOSS-SSH"
+  j2ee-spec="5.0"
+  archive="NETCTOSS-SSH.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

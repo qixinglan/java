@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="supervison" extends="extend-json-default"
+		namespace="/data/supervision">
+		<action name="mineData" class="com.nci.dcs.supervision.action.SupervisionAction"
+			method="getMineData">
+			<result type="json">
+				<param name="root">supervisionModules</param>
+			</result>
+		</action>
+		<action name="orgReport" class="com.nci.dcs.supervision.action.SupervisionAction"
+			method="getReportData">
+			<result type="json">
+				<param name="root">reportModules</param>
+			</result>
+		</action>
+		<action name="getWjsData"
+			class="com.nci.dcs.jzgl.dagl.action.ViewFxryNoticeAction" method="getSupervisonData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="phoneReport"
+			class="com.nci.dcs.supervision.action.SupervisionPhoneReportAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="publicWork"
+			class="com.nci.dcs.supervision.action.SupervisionPublicWorkAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="monthReport"
+			class="com.nci.dcs.supervision.action.SupervisionMonthReportAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="unManage"
+			class="com.nci.dcs.jzgl.dagl.action.ViewFxryUnmanageHistoryAction"
+			method="supervisonList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="vacateList"
+			class="com.nci.dcs.supervision.action.SupervisionVacateAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="release"
+			class="com.nci.dcs.supervision.action.SupervisionReleaseAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="firstEducation"
+			class="com.nci.dcs.supervision.action.SupervisionFirstEducationAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="crime"
+			class="com.nci.dcs.supervision.action.SupervisionCrimeAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="ill"
+			class="com.nci.dcs.supervision.action.SupervisionIllExaminationAction"
+			method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+</struts>

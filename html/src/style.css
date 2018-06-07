@@ -1,0 +1,30 @@
+/*元素选择器*/
+
+body{background-color:#0063a0;font-size:12px;background-image:url(images/body_bg.png)}
+/*同时设置背景颜色和背景图片，防止图片加载过慢，浏览器默会把背景图片平铺*/
+div {margin:0 auto}
+/*id选择器*/
+#header{height:61px;text-align:right;background-image:url(images/top_bg.png)}	
+#navi{width:100%;height:91px;background-image:url(images/navigation.png)}
+#main{width:950px;height:410px;background-color:#e8f3f8;border:5px solid #8ac1db}
+#footer{height:50px}
+/*组合选择器*/
+#header,#footer{width:960px}
+/*分组选择器*/
+.subdiv{width:910px}
+.btn{color:#fff;border:0;width:73px;height:26px;background-image:url(images/btn_bg.png)}
+.btn:hover{background-position:center}
+.btn:active{background-position:bottom}
+#pages .curr{background-color:#fff;border:0;}
+
+#operate{height:30px;text-align:right}
+#data{height:340px}
+#pages{height:28px;text-align:center}
+/*派生选择器*/
+#footer  p{text-align:center;color:#fff}
+#header a{line-height:61px;color:#fff;text-decoration:none;margin-right:40px}/*垂直方向要让文字居中用行高*/
+#pages a{text-decoration:none;line-height:28px;border:1px solid #97b9c9;padding:5px 10px}
+/*伪类*/
+#pages a:hover{background-color:#cddde4}
+#header a:hover{font-size:1.2em;text-decoration:underline}/*鼠标滑过*/
+#header a:active{color:red}/*鼠标点击时*/

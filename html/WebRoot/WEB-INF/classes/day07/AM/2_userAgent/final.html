@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head><title>浏览器类型与版本</title>
+		<meta charset="utf-8"/>
+		<script>
+			if(navigator.cookieEnabled)
+				alert("已启用cookie，请谨慎选择保存个人信息");
+			else
+				alert("未启用cookie，自动登陆功能可能无法使用");
+			var userAgent = navigator.userAgent;	
+			document.write("<h1>" + userAgent + "</h1>");
+			var browserName = "unknown";
+			if (userAgent.indexOf("Chrome") > -1) 
+				browserName = "Chrome";
+			else if(userAgent.indexOf("MSIE") > -1) 
+				browserName = "IE";
+			else if (userAgent.indexOf("Firefox") > -1)
+				browserName = "Firefox";
+			document.write("<h1>browser is "+browserName+"</h1>");
+			if(browserName != "unknown"){
+				var index=userAgent.indexOf(browserName)
+						 +browserName.length + 1;
+				var version=userAgent.substring(index,index + 4);
+				document.write("<h1>version is "+version+"</h1>");
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

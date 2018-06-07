@@ -1,0 +1,9 @@
+﻿/*Step1:调整products和test两个区域的宽度分别为528px和325px*/
+/*Step2:为Products指定float:left属性。*/
+/*Step3:为test指定float:left属性*/
+/*Step4:为copyright定义clear:left属性*/
+/*Step5:设置products和test的margin-left为20px,使左右之间空出一定区域。*/
+/*Step6:将步骤5中的两个margin改为12px，最后去掉copyright的边框——告一段落*/
+#products{width:528px;float:left;margin-left:16px}
+#test{width:325px;float:right;margin-left:16px}
+#copyright{clear:both}

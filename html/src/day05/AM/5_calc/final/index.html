@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head><title>计算器</title>
+		<meta charset="utf-8"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<input type="button" value="1" onclick="calculate(this.value)"/>
+		<input type="button" value="2" onclick="calculate(this.value)"/>
+		<input type="button" value="3" onclick="calculate(this.value)"/>
+		<input type="button" value="4" onclick="calculate(this.value)"/><br/>
+		<input type="button" value="C" onclick="calculate(this.value)"/>
+		<input type="button" value="+" onclick="calculate(this.value)"/>
+		<input type="button" value="-" onclick="calculate(this.value)"/>
+		<input type="button" value="=" onclick="calculate(this.value)"/><br />
+		<!--readonly表示文本框内容不可编辑 -->
+		<textarea type="text" cols="25" rows="4" id="txtData" style="resize:none" readonly></textarea>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+.select2-container{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	min-width: 120px;
+}
+
+.select2-container[class*="search-form-field"]{
+	width: 214px !important;
+}
+
+.select2-search .select2-input{
+	font-size: 10px;
+	height: 15px;
+	line-height:15px;
+	min-height:15px;
+	background: #fff url('select2.png') no-repeat 100% -22px;
+}
+
+.select2-chosen{
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.select2-container .select2-choice{
+	height: 28px;
+	line-height: 28px;
+	border-radius:0px;
+	background: white;
+	filter: initial;
+}
+
+.select2-container-multi .select2-choices{
+	background: transparent !important;
+	filter: initial;
+}
+
+.select2-container.select2-drop-above .select2-choice{
+	border-radius:0px;
+}
+
+.select2-drop{
+	border-radius:0px;
+}
+
+.select2-drop.select2-drop-above{
+	border-radius:0px;
+}
+
+.select2-container .select2-choice .select2-arrow{
+	border-radius:0px;
+}
+
+.select2-container-multi .select2-choices .select2-search-choice{
+	margin: 6px 0 6px 5px;
+}
+.select2-abbr-button{
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	background:-webkit-gradient(linear,0% 0%,0% 100%,from(#33bbee),to(#2288cc));
+	border-bottom-color: rgb(28, 106, 158);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-left-color: rgb(28, 106, 158);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgb(28, 106, 158);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: rgb(28, 106, 158);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	box-shadow: rgba(255, 255, 255, 0.701961) 0px 1px 0px 0px, rgba(0, 0, 0, 0.0901961) 0px -1px 0px 0px;
+	box-sizing: border-box;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline-block;
+	height: 23px;
+	letter-spacing: 1px;
+	line-height: 12px;
+	outline-color: rgb(255, 255, 255);
+	overflow-x: visible;
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 3px;
+}

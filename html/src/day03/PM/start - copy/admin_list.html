@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <title>管理员列表</title>
+        <meta charset="utf-8" />
+        
+		<link rel="stylesheet" href="admin_style.css"/>
+    </head>
+    <body>
+		<div id="header">
+			<img src="images/logo.png"/>
+			<a href="#">退出</a>
+		</div>
+		<div id="navi">navi区域</div>
+  		
+		<div id="main">
+			
+			<div id="operate" class="subdiv">
+				<input type="button" value="增加" class="btn_add"/>
+			</div>
+			
+			<div id="data" class="subdiv">
+				<table id="datalist">
+					<tr>
+						<th>
+							<input id="chbAll" type="checkbox"/>
+							<label for="chbAll">全选</label>
+						</th>
+						<th>管理员ID</th>
+						<th>姓名</th>                            
+						<th>拥有角色</th>
+						<th></th>
+					</tr>                      
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>1</td>
+						<td>贾强</td>                            
+						<td>超级管理员、角色管理员、账单管理员</td>
+						<td>
+							<input type="button" class="btn_modify" value="修改"/>
+							<input type="button" class="btn_delete" value="删除"/>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>2</td>
+						<td>贾强</td>
+						<td>超级管理员、帐务账号管理员</td>
+						<td>
+							<input type="button" class="btn_modify" value="修改"/>
+							<input type="button" class="btn_delete" value="删除"/>
+						</td>
+					</tr>                          
+				</table>
+			</div>
+			
+			<div id="pages" class="subdiv">
+				<a href="#">上一页</a>
+				<a href="#">1</a>
+				<a href="#" class="current_page">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">下一页</a>
+			</div>
+		
+		</div>
+  		
+		<div id="footer">
+			<p>版权所有&copy;加拿大达内IT培训集团公司 </p>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库连接信息 -->
+		<property name="connection.url">
+			jdbc:oracle:thin:@127.0.0.1:1521:xe
+		</property>
+		<property name="connection.username">jsd1403</property>
+		<property name="connection.password">jsd1403</property>
+		<property name="connection.driver_class">
+			oracle.jdbc.OracleDriver
+		</property>
+		<!-- Hibernate配置信息 -->
+		<!-- dialect方言，用于配置生成针对哪个数据库的SQL语句 -->
+		<!--方言类，Hibernate提供的，用于封装某种特定数据库的方言 -->
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		<!-- 是否在控制台打印生成的SQL -->
+		<property name="show_sql">true</property>
+		<!-- 是否要格式化生成的SQL -->
+		<property name="format_sql">true</property>
+		<!-- 在配置文件中关联映射文件 -->
+		<mapping resource="com/tarena/entity/Emp.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

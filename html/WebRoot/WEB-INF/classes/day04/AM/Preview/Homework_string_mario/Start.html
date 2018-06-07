@@ -1,0 +1,22 @@
+﻿<html>
+    <head>
+	    <title>String对象</title>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="index.css"/>
+		<script src="animate.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>		
+		<div id="end"></div>
+		<div id="fail"></div>
+		<div id="mario" onclick="start()"></div>		
+		<div id="dialog">		    
+			<div id="msg"></div>
+			<div id="operate">
+				<input id="txtInput" 
+					onkeydown="if (event.keyCode == 13) document.getElementById('btnOK').click()" class="txtInput"/>
+				<input id="btnOK" type="button" value="OK"/>
+			<div>
+		</div>		
+	</body>
+</html>

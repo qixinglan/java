@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <servlet>
+    <servlet-name>TaxingServlet</servlet-name>
+    <servlet-class>web.TaxingServlet</servlet-class>
+    <init-param>
+    <param-name>taxRate</param-name>
+    <param-value>bj,0.8:sz,0.7:sh,0.7</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ActionServlet</servlet-name>
+    <servlet-class>web.ActionServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>TaxingServlet</servlet-name>
+    <url-pattern>/tax</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActionServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>	
+  <error-page>
+  	<exception-type>javax.servlet.ServletException</exception-type>
+  	<location>/error.html</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

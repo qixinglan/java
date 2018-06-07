@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="dagl-json" extends="extend-json-default" namespace="/data/jzgl/dagl">
+	<action name="doc" class="com.nci.dcs.jzgl.dagl.action.FXRYAction"
+			method="exportFxryDoc">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		<action name="read" class="com.nci.dcs.jzgl.dagl.action.FXRYAction" method="getByIdOrCode">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>	
+		<action name="getEditConfig" class="com.nci.dcs.jzgl.dagl.action.FXRYAction" method="getOrgEditConfig">
+			<result type="json">
+				<param name="root">editConfig</param>
+			</result>
+		</action>	
+		<action name="listZJRY" class="com.nci.dcs.jzgl.dagl.action.ViewFXRYExecuteInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="saveJBSFXX" class="com.nci.dcs.jzgl.dagl.action.ZJRYAction" method="saveJBSFXX">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="updateJBSFXX" class="com.nci.dcs.jzgl.dagl.action.ZJRYAction" method="updateJBSFXX">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteZJRY" class="com.nci.dcs.jzgl.dagl.action.ZJRYAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="removeEquip" class="com.nci.dcs.jzgl.dagl.action.ZJRYAction" method="removeEquip">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="sfsMoveOut" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="sfsMoveOut">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="sfjMoveOut" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="sfjMoveOut">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="sfjMoveOutBJ" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="sfjMoveOutBJ">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="cancelSfsMoveOut" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="cancelSfsMoveOut">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="sfsMoveIn" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="sfsMoveIn">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="sfjMoveIn" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="sfjMoveIn">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listTransfer" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="outManage" class="com.nci.dcs.jzgl.dagl.action.FXRYOutManageInfoAction" method="outManage">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="inManage" class="com.nci.dcs.jzgl.dagl.action.FXRYOutManageInfoAction" method="inManage">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listOutManage" class="com.nci.dcs.jzgl.dagl.action.FXRYOutManageInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listTransferUntrat" class="com.nci.dcs.jzgl.dagl.action.ViewFXRYTransferInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listUnControl" class="com.nci.dcs.jzgl.dagl.action.ViewFxryUncontrolHistoryAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listUnManage" class="com.nci.dcs.jzgl.dagl.action.ViewFxryUnmanageHistoryAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listReadyRelease" class="com.nci.dcs.jzgl.dagl.action.ViewFxryReadyReleaseInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listOutPrionExtend" class="com.nci.dcs.jzgl.dagl.action.ViewFxryTempoutprionExtendAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="saveOutManageInfo" class="com.nci.dcs.jzgl.dagl.action.FXRYOutManageInfoAction" method="saveOrUpdate">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="readOutManageInfo" class="com.nci.dcs.jzgl.dagl.action.FXRYOutManageInfoAction" method="getByIdOrFxryId">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="readTransferInfo" class="com.nci.dcs.jzgl.dagl.action.FXRYTransferInfoAction" method="getByIdOrFxryId">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="saveLegal" class="com.nci.dcs.jzgl.dagl.action.LegalInstrumentAction" method="saveOrUpdate">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="readLegal" class="com.nci.dcs.jzgl.dagl.action.LegalInstrumentAction" method="getByIdOrFxryId">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="deviceCheck" class="com.nci.dcs.jzgl.dagl.action.DeviceCheckAction" method="deviceCheck">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="deviceClose" class="com.nci.dcs.jzgl.dagl.action.DeviceCheckAction" method="deviceClose">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="listJCQK" class="com.nci.dcs.jzgl.dagl.action.ViewFxryRewardPunishAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="reporthistory" class="com.nci.dcs.jzgl.rcbdgl.action.ReportListAction" method="getReportInfoByRYID">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>         
+		<action name="addReportInfoOperate" class="com.nci.dcs.jzgl.rcbdgl.action.AddReportInfoAction" method="add">
+		    <result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="vacateSearch" class="com.nci.dcs.jzgl.rcbdgl.action.ViewFxryVacateinfoAction" method="vacateSearch">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>
+		<action name="vacateList" class="com.nci.dcs.jzgl.rcbdgl.action.ViewFxryVacateinfoAction" method="list">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>
+	   	<action name="qjgl" class="com.nci.dcs.jzgl.rcbdgl.action.VacateAction" method="add">
+		   <result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="report" class="com.nci.dcs.jzgl.rcbdgl.action.VacateAction" method="report">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="getReportInitData" class="com.nci.dcs.jzgl.rcbdgl.action.VacateAction" method="getReportInitData">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="listXBDRY" class="com.nci.dcs.jzgl.dagl.action.ViewFXRYExecuteInfoAction" method="xbdryList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listReportRY" class="com.nci.dcs.jzgl.rcbdgl.action.ReportListAction" method="list">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>
+		<!--  -->
+		<action name="listXYBDRY" class="com.nci.dcs.jzgl.rcbdgl.action.ViewCCFxryReportInfoAction" method="list">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>
+		<action name="rctxCount" class="com.nci.dcs.jzgl.dagl.action.DailyWorkRemindAction" method="getCount">
+		   <result type="json">
+				<param name="root">result</param>
+			</result>    
+		</action>
+		<action name="listReadyJzcsjy" class="com.nci.dcs.jzgl.dagl.action.ViewFxryEducationJzcsjyAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="listReadyJzjjqjy" class="com.nci.dcs.jzgl.dagl.action.ViewFxryEducationJzjjqjyAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="dagl-moreinfo-json" extends="extend-json-default" namespace="/data/jzgl/dagl/moreinfo">
+		<action name="selectAddress" class="com.nci.dcs.jzgl.dagl.action.AddressSelectAction" method="list">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>	
+		<action name="listResumes" class="com.nci.dcs.jzgl.dagl.action.FXRYResumeInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveResume" class="com.nci.dcs.jzgl.dagl.action.FXRYResumeInfoAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteResumes" class="com.nci.dcs.jzgl.dagl.action.FXRYResumeInfoAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listRelations" class="com.nci.dcs.jzgl.dagl.action.FXRYSocialRelationsAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveRelation" class="com.nci.dcs.jzgl.dagl.action.FXRYSocialRelationsAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteRelations" class="com.nci.dcs.jzgl.dagl.action.FXRYSocialRelationsAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="listAdjustGroup" class="com.nci.dcs.jzgl.dagl.action.FXRYAdjustGroupAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveAdjustGroup" class="com.nci.dcs.jzgl.dagl.action.FXRYAdjustGroupAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteAdjustGroup" class="com.nci.dcs.jzgl.dagl.action.FXRYAdjustGroupAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+	</package>
+	<package name="dagl-rewardpunish-json" extends="extend-json-default" namespace="/data/jzgl/dagl/rewardpunish">
+		<action name="read" class="com.nci.dcs.jzgl.dagl.action.FXRYAction" method="getByIdOrCode">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="listCrime" class="com.nci.dcs.jzgl.dagl.action.FxryCrimeAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="saveCrime" class="com.nci.dcs.jzgl.dagl.action.FxryCrimeAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="getCrime" class="com.nci.dcs.jzgl.dagl.action.FxryCrimeAction" method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>		
+		<action name="deleteCrime" class="com.nci.dcs.jzgl.dagl.action.FxryCrimeAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="listIllegal" class="com.nci.dcs.jzgl.dagl.action.FxryIllegalAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="saveIllegal" class="com.nci.dcs.jzgl.dagl.action.FxryIllegalAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteIllegal" class="com.nci.dcs.jzgl.dagl.action.FxryIllegalAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="listPunish" class="com.nci.dcs.jzgl.dagl.action.FxryPunishAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="savePunish" class="com.nci.dcs.jzgl.dagl.action.FxryPunishAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deletePunish" class="com.nci.dcs.jzgl.dagl.action.FxryPunishAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="listReward" class="com.nci.dcs.jzgl.dagl.action.FxryRewardAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="saveReward" class="com.nci.dcs.jzgl.dagl.action.FxryRewardAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteReward" class="com.nci.dcs.jzgl.dagl.action.FxryRewardAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+	</package>
+	<package name="dagl-excuteinfo-json" extends="extend-json-default" namespace="/data/jzgl/dagl/executeinfo">
+		<action name="read" class="com.nci.dcs.jzgl.dagl.action.FXRYExecuteInfoAction" method="getByIdOrFxryId">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>	
+		<action name="save" class="com.nci.dcs.jzgl.dagl.action.FXRYExecuteInfoAction" method="saveOrUpdate">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listEscort" class="com.nci.dcs.jzgl.dagl.action.FXRYEscortInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveEscort" class="com.nci.dcs.jzgl.dagl.action.FXRYEscortInfoAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteEscort" class="com.nci.dcs.jzgl.dagl.action.FXRYEscortInfoAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listComplicity" class="com.nci.dcs.jzgl.dagl.action.FXRYComplicityInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveComplicity" class="com.nci.dcs.jzgl.dagl.action.FXRYComplicityInfoAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteComplicity" class="com.nci.dcs.jzgl.dagl.action.FXRYComplicityInfoAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+	    <action name="updateAdjustTerm" class="com.nci.dcs.jzgl.dagl.action.FXRYAdjustTermRecordAction" method="update">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+	</package>
+	
+	<package name="dagl-release-json" extends="extend-json-default" namespace="/data/jzgl/dagl/release">
+		<action name="read" class="com.nci.dcs.jzgl.dagl.action.FXRYRemoveAdjustAction" method="getByIdOrFxryId">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>	
+		<action name="save" class="com.nci.dcs.jzgl.dagl.action.FXRYRemoveAdjustAction" method="saveOrUpdate">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="removeAdjust" class="com.nci.dcs.jzgl.dagl.action.FXRYRemoveAdjustAction" method="removeAdjust">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listMoreCrime" class="com.nci.dcs.jzgl.dagl.action.FXRYMoreCrimeAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveMoreCrime" class="com.nci.dcs.jzgl.dagl.action.FXRYMoreCrimeAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteMoreCrime" class="com.nci.dcs.jzgl.dagl.action.FXRYMoreCrimeAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="listImprisonment" class="com.nci.dcs.jzgl.dagl.action.FXRYImprisonmentChangeAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>	
+		<action name="saveImprisonment" class="com.nci.dcs.jzgl.dagl.action.FXRYImprisonmentChangeAction" method="save">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+		<action name="deleteImprisonment" class="com.nci.dcs.jzgl.dagl.action.FXRYImprisonmentChangeAction" method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>	
+	</package>
+	
+	<package name="dagl-mission" extends="extend-json-default" namespace="/data/jzgl/dagl/mission">
+		<action name="phoneReportList" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="phoneReportList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="phoneReport" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="phoneReport">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fxryPhoneReport" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="fxryPhoneReport">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="interviewList" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="interviewList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="interview" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="interview">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fxryInterview" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="fxryInterview">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="educationList" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="educationList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="education" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="education">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fxryEducation" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="fxryEducation">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="publicWorkList" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="publicWorkList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="publicWork" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="publicWork">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fxryPublicWork" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="fxryPublicWork">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="needReportList" class="com.nci.dcs.jzgl.rcbdgl.action.ViewCCFxryReportInfoAction" method="todoList">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>
+		<action name="report" class="com.nci.dcs.jzgl.rcbdgl.action.AddReportInfoAction" method="todoAdd">
+		   <result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>     
+		</action>
+		<action name="getReportInitData" class="com.nci.dcs.jzgl.rcbdgl.action.ReportInfoAction" method="getReportInitData">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="getMissionInitData" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="getMissionInitData">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<!-- 获取待病检续保人员list -->
+		<action name="illExaminationList" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="illExaminationList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action> 
+		<!-- 暂监外病检-->
+		<action name="illExamination" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="illExamination">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="fxryIllExamination" class="com.nci.dcs.jzgl.mission.action.MissionInfoAction" method="fxryIllExamination">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="rcbdgl" extends="extend-json-default" namespace="/data/jzgl/rcbdgl"> 
+		<action name="list" class="com.nci.dcs.jzgl.rcbdgl.action.ReportListAction" method="Toadd">
+		   <result name="add">/data/jzgl/rcbdgl/list.jsp</result>      
+		</action>
+		<action name="reportlist" class="com.nci.dcs.jzgl.rcbdgl.action.ReportListAction" method="search">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>	
+		<action name="reporthistory" class="com.nci.dcs.jzgl.rcbdgl.action.ReportListAction" method="getReportInfoByRYID">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>        
+		<action name="addReportInfoView" class="com.nci.dcs.jzgl.rcbdgl.action.AddReportInfoAction" method="search">
+		   <result type="json">
+				<param name="root">entity</param>
+			</result>     
+		</action>         
+		<action name="addReportInfoOperate" class="com.nci.dcs.jzgl.rcbdgl.action.AddReportInfoAction" method="add">
+		  <!-- <result name="add">/data/jzgl/rcbdgl/list.jsp</result> -->   		   
+		    <result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="fxrysJson" class="com.nci.dcs.jzgl.rcbdgl.action.ReportListAction" method="fxrysJson">
+			<result type="json">
+				<param name="root">dicts</param>
+				<param name="excludeNullProperties">true</param>  
+			</result>
+		</action> 
+		<action name="vacateList" class="com.nci.dcs.jzgl.rcbdgl.action.VacateAction" method="list">
+		   <result name="success">/data/jzgl/rcbdgl/vacatelist.jsp</result>      
+		</action>
+		<action name="vacateSearch" class="com.nci.dcs.jzgl.rcbdgl.action.ViewFxryVacateinfoAction" method="vacateSearch">
+		   <result type="json">
+				<param name="root">jqgridPage</param>
+			</result>     
+		</action>
+	   	<action name="qjgl" class="com.nci.dcs.jzgl.rcbdgl.action.VacateAction" method="add">
+		   <result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="report" class="com.nci.dcs.jzgl.rcbdgl.action.VacateAction" method="report">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="sync" extends="extend-json-default" namespace="/data/jzgl/sync">  
+		<action name="sync*" class="com.nci.dcs.jzgl.sync.action.SyncAction" method="sync{1}">
+		</action>	 
+		<action name="list" class="com.nci.dcs.jzgl.sync.action.ViewSyncAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action> 
+		<action name="fxrysSync" class="com.nci.dcs.jzgl.sync.action.ViewSyncAction" method="fxrysSync">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action> 
+		<action name="fxrySync" class="com.nci.dcs.jzgl.sync.action.ViewSyncAction" method="fxrySync">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action> 
+		<action name="history" class="com.nci.dcs.jzgl.sync.action.SyncInfoAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action> 
+	</package>
+	<package name="statfxry" extends="extend-json-default" namespace="/data/jzgl/bbgl/statfxry">
+		<action name="list" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+				
+		<action name="weeklist" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="weekList">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		
+		<action name="excel" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction"
+			method="excel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="sendBack" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="sendBack">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="sendSuccess" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="sendSuccess">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="reportTable" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="reportTable">
+		</action>
+		<action name="add" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="delete" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="delete">
+		</action>
+		<action name="reCreateTable" class="com.nci.dcs.jzgl.bbgl.action.StatisticsFxryAction" method="reCreateTable">
+		</action>
+	</package>
+	<package name="workstat" extends="extend-json-default" namespace="/data/jzgl/bbgl/workstat">
+		<action name="list" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="sendBack" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="sendBack">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="sendSuccess" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="sendSuccess">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="reportTable" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="reportTable">
+		</action>
+		<action name="add" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="delete" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="delete">
+		</action>
+		<action name="reCreateTable" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="reCreateTable">
+		</action>
+		<action name="updateTable" class="com.nci.dcs.jzgl.bbgl.action.WorkStatTableAction" method="updateTable">
+		</action>
+	</package>
+
+	<!-- 阳光中途之家-->
+	<package name="ygztzj" extends="extend-json-default" namespace="/data/jzgl/bbgl/ygztzj">
+		<action name="list" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="sendBack" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="sendBack">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="sendSuccess" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="sendSuccess">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="reportTable" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="reportTable">
+		</action>
+		<action name="add" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result> 
+		</action>
+		<action name="delete" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="delete">
+		</action>
+		<action name="reCreateTable" class="com.nci.dcs.jzgl.bbgl.action.YgztzjStatAction" method="reCreateTable">
+		</action>
+	</package>
+	<!-- 服刑人员档案查询 -->
+
+	<package name="cxtj-dacx" extends="extend-json-default" namespace="/data/jzgl/cxtj/dacx">
+		<action name="list" class="com.nci.dcs.jzgl.cxtj.action.FxryAllinfoSearchAction" method="list">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	<package name="cxtj-sjfx" extends="extend-json-default" namespace="/data/jzgl/cxtj/sjfx">
+		<action name="fzlxReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="fzlxReport">
+			<result type="json">
+				<param name="root">jlist</param>
+			</result>
+		</action>
+		<action name="jyjxReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="jyjxReport">
+			<result type="json">
+				<param name="root">jlist</param>
+			</result>
+		</action>
+		<action name="whcdReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="whcdReport">
+			<result type="json">
+				<param name="root">jlist</param>
+			</result>
+		</action>
+		<action name="hjxzReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="hjxzReport">
+			<result type="json">
+				<param name="root">jlist</param>
+			</result>
+		</action>
+		<action name="nldReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="nldReport">
+			<result type="json">
+				<param name="root">jlist</param>
+			</result>
+		</action>
+		<action name="jzlxReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="jzlxReport">
+			<result type="json">
+				<param name="root">jlist</param>
+			</result>
+		</action>
+		<action name="ryslReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="ryslReport">
+			<result type="json">
+				<param name="root">zlmap</param>
+			</result>
+		</action>
+		<action name="educationReport" class="com.nci.dcs.jzgl.cxtj.action.FxryReportAction" method="educationReport">
+			<result type="json">
+				<param name="root">zlmap</param>
+			</result>
+		</action>
+	</package>
+	<package name="fxrytzgl" extends="extend-json-default" namespace="/data/jzgl/dagl/tzgl">
+		<action name="list" class="com.nci.dcs.jzgl.dagl.action.FxryNoticeAction" method="list">
+			<result name="success">/data/jzgl/dagl/notice/list.jsp
+			</result>
+		</action>
+		<action name="getData" class="com.nci.dcs.jzgl.dagl.action.ViewCCFxryNoticeAction"
+			method="getData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.jzgl.dagl.action.FxryNoticeAction"
+			method="view">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="wjslist" class="com.nci.dcs.jzgl.dagl.action.ViewFxryNoticeAction" method="list">
+			<result name="success">/data/jzgl/dagl/notice/wjslist.jsp
+			</result>
+		</action>
+		<action name="getWjsData" class="com.nci.dcs.jzgl.dagl.action.ViewFxryNoticeAction"
+			method="getData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	<package name="fxryeducation" extends="extend-json-default" namespace="/data/jzgl/education">
+		<action name="list" class="com.nci.dcs.jzgl.education.action.FxryEducationAction" method="list">
+			<result name="success">/data/jzgl/education/list.jsp
+			</result>
+		</action>
+		<action name="getData" class="com.nci.dcs.jzgl.education.action.FxryEducationAction"
+			method="getData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="add" class="com.nci.dcs.jzgl.education.action.FxryEducationAction"
+			method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.jzgl.education.action.FxryEducationAction"
+			method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="delete" class="com.nci.dcs.jzgl.education.action.FxryEducationAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="educationReport" class="com.nci.dcs.jzgl.education.action.FxryEducationAction" method="educationReport">
+			<result type="json">
+				<param name="root">zlmap</param>
+			</result>
+		</action>
+	</package>
+	<package name="educations" extends="extend-json-default" namespace="/data/jzgl/educations">
+		<action name="list" class="com.nci.dcs.jzgl.education.action.EducationInfoAction" method="list">
+			<result name="success">/data/jzgl/education/list.jsp
+			</result>
+		</action>
+		<action name="getData" class="com.nci.dcs.jzgl.education.action.EducationInfoAction"
+			method="getData">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="add" class="com.nci.dcs.jzgl.education.action.EducationInfoAction"
+			method="add">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="addMore" class="com.nci.dcs.jzgl.education.action.EducationInfoAction"
+			method="addMore">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+		<action name="getEducationsInitData" class="com.nci.dcs.jzgl.education.action.EducationInfoAction" method="getEducationsInitData">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.jzgl.education.action.EducationInfoAction"
+			method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="delete" class="com.nci.dcs.jzgl.education.action.EducationInfoAction"
+			method="delete">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+	</package>
+</struts>

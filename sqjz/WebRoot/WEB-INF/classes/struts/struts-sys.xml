@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+	<package name="User" extends="extend-json-default" namespace="/sys/user">
+		<action name="list" class="com.nci.dcs.system.action.UserAction" method="list">
+			<result name="success">/admin/user/list.jsp</result>	
+		</action>
+		<action name="initAdd" class="com.nci.dcs.system.action.UserAction" method="initAdd">
+			<result name="success">/admin/user/add.jsp</result>
+		</action>
+		<action name="add" class="com.nci.dcs.system.action.UserAction" method="add">
+			<result name="success">/admin/user/list.jsp</result>	
+		</action>
+		<action name="view" class="com.nci.dcs.system.action.UserAction" method="view">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="update" class="com.nci.dcs.system.action.UserAction" method="update">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>	
+		</action>
+		<action name="del" class="com.nci.dcs.system.action.UserAction" method="delete">
+			<result name="success">/admin/user/list.jsp</result>	
+		</action>
+		<action name="show" class="com.nci.dcs.system.action.UserAction" method="showInfo">
+			<result type="json">
+				<param name="root">entity</param>
+			</result>
+		</action>
+		<action name="vp" class="com.nci.dcs.system.action.UserAction" method="validatePassword">
+		</action>
+		<action name="logout" class="com.nci.dcs.system.action.UserAction" method="logout">
+			<result name="success" type="redirect">${logoutRedirect}</result>	
+		</action>
+		<action name="search" class="com.nci.dcs.system.action.UserAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="searchForRole" class="com.nci.dcs.system.action.UserAction"
+			method="searchForRole">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="roleJson" class="com.nci.dcs.system.action.UserAction" method="roleJson">
+			<result type="json">
+				<param name="root">dicts</param>
+				<param name="excludeNullProperties">true</param>  
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="UserLogin" extends="json-default" namespace="/sys/user">
+		<action name="login" class="com.nci.dcs.system.action.UserAction" method="login">
+			<result name="success" type="redirect">/data/index.jsp</result>
+			<result name="input" type="redirect">
+				/system/login.jsp
+			</result>
+		</action>
+	</package>
+	<package name="SSOLogin" extends="json-default">
+		<action name="SSOLogin" class="com.nci.dcs.system.action.UserAction" method="ssoLogin">
+			<result name="success" type="redirect">/data/index.jsp</result>
+			<result name="input">/loginError.jsp</result>
+		</action>
+	</package>
+	
+	<package name="Role" extends="extend-json-default" namespace="/sys/role">
+		<action name="list" class="com.nci.dcs.system.action.RoleAction" method="list">
+			<result name="success">/admin/role/list.jsp</result>	
+		</action>
+		<action name="initAdd" class="com.nci.dcs.system.action.RoleAction" method="input">
+			<result name="success">/admin/role/add.jsp</result>
+		</action>
+		<action name="add" class="com.nci.dcs.system.action.RoleAction" method="add">
+			<result name="success">/admin/role/list.jsp</result>	
+		</action>
+		<action name="view" class="com.nci.dcs.system.action.RoleAction" method="view">
+			<result name="success">/admin/role/update.jsp</result>	
+		</action>
+		<action name="update" class="com.nci.dcs.system.action.RoleAction" method="update">
+			<result name="success">/admin/role/list.jsp</result>	
+		</action>
+		<action name="show" class="com.nci.dcs.system.action.RoleAction" method="showInfo">
+			<result name="success">/admin/role/detail.jsp</result>	
+		</action>
+		<action name="del" class="com.nci.dcs.system.action.RoleAction" method="delete">
+			<result name="success">/admin/role/list.jsp</result>	
+		</action>
+		<action name="choice" class="com.nci.dcs.system.action.RoleAction" method="choiceUser">
+			<result name="success">/admin/role/choiceuser.jsp</result>	
+		</action>
+		<action name="upusers" class="com.nci.dcs.system.action.RoleAction" method="updateUsers">
+			<result name="success">/admin/role/list.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.system.action.RoleAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="Authorization" extends="extend-json-default" namespace="/sys/action">
+		
+		<action name="listInit" class="com.nci.dcs.system.action.AuthorizationAction" method="listInit">
+			<result name="success">/admin/action/list.jsp</result>
+			<result name="none">/admin/action/detailDirect.jsp</result>	
+		</action>
+		<action name="choice" class="com.nci.dcs.system.action.AuthorizationAction" method="choiceRole">
+			<result name="success">/admin/action/choicerole.jsp</result>
+		</action>
+		<action name="upactions" class="com.nci.dcs.system.action.AuthorizationAction" method="updateRoles">
+			<result name="success">/admin/action/list.jsp</result>
+		</action>
+		<action name="show" class="com.nci.dcs.system.action.AuthorizationAction" method="showInfo">
+			<result name="success">/admin/action/detail.jsp</result>
+		</action>
+		<action name="addAction" class="com.nci.dcs.system.action.AuthorizationAction" method="addAction">
+			<result name="success">/admin/action/addAction.jsp</result>
+		</action>
+		<action name="view" class="com.nci.dcs.system.action.AuthorizationAction" method="view">
+			<result name="success">/admin/action/update.jsp</result>	
+			<result name="none">/admin/action/updateAction.jsp</result>
+		</action>
+			
+		<action name="list" class="com.nci.dcs.system.action.AuthorizationAction" method="list">
+			<result name="success">/admin/action/list.jsp</result>	
+		</action>
+		<action name="add" class="com.nci.dcs.system.action.AuthorizationAction" method="add">
+			<result name="success">/admin/action/list.jsp</result>	
+		</action>
+		<action name="del" class="com.nci.dcs.system.action.AuthorizationAction" method="delete">
+			<result name="success">/admin/action/list.jsp</result>
+		</action>
+		<action name="update" class="com.nci.dcs.system.action.AuthorizationAction" method="update">
+			<result name="success">/admin/action/list.jsp</result>	
+		</action>
+		<action name="beforeAdd" class="com.nci.dcs.system.action.AuthorizationAction" method="beforeAdd">
+			<result name="success">/admin/action/add.jsp</result>	
+		</action>	
+	</package>
+	<package name="AUTHORIZATION_TREE" extends="extend-json-default" namespace="/sys/action">
+		<action name="tree" class="com.nci.dcs.system.action.AuthorizationAction" method="tree">
+			<result type="json"></result>
+		</action>
+	</package>
+	
+	
+	<package name="xtrz" extends="extend-json-default" namespace="/sys/xtrz">
+		<action name="list" class="com.nci.dcs.system.action.LogAction" method="list">
+			<result name="success">/admin/xtrz/list.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.system.action.LogAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="bm" extends="extend-json-default" namespace="/data/bm">
+		<action name="tree" class="com.nci.dcs.system.action.BmbAction" method="tree">
+		</action>		
+	</package>
+	
+	
+	<package name="dictionary" extends="extend-json-default" namespace="/data/dictionary">
+		<action name="render" class="com.nci.dcs.system.action.DictionaryInfoAction" method="render">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="search" class="com.nci.dcs.system.action.DictionaryInfoAction" method="search">
+			
+		</action>
+		<action name="json" class="com.nci.dcs.system.action.DictionaryInfoAction" method="json">
+			<result type="json">
+				<param name="root">dicts</param>
+				<param name="excludeNullProperties">true</param>  
+			</result>
+		</action>
+		<action name="reload" class="com.nci.dcs.system.action.DictionaryInfoAction" method="reload">
+			<result name="success" type="redirectAction">json</result>  
+		</action>
+	</package>
+	<package name="photos" extends="extend-json-default" namespace="/data/photos">
+		<action name="upload" class="com.nci.dcs.system.action.PhotoUploadAction" method="upload">
+			<param name="savePath">/upload/photos</param>
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.system.action.PhotoUploadAction" method="view">
+			<result type="stream">
+				<param name="contentType">${photoContentType}</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- different from online -->
+	<!--  
+	<package name="authorise" extends="json-default" namespace="/sys/authorise">
+		<action name="sysInfo" class="com.nci.dcs.system.action.SystemAuthorizeAction" method="sysInfo">
+			<result type="json">
+				<param name="root">info</param>
+			</result>
+		</action>
+		<action name="authorise" class="com.nci.dcs.system.action.SystemAuthorizeAction" method="authorise">
+			<result type="json">
+				<param name="root">ajaxFormResult</param>
+			</result>
+		</action>
+	</package>
+	-->
+</struts>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head><title>自我介绍</title>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="index.css"/>
+		<script src="js/json2.js"></script>
+		<script>
+			//JSON方式：
+			//var hmm = {"name":"Han Meimei","age":18}
+			
+			//来自服务器端的JSON字符串：可用eval函数解析，必须加圆括号！
+			var str='{"name":"Han Meimei","age":18,"phone":{"telephone":"010-82828282","mobile":"12312312345"}}';
+			var hmm=JSON.parse(str);
+
+			function intrSelf() {
+				var dialog = document.getElementById("dialog");
+				dialog.innerHTML = "I'm " + hmm.name + " My telephone is "+hmm.phone.telephone; 
+				dialog.style.display="block";
+			}
+
+			function jsonProps(obj){
+				for(var key in obj){
+					alert(key+"："+obj[key]);
+					if(typeof(obj[key])=="object")
+						jsonProps(obj[key]);
+				}
+			}
+
+			/*var hmm={name:"Han Meimei"
+					,age:18
+					,address:[
+						{city:"北京",district:"朝阳"},
+						{city:"上海",district:"浦东"}
+					]
+			}
+			function json2Str(){
+				alert(JSON.stringify(hmm));
+			}*/
+		</script>
+	</head>
+	<body>
+		<div id="parentDiv">
+			<div id="hmm" onclick="intrSelf();">
+			</div>
+			<div id="dialog">
+			</div>
+		</div>
+	</body>
+</html>

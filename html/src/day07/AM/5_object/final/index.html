@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head><title>自我介绍</title>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="index.css"/>
+		<script>
+			/*//Step1:定义对象hmm
+			var hmm = new Object();
+			//Step2:定义hmm的姓名
+			hmm.name = "Han Meimei";
+			//Step3:定义hmm的年龄
+			hmm.age = 18;
+			//Step4:教hmm做自我介绍的方法。
+			hmm.intrSelf = function () {
+				var dialog = document.getElementById("dialog");
+				dialog.innerHTML = "i am " + this.name + ",i am " + this.age + " years old.";
+				dialog.style.display="block";
+			};*/
+
+			//简写方式：
+			var hmm = {
+				name:"Han Meimei",age:18 ,intrSelf: intrSelfFun }
+			function intrSelfFun() {
+				var dialog = document.getElementById("dialog");
+				dialog.innerHTML = "i am " + this.name + ",i am " + this.age + " years old."; dialog.style.display="block";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="parentDiv">
+			<div id="hmm" onclick="hmm.intrSelf();">
+			</div>
+			<div id="dialog">
+			</div>
+		</div>
+	</body>
+</html>

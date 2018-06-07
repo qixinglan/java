@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.color1,a.color1,.search-table input[type="button"],.select-box div.select-selected{ color:#FFF;}
+.color2,.select-box span,.error-box span,.error-box div,.box6>span{color:#aa1111;}
+.color3,.grid-table td{color:#757171;}
+.color4,.grid-table th{color:#808080;}
+.color5,.search-table th,.sidebar > ul li ul li a.click,.sidebar > ul li ul li a,.breadcrumb-nav a{color:#333;}
+.color6,.sidebar ul li{ color:#696969;}
+.color7,.operation-box>.box3>.title{ color:#575859;}
+.color8{ color:#000000;}
+.color8{ color:#ff0113;}
+.color9,a[class*=" micon-"]{color:#4f4f50;}
+.color10,.grid-table a{ color:#535353;}
+.color11,.select-box div{ color:#393838;}
+.color12,.box6>div{ color:#120101;}
+
+
+.backcolor1,.operation-box>.box1,.grid-table td,.select-box,.search-table,.error-box{ background:#fbfbfb;}
+.backcolor2,.grid-table tr.replaces td{ background:#fff;}
+.backcolor3,.grid-table th{background:#ebebeb;}
+.backcolor4,.sidebar > ul li ul li a,.sidebar > ul li ul{ background:#fdfdfd;}
+.backcolor5,.operation-box>.box2>.title,.operation-box>.box1>.title,.operation-box>.box2>.item-bottom,.item-bottom,.operation-box>.box4>.title,.operation-box>.box3>.title,.operation-box>.title,.operation-box .box7>.title,.operation-box>.box>.title,.box12>.title{ background:#f7f7f7;}
+.backcolor6,.operation-box>.box2 ,.box,.itme1,.box1,.box2,.operation-box .box7{ background:#fafafa;}
+.backcolor7,input[type="text"]:focus{	background-color:#FFC}
+.backcolor8{background:#efeff0;}
+.backcolor9,.yjsyy-conter,.ztysj-conter,.container-index-left .jsysj-conter, .container-index-left .ywysj-conter{background: #f6f6f6;}

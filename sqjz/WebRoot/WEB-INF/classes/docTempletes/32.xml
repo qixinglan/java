@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<w:wordDocument xmlns:aml="http://schemas.microsoft.com/aml/2001/core"
+	xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml"
+	xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint"
+	xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2"
+	xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core"
+	w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no"
+	xml:space="preserve"><w:ignoreSubtree
+	w:val="http://schemas.microsoft.com/office/word/2003/wordml/sp2" /><o:DocumentProperties><o:Title>北 京 市 司 法 局</o:Title><o:Author> </o:Author><o:LastAuthor>dasdadada</o:LastAuthor><o:Revision>7</o:Revision><o:TotalTime>10</o:TotalTime><o:LastPrinted>1899-12-30T00:00:00Z</o:LastPrinted><o:Created>2016-08-19T06:36:00Z</o:Created><o:LastSaved>2016-08-19T07:01:00Z</o:LastSaved><o:Pages>2</o:Pages><o:Words>163</o:Words><o:Characters>935</o:Characters><o:Bytes>0</o:Bytes><o:Lines>7</o:Lines><o:Paragraphs>2</o:Paragraphs><o:CharactersWithSpaces>1096</o:CharactersWithSpaces><o:Version>12</o:Version></o:DocumentProperties><o:CustomDocumentProperties><o:KSOProductBuildVer
+	dt:dt="string">2052-6.4.0.1855</o:KSOProductBuildVer></o:CustomDocumentProperties><w:fonts><w:defaultFonts
+	w:ascii="Times New Roman" w:fareast="宋体" w:h-ansi="Times New Roman"
+	w:cs="Times New Roman" /><w:font w:name="Times New Roman"><w:panose-1
+	w:val="02020603050405020304" /><w:charset w:val="00" /><w:family
+	w:val="Roman" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="20002A87" w:usb-1="80000000" w:usb-2="00000008" w:usb-3="00000000"
+	w:csb-0="000001FF" w:csb-1="00000000" /></w:font><w:font w:name="Courier New"><w:panose-1
+	w:val="02070309020205020404" /><w:charset w:val="00" /><w:family
+	w:val="Modern" /><w:pitch w:val="fixed" /><w:sig w:usb-0="20002A87"
+	w:usb-1="80000000" w:usb-2="00000008" w:usb-3="00000000" w:csb-0="000001FF"
+	w:csb-1="00000000" /></w:font><w:font w:name="宋体"><w:altName
+	w:val="SimSun" /><w:panose-1 w:val="02010600030101010101" /><w:charset
+	w:val="86" /><w:family w:val="auto" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="00000003" w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000"
+	w:csb-0="00040001" w:csb-1="00000000" /></w:font><w:font w:name="黑体"><w:altName
+	w:val="SimHei" /><w:panose-1 w:val="02010600030101010101" /><w:charset
+	w:val="86" /><w:family w:val="auto" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="00000001" w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000"
+	w:csb-0="00040000" w:csb-1="00000000" /></w:font><w:font w:name="Cambria Math"><w:panose-1
+	w:val="02040503050406030204" /><w:charset w:val="00" /><w:family
+	w:val="Roman" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="A00002EF" w:usb-1="420020EB" w:usb-2="00000000" w:usb-3="00000000"
+	w:csb-0="0000009F" w:csb-1="00000000" /></w:font><w:font w:name="方正小标宋简体"><w:altName
+	w:val="宋体" /><w:charset w:val="86" /><w:family
+	w:val="auto" /><w:pitch w:val="default" /><w:sig w:usb-0="00000001"
+	w:usb-1="080E0000" w:usb-2="00000000" w:usb-3="00000000" w:csb-0="00040000"
+	w:csb-1="00000000" /></w:font><w:font w:name="仿宋_GB2312"><w:panose-1
+	w:val="02010609030101010101" /><w:charset w:val="86" /><w:family
+	w:val="Modern" /><w:pitch w:val="fixed" /><w:sig w:usb-0="00000001"
+	w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000" w:csb-0="00040000"
+	w:csb-1="00000000" /></w:font><w:font w:name="楷体_GB2312"><w:panose-1
+	w:val="02010609030101010101" /><w:charset w:val="86" /><w:family
+	w:val="Modern" /><w:pitch w:val="fixed" /><w:sig w:usb-0="00000001"
+	w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000" w:csb-0="00040000"
+	w:csb-1="00000000" /></w:font><w:font w:name="@宋体"><w:panose-1
+	w:val="02010600030101010101" /><w:charset w:val="86" /><w:family
+	w:val="auto" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="00000003" w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000"
+	w:csb-0="00040001" w:csb-1="00000000" /></w:font><w:font w:name="@黑体"><w:panose-1
+	w:val="02010600030101010101" /><w:charset w:val="86" /><w:family
+	w:val="auto" /><w:pitch w:val="variable" /><w:sig
+	w:usb-0="00000001" w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000"
+	w:csb-0="00040000" w:csb-1="00000000" /></w:font><w:font w:name="@楷体_GB2312"><w:panose-1
+	w:val="02010609030101010101" /><w:charset w:val="86" /><w:family
+	w:val="Modern" /><w:pitch w:val="fixed" /><w:sig w:usb-0="00000001"
+	w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000" w:csb-0="00040000"
+	w:csb-1="00000000" /></w:font><w:font w:name="@仿宋_GB2312"><w:panose-1
+	w:val="02010609030101010101" /><w:charset w:val="86" /><w:family
+	w:val="Modern" /><w:pitch w:val="fixed" /><w:sig w:usb-0="00000001"
+	w:usb-1="080E0000" w:usb-2="00000010" w:usb-3="00000000" w:csb-0="00040000"
+	w:csb-1="00000000" /></w:font><w:font w:name="@方正小标宋简体"><w:charset
+	w:val="86" /><w:family w:val="auto" /><w:pitch w:val="default" /><w:sig
+	w:usb-0="00000001" w:usb-1="080E0000" w:usb-2="00000000" w:usb-3="00000000"
+	w:csb-0="00040000" w:csb-1="00000000" /></w:font></w:fonts><w:styles><w:versionOfBuiltInStylenames
+	w:val="7" /><w:latentStyles w:defLockedState="off"
+	w:latentStyleCount="267"><w:lsdException w:name="Normal" /><w:lsdException
+	w:name="heading 1" /><w:lsdException w:name="heading 2" /><w:lsdException
+	w:name="heading 3" /><w:lsdException w:name="heading 4" /><w:lsdException
+	w:name="heading 5" /><w:lsdException w:name="heading 6" /><w:lsdException
+	w:name="heading 7" /><w:lsdException w:name="heading 8" /><w:lsdException
+	w:name="heading 9" /><w:lsdException w:name="caption" /><w:lsdException
+	w:name="Title" /><w:lsdException w:name="Subtitle" /><w:lsdException
+	w:name="Strong" /><w:lsdException w:name="Emphasis" /><w:lsdException
+	w:name="No Spacing" /><w:lsdException w:name="List Paragraph" /><w:lsdException
+	w:name="Quote" /><w:lsdException w:name="Intense Quote" /><w:lsdException
+	w:name="Subtle Emphasis" /><w:lsdException w:name="Intense Emphasis" /><w:lsdException
+	w:name="Subtle Reference" /><w:lsdException w:name="Intense Reference" /><w:lsdException
+	w:name="Book Title" /><w:lsdException w:name="TOC Heading" /></w:latentStyles><w:style
+	w:type="paragraph" w:default="on" w:styleId="a"><w:name w:val="Normal" /><wx:uiName
+	wx:val="正文" /><w:rsid w:val="006F3F81" /><w:pPr><w:widowControl
+	w:val="off" /><w:jc w:val="both" /></w:pPr><w:rPr><w:rFonts
+	w:fareast="仿宋_GB2312" /><wx:font wx:val="Times New Roman" /><w:kern
+	w:val="2" /><w:sz w:val="32" /><w:lang w:val="EN-US"
+	w:fareast="ZH-CN" w:bidi="AR-SA" /></w:rPr></w:style><w:style
+	w:type="character" w:default="on" w:styleId="a0"><w:name
+	w:val="Default Paragraph Font" /><wx:uiName wx:val="默认段落字体" /></w:style><w:style
+	w:type="table" w:default="on" w:styleId="a1"><w:name w:val="Normal Table" /><wx:uiName
+	wx:val="普通表格" /><w:rPr><wx:font wx:val="Times New Roman" /><w:lang
+	w:val="EN-US" w:fareast="ZH-CN" w:bidi="AR-SA" /></w:rPr><w:tblPr><w:tblInd
+	w:w="0" w:type="dxa" /><w:tblCellMar><w:top w:w="0" w:type="dxa" /><w:left
+	w:w="108" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /><w:right
+	w:w="108" w:type="dxa" /></w:tblCellMar></w:tblPr></w:style><w:style
+	w:type="list" w:default="on" w:styleId="a2"><w:name w:val="No List" /><wx:uiName
+	wx:val="无列表" /></w:style><w:style w:type="character" w:styleId="newscontent"><w:name
+	w:val="news_content" /><w:basedOn w:val="a0" /><w:rsid
+	w:val="006F3F81" /></w:style><w:style w:type="character"
+	w:styleId="a3"><w:name w:val="Hyperlink" /><wx:uiName
+	wx:val="超链接" /><w:basedOn w:val="a0" /><w:rsid w:val="006F3F81" /><w:rPr><w:color
+	w:val="0000FF" /><w:u w:val="single" /></w:rPr></w:style><w:style
+	w:type="character" w:styleId="a4"><w:name w:val="page number" /><wx:uiName
+	wx:val="页码" /><w:basedOn w:val="a0" /><w:rsid w:val="006F3F81" /></w:style><w:style
+	w:type="paragraph" w:styleId="a5"><w:name w:val="Plain Text" /><wx:uiName
+	wx:val="纯文本" /><w:basedOn w:val="a" /><w:rsid w:val="006F3F81" /><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="Courier New" /><wx:font wx:val="Courier New" /></w:rPr></w:style><w:style
+	w:type="paragraph" w:styleId="2"><w:name w:val="Body Text Indent 2" /><wx:uiName
+	wx:val="正文文本缩进 2" /><w:basedOn w:val="a" /><w:rsid
+	w:val="006F3F81" /><w:pPr><w:snapToGrid w:val="off" /><w:spacing
+	w:line="620" w:line-rule="exact" /><w:ind w:first-line="623" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:rPr><w:rFonts w:ascii="黑体"
+	w:fareast="黑体" /><wx:font wx:val="Times New Roman" /></w:rPr></w:style><w:style
+	w:type="paragraph" w:styleId="a6"><w:name w:val="Normal (Web)" /><wx:uiName
+	wx:val="普通(网站)" /><w:basedOn w:val="a" /><w:rsid
+	w:val="006F3F81" /><w:pPr><w:widowControl /><w:spacing
+	w:before="100" w:before-autospacing="on" w:after="100"
+	w:after-autospacing="on" /><w:jc w:val="left" /></w:pPr><w:rPr><w:rFonts
+	w:ascii="宋体" w:h-ansi="宋体" /><wx:font wx:val="宋体" /><w:kern
+	w:val="0" /><w:sz w:val="24" /></w:rPr></w:style><w:style
+	w:type="paragraph" w:styleId="a7"><w:name w:val="header" /><wx:uiName
+	wx:val="页眉" /><w:basedOn w:val="a" /><w:rsid w:val="006F3F81" /><w:pPr><w:pBdr><w:top
+	w:val="none" w:sz="0" wx:bdrwidth="0" w:space="1" w:color="auto" /><w:left
+	w:val="none" w:sz="0" wx:bdrwidth="0" w:space="4" w:color="auto" /><w:bottom
+	w:val="none" w:sz="0" wx:bdrwidth="0" w:space="1" w:color="auto" /><w:right
+	w:val="none" w:sz="0" wx:bdrwidth="0" w:space="4" w:color="auto" /></w:pBdr><w:tabs><w:tab
+	w:val="center" w:pos="4153" /><w:tab w:val="right" w:pos="8306" /></w:tabs><w:snapToGrid
+	w:val="off" /></w:pPr><w:rPr><wx:font wx:val="Times New Roman" /><w:sz
+	w:val="18" /></w:rPr></w:style><w:style w:type="paragraph"
+	w:styleId="a8"><w:name w:val="Body Text Indent" /><wx:uiName
+	wx:val="正文文本缩进" /><w:basedOn w:val="a" /><w:rsid
+	w:val="006F3F81" /><w:pPr><w:snapToGrid w:val="off" /><w:spacing
+	w:line="620" w:line-rule="exact" /><w:ind w:first-line="623" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:rPr><w:rFonts w:ascii="仿宋_GB2312" /><wx:font
+	wx:val="Times New Roman" /><w:b /></w:rPr></w:style><w:style
+	w:type="paragraph" w:styleId="a9"><w:name w:val="Date" /><wx:uiName
+	wx:val="日期" /><w:basedOn w:val="a" /><w:next w:val="a" /><w:rsid
+	w:val="006F3F81" /><w:pPr><w:adjustRightInd w:val="off" /><w:ind
+	w:left-chars="2500" w:left="100" /><w:jc w:val="left" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:rPr><w:rFonts w:ascii="楷体_GB2312"
+	w:fareast="楷体_GB2312" /><wx:font wx:val="Times New Roman" /><w:kern
+	w:val="0" /></w:rPr></w:style><w:style w:type="paragraph"
+	w:styleId="aa"><w:name w:val="footer" /><wx:uiName wx:val="页脚" /><w:basedOn
+	w:val="a" /><w:rsid w:val="006F3F81" /><w:pPr><w:tabs><w:tab
+	w:val="center" w:pos="4153" /><w:tab w:val="right" w:pos="8306" /></w:tabs><w:snapToGrid
+	w:val="off" /><w:jc w:val="left" /></w:pPr><w:rPr><wx:font
+	wx:val="Times New Roman" /><w:sz w:val="18" /></w:rPr></w:style></w:styles><w:shapeDefaults><o:shapedefaults
+	v:ext="edit" spidmax="7170" /><o:shapelayout v:ext="edit"><o:idmap
+	v:ext="edit" data="1" /></o:shapelayout></w:shapeDefaults><w:bgPict><w:background
+	w:bgcolor="white" /></w:bgPict><w:docPr><w:view w:val="print" /><w:zoom
+	w:percent="95" /><w:doNotEmbedSystemFonts /><w:bordersDontSurroundHeader /><w:bordersDontSurroundFooter /><w:stylePaneFormatFilter
+	w:val="3F01" /><w:defaultTabStop w:val="420" /><w:drawingGridVerticalSpacing
+	w:val="156" /><w:displayHorizontalDrawingGridEvery
+	w:val="0" /><w:displayVerticalDrawingGridEvery
+	w:val="2" /><w:punctuationKerning /><w:characterSpacingControl
+	w:val="CompressPunctuation" /><w:webPageEncoding
+	w:val="x-cp20936" /><w:optimizeForBrowser /><w:validateAgainstSchema
+	w:val="off" /><w:saveInvalidXML w:val="off" /><w:ignoreMixedContent
+	w:val="off" /><w:alwaysShowPlaceholderText
+	w:val="off" /><w:doNotUnderlineInvalidXML /><w:hdrShapeDefaults><o:shapedefaults
+	v:ext="edit" spidmax="7170" /></w:hdrShapeDefaults><w:footnotePr><w:footnote
+	w:type="separator"><w:p wsp:rsidR="00B36173" wsp:rsidRDefault="00B36173"><w:r><w:separator /></w:r></w:p></w:footnote><w:footnote
+	w:type="continuation-separator"><w:p wsp:rsidR="00B36173" wsp:rsidRDefault="00B36173"><w:r><w:continuationSeparator /></w:r></w:p></w:footnote></w:footnotePr><w:endnotePr><w:endnote
+	w:type="separator"><w:p wsp:rsidR="00B36173" wsp:rsidRDefault="00B36173"><w:r><w:separator /></w:r></w:p></w:endnote><w:endnote
+	w:type="continuation-separator"><w:p wsp:rsidR="00B36173" wsp:rsidRDefault="00B36173"><w:r><w:continuationSeparator /></w:r></w:p></w:endnote></w:endnotePr><w:compat><w:spaceForUL /><w:balanceSingleByteDoubleByteWidth /><w:doNotLeaveBackslashAlone /><w:ulTrailSpace /><w:doNotExpandShiftReturn /><w:adjustLineHeightInTable /><w:breakWrappedTables /><w:snapToGridInCell /><w:wrapTextWithPunct /><w:useAsianBreakRules /><w:dontGrowAutofit /><w:useFELayout /></w:compat><wsp:rsids><wsp:rsidRoot
+	wsp:val="00172A27" /><wsp:rsid wsp:val="001043D5" /><wsp:rsid
+	wsp:val="00172A27" /><wsp:rsid wsp:val="001E1A11" /><wsp:rsid
+	wsp:val="003E4C6C" /><wsp:rsid wsp:val="004A7D01" /><wsp:rsid
+	wsp:val="006F3F81" /><wsp:rsid wsp:val="008501BD" /><wsp:rsid
+	wsp:val="00B36173" /><wsp:rsid wsp:val="00CD6256" /><wsp:rsid
+	wsp:val="00CE6EBB" /><wsp:rsid wsp:val="00CE796F" /><wsp:rsid
+	wsp:val="00D32A9D" /><wsp:rsid wsp:val="00EC1BAE" /><wsp:rsid
+	wsp:val="00F947AE" /></wsp:rsids></w:docPr><w:body><w:p wsp:rsidR="006F3F81"
+	wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing w:line="600" w:line-rule="exact" /><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="仿宋_GB2312" /><wx:font
+	wx:val="仿宋_GB2312" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:ascii="仿宋_GB2312" w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /><w:sz
+	w:val="28" /></w:rPr><w:t>文书32</w:t></w:r></w:p><w:p wsp:rsidR="006F3F81"
+	wsp:rsidRDefault="006F3F81"><w:pPr><w:spacing w:line="600" w:line-rule="exact" /><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="仿宋_GB2312" /><wx:font
+	wx:val="仿宋_GB2312" /></w:rPr></w:pPr></w:p><w:p wsp:rsidR="006F3F81"
+	wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing w:line="600" w:line-rule="exact" /><w:jc
+	w:val="center" /><w:textAlignment w:val="baseline" /><w:rPr><w:rFonts
+	w:ascii="方正小标宋简体" w:fareast="方正小标宋简体" w:h-ansi="方正小标宋简体" /><wx:font
+	wx:val="方正小标宋简体" /><w:sz w:val="44" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts
+	w:ascii="方正小标宋简体" w:fareast="方正小标宋简体" w:h-ansi="方正小标宋简体" w:hint="fareast" /><wx:font
+	wx:val="方正小标宋简体" /><w:sz w:val="44" /></w:rPr><w:t>撤销缓刑（撤销假释、收监执行、给予治安</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:jc w:val="center" /><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="方正小标宋简体"
+	w:fareast="方正小标宋简体" w:h-ansi="方正小标宋简体" /><wx:font wx:val="方正小标宋简体" /><w:sz
+	w:val="44" /></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="方正小标宋简体"
+	w:fareast="方正小标宋简体" w:h-ansi="方正小标宋简体" w:hint="fareast" /><wx:font
+	wx:val="方正小标宋简体" /><w:sz w:val="44" /></w:rPr><w:t>管理处罚）建议书</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:jc w:val="right" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:r><w:t>                           </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>${wsbh}</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="006F3F81" wsp:rsidP="001E1A11"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:ind w:first-line-chars="200"
+	w:first-line="640" /><w:textAlignment w:val="baseline" /></w:pPr></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE" wsp:rsidP="00F947AE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:ind w:first-line-chars="200"
+	w:first-line="640" /><w:textAlignment w:val="baseline" /></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>社区矫正人员</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${name}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，</w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>${sex}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${nation}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${bdaYear}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${bdaMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${bdaDay}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日出生于</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${city}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>省（市）</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${county}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>县（区），</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${educationDegree}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>文化，户籍地</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${homeAddress}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，居住地</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${houseAddress}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，因犯</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${accusation}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>罪，</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${rmfy}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>人民法院于</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${sdaYear}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${sdaMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${sdaDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日以</w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t> ${judgmentNumber} </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>刑事判决书判处</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${oriPunishment}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，附加</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="008501BD"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${addpunishment}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>。服刑期间减刑</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${jxcs}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>次，共计</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${jxYear}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${jxMonth}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>个月，减刑后刑期（缓刑考验期）自</w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${sjxYear}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${sjxMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${sjxDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日至</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ejxYear}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ejxMonth}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ejxDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日。</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${zjw}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>于</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${zjwYear}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${zjwMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${zjwDay}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日裁决假释（暂予监外执行），假释考验期（暂予监外执行期限）自</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${szjwYear}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${szjwMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="00CE796F"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${szjwDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日至</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ezjwYear}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ezjwMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ezjwDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日。</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE" wsp:rsidP="001E1A11"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:ind w:first-line-chars="200"
+	w:first-line="640" /><w:textAlignment w:val="baseline" /></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>该社区矫正人员因</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${reason}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，具体事实如下：</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:textAlignment
+	w:val="baseline" /><w:rPr><w:u w:val="single" /></w:rPr></w:pPr><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t>   </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${jtss}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>   </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>符合北京市公检法司机关《北京市社区矫正实施细则》第</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ssxzT}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>条</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ssxzX}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>项规定的情形。社区矫正</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>人员</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${name}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>，现正在</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${jyzxd}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>羁押执行中（处于非羁押状态中、脱管中）。脱管期间自</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${stgYear}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${stgMonth}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${stgDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日至</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${etgYear}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>年</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${etgMonth}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>月</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${etgDay}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>日。</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE" wsp:rsidP="001E1A11"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:ind w:first-line-chars="200"
+	w:first-line="640" /><w:textAlignment w:val="baseline" /></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>据此，根据《中华人民共和国刑法》第</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${xfT}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>条第</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>    </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>款、《中华人民共和国刑事诉讼法》第</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ssfT}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>条第</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${ssfK}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>款之规定，建议对社区矫正人员</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${name}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>裁定撤销缓刑（撤销假释、决定收监执行、给予治安管理处罚）。</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE" wsp:rsidP="001E1A11"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:ind w:first-line-chars="200"
+	w:first-line="640" /><w:textAlignment w:val="baseline" /></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>此致</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:jc w:val="left" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:r><w:rPr><w:rFonts w:hint="fareast" /><w:u
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r wsp:rsidR="001E1A11"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${rmfy}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>人民法院（公安局、监狱）</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:jc w:val="left" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:r><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>                                  </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>（公章）</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:jc w:val="left" /><w:textAlignment
+	w:val="baseline" /></w:pPr><w:r><w:t>                               </w:t></w:r><w:r
+	wsp:rsidR="001E1A11"><w:rPr><w:rFonts w:hint="fareast" /></w:rPr><w:t>${nowDate}</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="006F3F81" wsp:rsidP="001E1A11"><w:pPr><w:spacing
+	w:line="600" w:line-rule="exact" /><w:ind w:left="640"
+	w:hanging-chars="200" w:hanging="640" /><w:jc w:val="left" /><w:textAlignment
+	w:val="baseline" /></w:pPr></w:p><w:p wsp:rsidR="006F3F81"
+	wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing w:line="600" w:line-rule="exact" /><w:jc
+	w:val="left" /><w:textAlignment w:val="baseline" /></w:pPr><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /></w:rPr><w:t>    </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>附：社区矫正人员</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r wsp:rsidR="004A7D01"><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${name}</w:t></w:r><w:r><w:rPr><w:u
+	w:val="single" /></w:rPr><w:t>  </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>卷宗材料共</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="004A7D01"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${clJ}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>卷</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="004A7D01"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${clC}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>册</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r
+	wsp:rsidR="004A7D01"><w:rPr><w:rFonts w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t>${clY}</w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><w:u w:val="single" /></w:rPr><w:t> </w:t></w:r><w:r><w:rPr><w:rFonts
+	w:hint="fareast" /><wx:font wx:val="仿宋_GB2312" /></w:rPr><w:t>页。</w:t></w:r></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="006F3F81"><w:pPr><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="仿宋_GB2312" /><wx:font
+	wx:val="仿宋_GB2312" /><w:sz w:val="24" /></w:rPr></w:pPr></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="006F3F81"><w:pPr><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="仿宋_GB2312" /><wx:font
+	wx:val="仿宋_GB2312" /><w:sz w:val="24" /></w:rPr></w:pPr></w:p><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="006F3F81"><w:pPr><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="仿宋_GB2312" /><wx:font
+	wx:val="仿宋_GB2312" /><w:sz w:val="24" /></w:rPr></w:pPr></w:p><w:p
+	wsp:rsidR="00EC1BAE" wsp:rsidRDefault="00EC1BAE"><w:pPr><w:spacing
+	w:line="500" w:line-rule="exact" /><w:jc w:val="left" /><w:textAlignment
+	w:val="baseline" /><w:rPr><w:rFonts w:ascii="仿宋_GB2312"
+	w:h-ansi="仿宋_GB2312" /><wx:font wx:val="仿宋_GB2312" /><w:sz
+	w:val="24" /></w:rPr></w:pPr></w:p><w:sectPr wsp:rsidR="00EC1BAE"
+	wsp:rsidSect="006F3F81"><w:hdr w:type="odd"><wx:pBdrGroup><wx:borders><wx:top
+	wx:val="none" wx:bdrwidth="0" wx:space="1" wx:color="auto" /><wx:left
+	wx:val="none" wx:bdrwidth="0" wx:space="4" wx:color="auto" /><wx:right
+	wx:val="none" wx:bdrwidth="0" wx:space="4" wx:color="auto" /></wx:borders><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="006F3F81"><w:pPr><w:pStyle w:val="a7" /><w:pBdr><w:bottom
+	w:val="none" w:sz="0" wx:bdrwidth="0" w:space="0" w:color="auto" /></w:pBdr></w:pPr></w:p></wx:pBdrGroup></w:hdr><w:ftr
+	w:type="odd"><wx:pBdrGroup><wx:apo><wx:jc wx:val="center" /></wx:apo><w:p
+	wsp:rsidR="006F3F81" wsp:rsidRDefault="001043D5"><w:pPr><w:pStyle w:val="aa" /><w:framePr
+	w:h="0" w:wrap="around" w:vanchor="text" w:hanchor="margin" w:x-align="center"
+	w:y-align="top" /><w:pBdr><w:between w:val="none" w:sz="50"
+	wx:bdrwidth="0" w:space="0" w:color="auto" /></w:pBdr></w:pPr><w:r><w:fldChar
+	w:fldCharType="begin" /></w:r><w:r wsp:rsidR="00EC1BAE"><w:instrText> PAGE  </w:instrText></w:r><w:r><w:fldChar
+	w:fldCharType="separate" /></w:r><w:r wsp:rsidR="00CE796F"><w:rPr><w:noProof /></w:rPr><w:t>43</w:t></w:r><w:r><w:fldChar
+	w:fldCharType="end" /></w:r></w:p></wx:pBdrGroup><w:p wsp:rsidR="006F3F81"
+	wsp:rsidRDefault="006F3F81"><w:pPr><w:pStyle w:val="aa" /><w:ind
+	w:right="360" /></w:pPr></w:p></w:ftr><w:pgSz w:w="11907" w:h="16840" /><w:pgMar
+	w:top="1701" w:right="1587" w:bottom="1418" w:left="1587" w:header="720"
+	w:footer="1173" w:gutter="0" /><w:pgNumType w:start="43" /><w:cols
+	w:space="720" /><w:docGrid w:line-pitch="435" /></w:sectPr></w:body></w:wordDocument>

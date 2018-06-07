@@ -1,0 +1,79 @@
+
+.tabpage-label-container {
+	margin: 0px;
+	padding: 0px;
+	height: 30px;
+	
+}
+.tabpage-label-group{
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 5px 0px;
+	background-color:#E5EBEF;
+	list-style: none;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+	width:3px;
+	padding-top:8px;
+}
+.tabpage-label {
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 5px 0px;
+	/* font: bold 1em sans-serif; */
+	background-color:#1FABF7;
+	/* background-color: #DDD; */
+	list-style: none;
+	border-left: solid 1px #72A7AB;
+	border-bottom: solid 1px #72A7AB;
+	border-top: solid 1px #72A7AB;
+	border-right: solid 1px #72A7AB;	
+	text-align: center;
+	white-space: nowrap;
+	/* background-image: url(../images/rl_bg1.gif); */
+	background-repeat: repeat-x;
+	font-family: "";
+	font-size: 12px;
+	/* font-weight: bold; */
+	color: #FFFFFF;
+	cursor: pointer;
+	/* width:120px; */
+	width:100px;
+	padding-top:8px;
+}
+
+.tabpage-label-selected{
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 0px 0px;
+	/* font: bold 1em sans-serif; */
+	background-color: #008AF0;
+	/* background-color: #DDD; */
+	list-style: none;
+	border-left: solid 1px #72A7AB;
+	border-bottom: solid 1px #72A7AB;
+	border-top: solid 1px #72A7AB;
+	border-right: solid 1px #72A7AB;	
+	text-align: center;
+	white-space: nowrap;
+	/* background-image: url(../images/rl_bg2.gif); */
+	background-repeat: repeat-x;
+	font-family: "";
+	font-size: 12px;
+	/* font-weight: bold; */
+	/* color: Black; */
+	color: #FFFFFF;
+	cursor: pointer;
+	/* width:120px; */
+	width:100px;
+	padding-top:8px;
+}
+
+.tabpage-label a, .tabpage-label-selected a{}

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>综合查询</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/color.css" />
+		<link rel="stylesheet" href="../../../css/button.css" />
+		<link rel="stylesheet" href="../../../css/index.css" />
+		<link href="../../../js/grid/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" src="../../../js/jquery.min.js"></script>
+		<script language="javascript" src="../../../js/jquery.extends.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../js/grid/jquery.jqGrid.min.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../js/grid/grid.locale-cn.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../js/grid/jqgrid.custom.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../js/grid/jquery.jqGrid.src.js" type="text/javascript"></script>
+		<!-- lhgdialog -->
+		<script language="javascript" src="../../../js/dialog/lhgdialog.min.js?skin=blue" type="text/javascript"></script>
+		<!-- 下拉框 start-->
+		<link href="../../../js/combobox/css/jquery.simple.tree.css" rel="stylesheet" type="text/css" />
+		<script src="../../../js/combobox/js/jquery.simple.tree.js" type="text/javascript"></script>
+		<link href="../../../js/triggerfield/css/jquery.triggerfield.css" rel="stylesheet" type="text/css" />
+		<script src="../../../js/triggerfield/js/jquery.triggerfield.js" type="text/javascript"></script>
+		<script src="../../../js/combobox/js/jquery.combobox.js" type="text/javascript"></script>
+		<!-- 下拉框 end-->
+		<script language="javascript" type="text/javascript" src="../../../js/my97DatePicker/WdatePicker.js"></script>
+    <script language="javascript" src="../../../js/common.js"></script>
+		<script type="text/javascript" src="selectDialog.js" ></script>
+		<link rel="stylesheet" href="popup.css" />
+		<script type="text/javascript">
+		/**var api = frameElement.api, W = api.opener;
+
+		api.button({
+		  id:'valueOk',
+			name:'确定',
+			callback:ok,
+			focus: true
+		},{
+			id:'valueCal',
+			name:'取消',
+			callback:true
+		});
+
+		function ok()
+		{
+			
+			var rs = $("#tagValue").val();
+			rs = format(rs);
+			$("#tagValue").val(rs);
+			var flg = check(rs);
+			if (!flg) {
+				return false;
+			}
+		  W.document.getElementById('text1').value = rs;
+		};**/
+	</script>
+	</head>
+	<body>
+		
+	<div class="content">
+    <div class="contentWrapper">
+      
+        <div class="operation-box container-main">
+          <div class="title"> <span></span>
+            <label>设置查询条件：</label>
+            <div id="divtj" class="spanTurnOff" style="margin-right: 20px;">
+	      			<input type="text" 
+	      			       name="tagValue" 
+	      			       id="tagValue" 
+	      			       style="margin-top:3.5px;">	
+	      			<input type="button" class="shezhi" id="btnClear"  value="处理"/>
+            </div>
+          </div>
+          <div class="comm-div" id="tj">
+          	
+				  	<table>
+				  		<tr height="100%">
+				  			<td width="80%">
+								<div id="leftLayout" align="center" style="width:98%;height:260px;margin:3px;border:1px solid #B4DEF5">
+									<c:if test="${tagType=='4'}">
+										<div id="myDate" style="margin-top:20px;"></div>
+										<!--<script type="text/javascript">
+											WdatePicker({eCont:'myDate',onpicked:function(dp){setCal(dp.cal.getDateStr())}});						
+										</script>-->
+									</c:if>
+								</div>
+							</td>
+							<td width="20%">
+								<div style="width:130px;height:260px;margin:3px;border:1px solid #B4DEF5">
+									<table align="left">
+										<tr id="trCon10" class="changeColor" onclick="setCon('10')">
+											<td align="left">( (左括号)</td>
+										</tr>
+										<tr id="trCon11" class="changeColor" onclick="setCon('11')">
+											<td align="left">) (右括号)</td>
+										</tr>
+										<tr id="trCon1" class="changeColor" onclick="setCon('1')">
+											<td align="left">AND (与)</td>
+										</tr>
+										<tr id="trCon2" class="changeColor" onclick="setCon('2')">
+											<td align="left">OR (或)</td>
+										</tr>
+										<tr id="trCon3" class="changeColor" onclick="setCon('3')">
+											<td align="left">> (大于)</td>
+										</tr>
+										<tr id="trCon4" class="changeColor" onclick="setCon('4')">
+											<td align="left">< (小于)</td>
+										</tr>
+										<tr id="trCon5" class="changeColor" onclick="setCon('5')">
+											<td align="left">>= (大于等于)</td>
+										</tr>
+										<tr id="trCon6" class="changeColor" onclick="setCon('6')">
+											<td align="left"><= (小于等于)</td>
+										</tr>
+										<tr id="trCon7" class="changeColor" onclick="setCon('7')">
+											<td align="left">= (等于)</td>
+										</tr>
+										<tr id="trCon8" class="changeColor" onclick="setCon('8')">
+											<td align="left">!= (不等于)</td>
+										</tr>
+										<tr id="trCon9" class="changeColor" onclick="setCon('9')">
+											<td align="left">LIKE (模糊查询)</td>
+										</tr>
+									</table>
+								</div>
+							</td>
+				  		</tr>
+					</table>
+          </div>
+        </div>
+    </div>
+  </div>
+		
+	</body>
+</html>

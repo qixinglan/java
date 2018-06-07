@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/fluent-hc-4.5.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/httpclient-cache-4.5.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/httpclient-win-4.5.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="E:/资料1/java课件/HttpClient/httpclient-4.5所需jar包/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

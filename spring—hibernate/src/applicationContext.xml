@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:tx="http://www.springframework.org/schema/tx" 
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:jee="http://www.springframework.org/schema/jee"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+<!-- 开启注解扫描 -->
+<context:component-scan base-package="com.tarena"></context:component-scan>
+<!--spring2.5不支持：util:properties   -->
+<!-- <util:properties id="db" location="classpath:db.properties"></util:properties> -->
+	<!-- 配置数据源 -->
+	<bean id="ds" 
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- 配置连接参数 -->
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+		<property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+		<property name="user" value="jsd1403"/>
+		<property name="password" value="jsd1403"/>
+		<!-- 配置连接池 -->
+		<property name="initialPoolSize" value="3"/>
+		<property name="maxPoolSize" value="10"/>
+		<property name="minPoolSize" value="1"/>
+		<property name="acquireIncrement" value="3"/>
+		<property name="maxIdleTime" value="60"/>
+	</bean>
+	
+	<!-- 配置SessionFactory -->
+	<bean id="sessionFactory" 
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 依赖数据源 -->
+		<property name="dataSource" ref="ds"/>
+		<!-- Hibernate框架相关配置 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/tarena/entity/Cost.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>

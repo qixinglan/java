@@ -1,0 +1,5 @@
+﻿<!--操作成功提示-->
+<div id="result_info">
+	<img src="images/close.png"/> 
+	<span class="success">修改成功！</span>
+</div>

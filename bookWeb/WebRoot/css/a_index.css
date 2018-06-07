@@ -1,0 +1,87 @@
+#imgPlay {
+	MARGIN: 0 auto;
+	OVERFLOW: hidden;
+	WIDTH: 750px;
+	ZOOM: 1;
+	POSITION: relative;
+	HEIGHT: 315px;
+	padding: 0PX;
+}
+
+#imgPlay .imgs IMG {
+	WIDTH: 750px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+#imgPlay .imgs LI {
+	FLOAT: left;
+	POSITION: relative
+}
+
+#imgPlay .imgs {
+	WIDTH: 4500px
+}
+
+#imgPlay .prev {
+	BACKGROUND: url(../images/a_index/imgPlayer.png) no-repeat 0px 0px;
+	LEFT: 0;
+	WIDTH: 35px;
+	CURSOR: pointer;
+	TEXT-INDENT: -9999px;
+	POSITION: absolute;
+	TOP: 110px;
+	HEIGHT: 96px
+}
+
+#imgPlay .next {
+	BACKGROUND: url(../images/a_index/imgPlayer.png) no-repeat 0px 0px;
+	LEFT: 0;
+	WIDTH: 35px;
+	CURSOR: pointer;
+	TEXT-INDENT: -9999px;
+	POSITION: absolute;
+	TOP: 110px;
+	HEIGHT: 96px
+}
+
+#imgPlay .next {
+	BACKGROUND-POSITION: right 0px;
+	RIGHT: 0;
+	LEFT: auto
+}
+
+#imgPlay .num {
+	DISPLAY: inline;
+	LEFT: 400px;
+	POSITION: absolute;
+	TOP: 275px;
+	HEIGHT: 19px
+}
+
+#imgPlay .num SPAN {
+	DISPLAY: inline-block;
+	BACKGROUND: url(../images/a_index/imgPlayer.png) no-repeat -19px -97px;
+	MARGIN: 0px 2px;
+	OVERFLOW: hidden;
+	WIDTH: 14px;
+	CURSOR: pointer;
+	LINE-HEIGHT: 0;
+	HEIGHT: 13px
+}
+
+#imgPlay .num SPAN.on {
+	BACKGROUND-POSITION: 1px -97px
+}
+
+#imgPlay #numInner {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 3px;
+	POSITION: absolute;
+	TOP: 275px;
+	TEXT-ALIGN: center
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.WorkerMapper">
+<select id="findAll" resultType="com.tarena.entity.Worker">
+select * from worker 
+</select>
+<insert id="addWorker" parameterType="com.tarena.entity.Worker">
+insert into worker values(#{name},#{pwd},#{phone})
+</insert>
+<delete id="deleteWorker" parameterType="com.tarena.entity.Worker">
+delete from worker where name=#{name} and pwd=#{pwd} and phone=#{phone}
+</delete>
+<update id="updateWorker" parameterType="com.tarena.entity.Worker">
+update worker set pwd=#{pwd},phone=#{phone} where name=#{name}
+</update>
+<select id="findByName" parameterType="String" resultType="com.tarena.entity.Worker">
+select * from worker where name=#{name} 
+</select>
+<select id="findByPwd" parameterType="String" resultType="com.tarena.entity.Worker">
+select * from worker where name=#{pwd} 
+</select>
+<select id="findAllName" resultType="java.util.Map">
+select name from worker
+</select>
+</mapper>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<context-param>
+			<param-name>useCAS</param-name>
+			<param-value>false</param-value>
+	</context-param>
+	<context-param>
+			<param-name>logoutUrl</param-name>
+			<param-value>http://10.204.0.24/sfj1_gb/sso_logout</param-value>
+	</context-param>
+	<filter>
+		<filter-name>CASFilter</filter-name>
+			<filter-class>edu.yale.its.tp.cas.client.filter.CASFilter</filter-class>
+			<init-param>
+					<param-name>edu.yale.its.tp.cas.client.filter.loginUrl</param-name>
+					<param-value>http://10.204.0.24/sfj1_gb/sso_login</param-value> <!-- https 8443 -->
+			</init-param>
+			<init-param>
+					<param-name>edu.yale.its.tp.cas.client.filter.validateUrl</param-name>
+					<param-value>http://10.204.0.24/sfj1_gb/serviceValidate</param-value>
+			</init-param>
+			<init-param>
+					<param-name>edu.yale.its.tp.cas.client.filter.serverName</param-name>
+					<param-value>10.204.1.193:8080</param-value>
+			</init-param>
+	</filter>
+	<filter-mapping>
+			<filter-name>CASFilter</filter-name>
+			<url-pattern>/SSOLogin.action</url-pattern>
+	</filter-mapping> 
+	<!-- Spring ApplicationContext配置文件的路径,可使用通配符，多个路径用,号分隔 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext-report-alone.xml</param-value>
+	</context-param>
+
+	<!-- Character Encoding Filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<!-- Hibernate Open Session in View Filter -->
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+
+	<!-- spring session cope Filter -->
+	<filter>
+		<filter-name>RequestContexFilter</filter-name>
+		<filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>RequestContexFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Spring ApplicationContext 载入 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	<servlet>
+	    <servlet-name>reportServlet</servlet-name>
+	    <servlet-class>com.runqian.report4.view.ReportServlet</servlet-class>
+	    <init-param>
+	      <param-name>configFile</param-name>
+	      <param-value>/WEB-INF/reportConfig.xml</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>reportServlet</servlet-name> 
+		<url-pattern>/reportServlet</url-pattern>
+	</servlet-mapping>
+		
+	<jsp-config>
+		<taglib>
+		<taglib-uri>/WEB-INF/runqianReport4.tld</taglib-uri> <taglib-location>/WEB-INF/runqianReport4.tld</taglib-location> 
+		</taglib>
+	</jsp-config>
+
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.root</param-value>
+	</context-param>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/common/500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/common/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/common/error.jsp</location>
+	</error-page>
+	
+	<!-- added by Jennie on 14/01/26 out of testing -->
+	<mime-mapping>
+		<extension>docx</extension>
+		<mime-type>application/vnd.openxmlformats</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xlsx</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>pdf</extension>
+		<mime-type>application/pdf</mime-type>
+	</mime-mapping>
+</web-app>

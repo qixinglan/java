@@ -1,0 +1,30 @@
+﻿/* 操作框样式 */
+#result_info{
+    width: 400px; height: 70px;
+	border: 1px solid green;/*设置边框颜色为绿色*/
+	background-color:#fdecec ;/*设置背景色为粉色*/
+	padding-left: 40px;/*让提示框内容文字距左边框拉开40px距离*/	
+}
+/*关闭按钮样式*/
+#result_info img{
+    float: right;/*显示在提示框的右上角*/
+    margin-right: 10px;/*右侧和上部分别空出10px距离，不要紧贴边框*/
+    margin-top: 10px;
+    cursor: pointer;/*当鼠标放在关闭按钮上时，鼠标变为手指样式*/
+}
+
+.success{
+	color: #af6606; /*字体颜色为褐色*/
+	background-image:url(images/ok.png);/*文字设置一个图标为背景图片*/
+}
+.fail{
+	color: #f00; /*字体颜色为褐色*/
+	background-image:url(images/warning.png);/*文字设置一个图标为背景图片*/
+}
+/*提示文本的固定样式*/
+#result_info span{
+    background-repeat:no-repeat;/*取消背景图片的重复*/
+	padding-left:20px;/*左侧空出20px，让出图标的距离*/
+	line-height:70px;/*使文本在整个提示框中垂直居中*/
+	font-size:1.5em;/*使字体增大1.5倍，更醒目*/
+}

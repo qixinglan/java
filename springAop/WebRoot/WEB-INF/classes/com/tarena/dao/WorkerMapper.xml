@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.WorkerMapper">
+<insert id="insert" parameterType="com.tarena.entity.Worker">
+insert into worker values(
+#{id,jdbcType=NUMERIC},
+#{name,jdbcType=VARCHAR},
+#{pwd,jdbcType=VARCHAR},
+#{phone,jdbcType=VARCHAR})
+</insert>
+
+</mapper>

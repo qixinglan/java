@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="tset03/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="E:/资料/java课件/java常用jar包/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="E:/资料/java课件/java常用jar包/lib/1.6/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="E:/资料/java课件/java常用jar包/lib/1.6/commons-pool-1.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

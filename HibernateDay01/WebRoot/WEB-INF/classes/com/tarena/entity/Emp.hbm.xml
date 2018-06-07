@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- class元素指定了对象和表的关系
+	name配置了类名
+	table配置了了表名 -->
+	<class name="com.tarena.entity.Emp" table="Emp">
+		<!-- 
+			id元素声明了主键字段和属性的关系；
+			name声明了属性名；
+			column声明了字段名；
+			type声明了2者转换时所使用的类型；
+		 -->
+		<id name="id" type="integer" column="id">
+			<!-- 用来指明主键的生成方式 -->
+			<generator class="sequence">
+				<param name="sequence">emp_seq</param>
+			</generator>
+		</id>
+		<!-- 
+			property元素声明了普通字段和属性的关系；
+			name声明了属性名；
+			column声明了字段名；
+			type声明了2者转换时所使用的类型；
+		 -->
+		<property name="name" type="string" column="name" />
+		<property name="age" type="integer" column="age" />
+		<property name="salary" type="double" column="salary" />
+		<property name="marry" type="yes_no" column="marry" />
+		<property name="birthday" type="date" column="birthday" />
+		<property name="lastLoginTime" type="timestamp" column="last_login_time" />
+	</class>
+</hibernate-mapping>

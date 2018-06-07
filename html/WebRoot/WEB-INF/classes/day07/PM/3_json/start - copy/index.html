@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head><title>自我介绍</title>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="index.css"/>
+		<script src="js/json2.js"></script>
+		<script>
+		
+			//JSON方式：
+			//把字符串变成对象
+			var str='{"name":"bfcuedbeubd" ,"age":19}';
+			//eval能把字符串变成对象，注意格式
+			var stu=eval('('+str+')');
+			//把对象变成字符串，需引入json2.js
+			function obj2json(){
+				alert(JSON.stringify(stu));//返回一个字符串
+			}
+			function intrSelf() {
+				var dialog = document.getElementById("dialog");
+				dialog.innerHTML="I'am "+stu.name+"I'am "+stu.age;
+				dialog.style.display="block";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="parentDiv">
+			<div id="hmm" onclick="obj2json()">
+			</div>
+			<div id="dialog">
+			</div>
+		</div>
+	</body>
+</html>

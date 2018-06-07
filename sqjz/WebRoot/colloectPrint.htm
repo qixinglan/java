@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+<META name=VI60_defaultClientScript content=VBScript>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE>Test OA99+ OCX</TITLE>
+<script src="js/jquery-1.6.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		openDevice();
+	});
+	function closeDevice(){
+		CloseDevice();
+	}
+	function playSound(src){
+		var s = document.getElementByIdx_x('snd');
+		if(src!=''&& typeof src!=undefined){
+			s.src=src;
+		}
+	}
+	function changeFinger(FNo){
+		if(FNo>0&&tempFinger<9){
+			$("#title").empty().append(title[tempFinger+1]);
+			tempFinger++;
+		}else if (FNo<0&&tempFinger>0){
+			$("#title").empty().append(title[tempFinger-1]);
+			tempFinger--;
+		}
+		return;
+	}
+	function getFingers(){
+		GetFinger1();
+		if(ret==1){
+			title[tempFinger]=title[tempFinger]+"已采集";
+			$("#title").empty().append(title[tempFinger]);
+		}
+	}
+	var tempFinger = 0;
+	var title =["左手拇指","左手食指","左手中指","左手无名指","左手小指","右手拇指","右手食指","右手中指","右手无名指","右手小指"];
+</script>
+
+<script language="vbscript">
+Function openDevice()
+	openDevice = OpenDevice()
+End Function
+
+dim ret
+dim Finger1
+dim Finger2
+
+//关闭采集器
+sub CloseDevice()
+	AVZFinger1.CloseDevice
+end sub
+
+//打开采集器
+sub OpenDevice()
+ret=AVZFinger1.OpenDevice
+    if (ret <> 1) then
+       MsgBox "采集器打开失败"
+    else
+       MsgBox "采集器打开成功"
+    end if
+end sub
+
+//获取指纹1
+sub GetFinger1()
+Finger1=""
+ret=AVZFinger1.ScanFinger
+  if (ret <> 1) then
+    MsgBox "采集指纹失败"
+    exit sub	
+  end if
+ if (ret = 1) then
+    MsgBox "采集成功"
+    exit sub	
+  end if
+
+//ret=AVZFinger1.GetFingerTemplateS(Finger1)
+  //if (ret <> 1) then
+    //MsgBox "获取指纹特征失败"
+    //exit sub	
+  //end if
+end sub
+
+//获取指纹2
+sub GetFinger2()
+Finger2=""
+ret=AVZFinger1.ScanFinger
+  if (ret <> 1) then
+    MsgBox "采集指纹失败"
+    exit sub	
+  end if
+
+ret=AVZFinger1.GetFingerTemplateS(Finger2)
+  if (ret <> 1) then
+    MsgBox "获取指纹特征失败"
+    exit sub	
+  end if
+end sub
+
+//比对指纹
+sub MatchFinger()
+  if (Finger1="" or Finger2="") then
+    MsgBox "尚未获取两次指纹"
+    exit sub	
+  end if	
+  ret=AVZFinger1.MatchFinger(Finger1,Finger2,9)
+  if (ret <> 1)  then
+    MsgBox "指纹比对失败"
+  else
+    MsgBox "指纹比对成功"
+  end if
+end sub
+
+</script>
+</HEAD>
+
+<BODY onbeforeunload="closeDevice()">
+<span id="title" style="text-align: center">左手拇指</span>
+<P>
+<OBJECT id=AVZFinger1 style="LEFT: 0px; WIDTH: 168px; TOP: 60px; HEIGHT: 218px" classid="clsid:CAA911D8-8ED5-4CA3-B51E-B77D3C5ADD0A">
+</OBJECT>
+<br>
+<!-- 
+<input name="Submit1" type="button" onClick="OpenDevice()" value="打开采集器" style="LEFT: 0px; WIDTH: 100px; TOP: 0px; HEIGHT: 20px">
+<input name="Submit2" type="button" onClick="CloseDevice()" value="关闭采集器" style="LEFT: 110px; WIDTH: 100px; TOP: 0px; HEIGHT: 20px">
+<br><embed src="" id="putF1"  align="cengter" loop="false"/>
+ -->
+ <bgsound id='snd' loop='0' src='sndrec.wav' hidden="hidden"/>
+ <input name="Submit3" type="button" onClick="getFingers()" value=" 采集指纹 " style="LEFT: 0px; WIDTH: 160px; TOP: 30px; HEIGHT: 20px">
+ <br>
+  <input name="Submit3" type="button" onClick="changeFinger(1)" value=" 下一个 " style="LEFT: 0px; WIDTH: 80px; TOP: 30px; HEIGHT: 20px">
+  <input name="Submit3" type="button" onClick="changeFinger(-1)" value=" 上一个 " style="LEFT: 0px; WIDTH: 80px; TOP: 30px; HEIGHT: 20px">
+<!-- <input name="Submit3" type="button" onClick="GetFinger1()" value=" 获取指纹1 " style="LEFT: 0px; WIDTH: 80px; TOP: 30px; HEIGHT: 20px">
+<input name="Submit4" type="button" onClick="GetFinger2()" value=" 获取指纹2 " style="LEFT: 110px; WIDTH: 80px; TOP: 30px; HEIGHT: 20px"> -->
+<br>
+</P>
+
+</BODY>
+</HTML>

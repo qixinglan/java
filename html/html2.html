@@ -1,0 +1,222 @@
+<DOCTYPE html>
+<html>
+<title>
+第一个HTML文档
+</title>
+<style>
+h4{color:blue;font-size:20pt}
+</style>
+<link type="text/css" rel="Stylesheet" href="Demo.css"/>
+<meta charset="utf-8"/>
+<body bgcolor="red">
+<p style="font-family:arial;font-size:20px;background-color:blue;text-align:center;color:Red">哈哈哈</P>
+
+<p align="center"><a href="#button">to button</a></p>
+<ol><li>个人所得税计算器
+
+<ul>
+<li><a href="#question">问题</a></li>
+<li><a href="#way">方案</a></li>
+<li><a href="#work">实现</a></li>
+</ul>
+</li><li>命令解析器
+<ul>
+<li>问题</li>
+<li>方案</li>
+<li>实现</li></ul>
+</li>
+</ol>
+<h1 align="center">Java 语言基础<span style="color:Red">&lt;day03&gt;</span></h1>
+<h2>1 个人所得税计算器</h2>
+<h3 id="question">1.1问题</h3><p style="font-size:0.8em">计算个人所得税的缴纳情况。用户从控制台输入税前工资的金额，系统根据用户输入的工资金额计算应缴纳的税额。</p>
+<p align="center"><a href="www.baidu.com" target="_blank"><img  src="images/apple.jpg";></a></p>
+<table border="1px" align="center" cellpadding="5" >
+<caption align="center">表-1</caption>
+<tr bgcolor="Silver"><th>全月应缴纳所得额</th><th>税率</th><th>速算和除数</th></tr>
+<tr><td>全月应缴纳所得额&lt;1500</td><td>3%</td><td>0</td></tr>
+<tr><td>1500=&lt;全月应缴纳所得额&lt;4500</td><td>10%</td><td>105</td></tr>
+<tr><td colspan=3>...</td><tr>
+<tr><td colspan=3>计算公式为：应缴税额=全月应缴纳所得税*适用税率-速算扣除数</td><tr>
+
+</table>
+<h3 id="way">1.2方案</h3>
+<p style="font-size:0.8em">使用if语句来完成该程序</p>
+<p align="center"><a href="www.baidu.com" target="_blank"><img src="images/rose.jpg"></a></p>
+<h3 id="work">1.3实现</h3>
+<p style="font-size:0.8em">使用记事本建立一个名称为IncomeTax.java 的文本文件。定义一个类，代码如下：
+public class IncomeTax<br>
+{<br><br><br>
+
+
+}
+</p>
+<div align="center"><a href="#">To Tap</a></div>
+
+<h1>添加管理员</h1>
+<table width="500”border="1px">
+<tr><td>姓名：</td><td><input /></td><td>10个字符以内</td></tr>
+<tr><td>密码：</td><td><input type="password"/></td><td>10个字符以内</td></tr>
+<tr><td>性别：</td><td><input type="radio" name="sex"/>女士<input type="radio" name="sex"/>男士</td><td></td></tr>
+<tr><td>角色：</td><td><input type="checkbox" name="roles"/>超级管理员<input type="checkbox" name="roles"/>账单管理员</td><td>至少选择一个角色</td></tr>
+<tr><td>头像：</td><td colspan="2"><input type="file"/></td></tr>
+<tr><td></td><td colspan="2"><input type="submit" value="保存"/>&nbsp;&nbsp;<input type="reset"  value="重填"/></td></tr>
+</table>
+<table width="500" border="2">
+<tr><td colspan="2">&nbsp;</td><td rowspan="2">&nbsp;</td></tr>
+<tr><td rowspan="2">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</table>
+
+<table>
+<caption weight="bold">---&gt;&gt;求职申请&lt;&lt;---</caption>
+<tr><td>用户名：</td><td><input /></td></tr>
+<tr><td>密码：</td><td><input /></td></tr>
+<tr><td>性别：</td><td><input type="radio" name="sex"/>男<input type="radio" name="sex"/>女<input type="radio" name="sex"/>不透露</td>
+<tr><td>头像：<td><input type="file"/>未选择文件</td></tr>
+<tr><td></td><td><input type="submit" value="提交"/><input type="reset"></td></tr>
+<tr><td></td><td><input type="checkbox">不再公开我的信息</td></tr>
+</table>
+<h1 align="center">flowers</h1>
+<table width="500">
+<tr><td><a href="#Daisy">Daisy</a></td><td><a href="#Rose">Rose</a></td><td><a href="#Daffodil">Daffodil</a></td></tr>
+</table>
+<a name="Daisy"></a>
+<h4>Daisy</h4>
+<P >
+<img alt="" src="images/daisy.jpg" align="bottom">一些叙述
+</P>
+<a name="Rose"></a>
+<h4>Rose</h4>
+<p>
+<img alt="" src="images/rose.jpg" align="middle">一些叙述
+<a name="Daffodil"></a>
+</p>
+<h4>Daffodil</h4>
+
+<p>
+一些叙述<img alt="" src="images/daffodil.jpg" align="right">
+<a name="daffodil"></a>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<form action="" methad="">
+<h1>修改个人信息</h1>
+<table>
+<tr>
+<td>姓名：</td>
+<td><input type="text" value="mary"/></td>
+</tr>
+<tr>
+<td >性别：</td>
+<td><input type="radio" name="sex" id="fem" checked/><label for="fem">女士</label><input type="radio" name="sex" id="man"/><label for="man">男士</label></td>
+</tr>
+<tr>
+<td>学历：</td>
+<td>
+<select name="xueli"  >
+<option value="本科">本科</option>
+<option value="研究生">研究生</option>
+<option value="专科">专科</option>
+<option value="其他">其他</option>
+</select>
+</td>
+</tr>
+<tr>
+<td valign=">个人描述:</td>
+<td ><textarea rows="8" cols="20"></textarea></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="checkbox" id="no" name="secret"><label for="no">不要公开我的个人信息</label></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="保存" />
+<input type="reset" value="重填"/></td>
+</tr>
+</table>
+</form>
+<p style="color:green;font-size:25pt">内联样式</p>
+<h4 >内部样式</h4>
+<h3>外部样式</h3>
+<h4>元素选择器</h4>
+<div>div类选择器</div>
+<span>span类选择器</span><br/>
+<input type="button" id="button" value="按钮"/>
+<input id="text"/>
+<p class="class">类选择器</p>
+<label>label文本</label><span>span文本</span>
+<p>一周排行<span>榜</span></p>
+<a href="">使用伪类选择器</a>
+<!-- logo区域 -->
+<div id="header">123456</div>
+<!-- 导航区域 -->
+<div id="navi"></div>
+<!-- 主要区域 -->
+<div id="main">
+<!-- 操作区域 -->
+<div id="operate" class="subdiv"><input type="button" value="增加" class="btn_add"/>
+</div>
+<!-- 数据区域 -->
+<div id="data" class="subdiv">
+<table id="datalist">
+<tr>
+<th>
+<input type="checkbox"  id="chbAll" /><label for="chbAll">全选</label>
+</th>
+<th>管理员</th>
+<th>姓名</th>
+<th>拥有角色</th>
+<th></th>
+<tr>
+<td><input type="checkbox"/></td>
+<td>1</td>
+<td>贾强</td>
+<td>超级管理员、角色管理员、账单管理员</td>
+<td><input type="button" class="btn_modify" value="修改"><input type="button"  class="btn_delete" value="删除"/>
+</td></tr>
+<tr>
+<td><input type="checkbox"/></td>
+<td>2</td>
+<td>贾强</td>
+<td>超级管理员、角色管理员、账单管理员</td>
+<td><input type="button"  class="btn_modify" value="修改"><input type="button"  class="btn_delete"  value="删除"/>
+</td></tr>
+</table>
+</div>
+<!-- 分页 -->
+<div id="pages"></div>
+</div>
+<!-- 页脚区域 -->
+<div id="footer"></div>
+<div id="intro">Logo & Title</div>
+			<div id="nav">body width:960px,默认字体大小</div>
+			<div id="content">
+				<div id="products" style="float:left;width="300">产品(padding:1em;border:4px)</div>
+				<div id="test" style="float:right" width="300">客户评价(padding: 1em;)</div>
+			</div>
+			<div id="copyright" style="clear:both">
+				All content copyright &copy;Tarena
+			</div>
+<p align="center"><a href="#" title="到顶部">to top</a></p>
+<a name="#button"></a>
+</body>
+</html>

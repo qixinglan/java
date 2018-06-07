@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book id="B1" language="CHIN">
+		<name>我的野蛮女友</name>
+		<price>19.8</price>
+		
+	</book>
+	<book id="B2" language="ENG">
+		<name>the art of computer programming</name>
+		<price>59.9</price>
+	</book>
+	<book id="B3" language="CHIN">
+		<name>钢铁是怎样炼成的</name>
+		<price>31.5</price>
+	</book>
+	<book id="B4" language="CHIN">
+		<name>基督山伯爵</name>
+		<price>26</price>
+	</book>
+</books>

@@ -1,0 +1,25 @@
+﻿<html>
+	<head>
+		<title>parse</title>
+		<meta charset="utf-8"/>
+		<script>
+			var i=6.12;
+			alert(typeof(i));//number
+			alert(typeof(i.toString()));//string;
+			alert("parseInt('6.12')=" + parseInt('6.12'));//6
+			alert("parseInt('')=" + parseInt(''));//NaN
+			alert("parseInt(22.5)=" + parseInt(22.5));//22
+			alert("parseInt(' 10 ')=" + parseInt(' 10 '));//10
+			alert("parseInt('blue1234')=" + parseInt('blue1234'));//1234
+			alert("parseInt(true)=" + parseInt(true));//NaN
+
+			alert("parseFloat('6.12')=" 
+					+ parseFloat('6.12'));//6.12
+			alert("parseFloat(' 6.12 ')=" 
+					+ parseFloat(' 6.12 '));//6.12
+			alert("parseFloat('6.12abcd')=" 
+					+ parseFloat('6.12abcd'));//6.12
+		</script>
+	</head>
+	<body></body>
+</html>

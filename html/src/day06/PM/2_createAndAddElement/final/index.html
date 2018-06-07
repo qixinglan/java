@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html>
+	<head><title>create and add element</title>
+		<meta charset="utf-8"/>
+		<script>
+			function createNewNode()  {
+				//先找父元素！
+				var div = document.getElementById("div1");
+				//创建一个新的文本框节点
+				var textNode = document.createElement("input");
+				textNode.type = "text";
+				textNode.value = "mary";
+
+				//加入到 form 中，作为form的最后一个子节点
+				div.appendChild(textNode);
+
+				//创建一个新的 h1 节点，加入到原有按钮之前
+				var h1Node = document.createElement("h1");
+				h1Node.innerHTML = "h1 text";
+				div.insertBefore(h1Node,
+								document.getElementById("btn1"));
+
+				//在按钮后添加一个超级链接
+				var linkNode = document.createElement("a");
+				linkNode.href = "http://tts7.tarena.com.cn";
+				linkNode.target = "_blank";
+				linkNode.innerHTML = "Tarena TTS";
+				div.appendChild(linkNode);
+
+				//在按钮前再添加一个按钮，单击新按钮，弹出 hello
+				var newBtn = document.createElement("input");
+				newBtn.type = "button";
+				newBtn.value = "New Button";
+				newBtn.addEventListener("click",btnClick,false);
+				div.insertBefore(newBtn,
+								document.getElementById("btn1"));
+			}
+			var btnClick=function(){alert("Hello");}
+		</script>
+	</head>
+	<body>
+		<form>
+			<div id="div1">
+			<input id="btn1" type="button" value="添加新节点" onclick="createNewNode();" />
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,130 @@
+ .customEditingToolbar {
+            float: left;
+            left: 150px;	   
+            height: 30px; 
+        }
+        
+        .customEditingToolbar div {
+            float: right;
+            margin: 5px;
+            width: 24px;
+            height: 24px;
+        }
+         .customToolbar {
+            float: right;
+            left: 0px;	   
+            height: 30px;
+            bottom:0px 
+        }
+         .customToolbar div {
+            float: left;
+            margin: 5px;
+            width: 204px;
+            height: 24px;
+        }
+ 	.olControlNewButtonItemActive { 
+            background-image: url("openlayer/theme/default/img/editing_tool_bar.png");
+            background-repeat: no-repeat;
+            background-position: -77px -23px; 
+        }
+        .olControlNewButtonItemInactive { 
+            background-image: url("openlayer/theme/default/img/editing_tool_bar.png");
+            background-repeat: no-repeat;
+            background-position: -77px -0px; 
+        }
+        .olControlNavigationItemActive { 
+            background-image: url("openlayer/theme/default/img/editing_tool_bar.png");
+            background-repeat: no-repeat;
+            background-position: -103px -23px; 
+        }
+        .olControlNavigationItemInactive { 
+            background-image: url("openlayer/theme/default/img/editing_tool_bar.png");
+            background-repeat: no-repeat;
+            background-position: -103px -0px; 
+        }
+        .olControlDrawFeaturePolygonItemInactive { 
+            background-image: url("openlayer/theme/default/img/editing_tool_bar.png");
+            background-repeat: no-repeat;
+            background-position: -26px 0px; 
+        }
+        .olControlDrawFeaturePolygonItemActive { 
+            background-image: url("openlayer/theme/default/img/editing_tool_bar.png");
+            background-repeat: no-repeat;
+            background-position: -26px -23px ;                                                                   
+        }
+        .olControlModifyFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/ljl-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlModifyFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/ljl.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlDeleteFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/qk-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlDeleteFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/qk.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        
+        .olControlTKFDFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/lkfd-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlTKFDFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/lkfd.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        
+                .olControlFDFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/fd-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlFDFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/fd.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        
+                .olControlSXFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/sx-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlSXFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/sx.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        
+                .olControlCMJFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/cmj-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlCMJFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/cmj.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        
+                
+                .olControlLJLFeatureItemActive { 
+            background-image: url(openlayer/theme/default/img/ljl-b.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlLJLFeatureItemInactive { 
+            background-image: url(openlayer/theme/default/img/ljl.png);
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }

@@ -1,0 +1,7 @@
+﻿.dropList{
+	width:300px; float:left;
+}
+#racers,#volunteers{height:300px}
+#members li {cursor: move;}
+.highlighted {background-color: yellow;}
+.validtarget {background-color: lightblue;}

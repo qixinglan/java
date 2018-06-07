@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.tarena.entity.Account" 
+		table="account">
+		<id name="accountId" 
+			column="account_id" type="integer">
+			<generator class="sequence">
+				<param name="sequence">
+					account_seq
+				</param>
+			</generator>
+		</id>
+		
+		<property name="recommenderId" 
+			column="recommender_id" type="integer"/>
+		<property name="loginName" 
+			column="login_name" type="string"/>
+		<property name="loginPassword" 
+			column="login_passwd" type="string"/>
+		<property name="status" 
+			column="status" type="string"/>
+		<property name="createDate" 
+			column="create_date" type="timestamp"/>
+		<property name="pauseDate" 
+			column="pause_date" type="timestamp"/>
+		<property name="closeDate" 
+			column="close_date" type="timestamp"/>
+		<property name="realName" 
+			column="real_name" type="string"/>
+		<property name="idcardNo" 
+			column="idcard_no" type="string"/>
+		<property name="birthdate" 
+			column="birthdate" type="date"/>
+		<property name="gender" 
+			column="gender" type="string"/>
+		<property name="occupation" 
+			column="occupation" type="string"/>
+		<property name="telephone" 
+			column="telephone" type="string"/>
+		<property name="email" 
+			column="email" type="string"/>
+		<property name="mailAddress" 
+			column="mailaddress" type="string"/>
+		<property name="zipcode" 
+			column="zipcode" type="string"/>
+		<property name="qq" 
+			column="qq" type="string"/>
+		<property name="lastLoginTime" 
+			column="last_login_time" type="timestamp"/>
+		<property name="lastLoginIp" 
+			column="last_login_ip" type="string"/>
+		
+		<!-- 配置关联属性
+		set元素声明了关联属性的类型是Set
+		name:set属性变量名
+		cascade：all支持所有级联操作
+		inverse="true":不控制反转
+		 -->
+		<set name="services" cascade="all" inverse="true">
+			
+			<!-- column: 声明了另一个数据表的字段名称不是另一个对象的属性名称；
+			注意其值默认取本对象的account对象的id值-->
+			<key column="account_id"/>
+			<!-- one——to-many生命了两张表的关系
+			class声明了另一个对象的类 -->
+			<one-to-many 
+				class="com.tarena.entity.Service"/>
+		
+		</set>
+		
+	</class>
+</hibernate-mapping>

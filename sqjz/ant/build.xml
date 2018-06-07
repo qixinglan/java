@@ -1,0 +1,216 @@
+<project basedir=".." default="build.full" name="sqjz">
+	<target name="init" description="设置初始化打 war 包需要的路径变量">
+		<property name="tomcat.home" value="D:\ProgramFiles\apache-tomcat-7.0.42" description="tomcat目录" />
+		<property name="j2eelib.dir" value="${tomcat.home}\lib" description="j2ee jar包的路径" />
+
+		<property name="name" value="sqjz" />
+		<property name="src" value="${basedir}/src" />
+		<property name="xmpp" value="${basedir}/xmpp" />
+		<property name="webapp" value="${basedir}/WebRoot" />
+		<property name="lib" value="${webapp}/WEB-INF/lib" />
+		<property name="packages" value="ant.*" />
+		
+		<property name="build.ant.dir" value="${basedir}/ant" />
+		<property name="build.base" value="${basedir}/build/ant" />
+		
+		<property name="build.webapp" value="${build.base}/${name}/webapp" />
+		<property name="build.src" value="${build.base}/${name}/src" />
+		<property name="build.classes" value="${build.base}/${name}/classes" />
+		
+		<fileset id="report.src" dir="${src}" description="src目录下需要的文件">
+			<include name="applicationContext-report-alone.xml"/>
+			<include name="com/nci/dcs/base/dao/HibernateDao.java"/>
+			<include name="com/nci/dcs/base/dao/SimpleHibernateDao.java"/>
+			<include name="com/nci/dcs/base/service/BaseService.java"/>
+			<include name="com/nci/dcs/common/Constants.java"/>
+			<include name="com/nci/dcs/common/page/JsonTree.java"/>
+			<include name="com/nci/dcs/common/page/JsonTreeAttr.java"/>
+			<include name="com/nci/dcs/common/runqian/DicFunction.java"/>
+			<include name="com/nci/dcs/common/runqian/JZXZRs.java"/>
+			<include name="com/nci/dcs/common/runqian/OrgFunction.java"/>
+			<include name="com/nci/dcs/common/runqian/PadStringIfNull.java"/>
+			<include name="com/nci/dcs/common/runqian/RunqianFunction.java"/>
+			<include name="com/nci/dcs/common/runqian/UserFunction.java"/>
+			<include name="com/nci/dcs/common/sql/SQLStringUtils.java"/>
+			<include name="com/nci/dcs/common/utils/CommonUtils.java"/>
+			<include name="com/nci/dcs/common/utils/Constants.java"/>
+			<include name="com/nci/dcs/common/utils/DateTimeFmtSpec.java"/>
+			<include name="com/nci/dcs/common/utils/Page.java"/>
+			<include name="com/nci/dcs/common/utils/PropertyFilter.java"/>
+			<include name="com/nci/dcs/common/utils/ReflectionUtils.java"/>
+			<include name="com/nci/dcs/common/utils/SpringContextUtil.java"/>
+			<include name="com/nci/dcs/common/web/jquery/jqgrid/JQGridPageRequest.java"/>
+			<include name="com/nci/dcs/common/web/jquery/jqgrid/JQGridPageResponse.java"/>
+			<include name="com/nci/dcs/common/web/jquery/jqgrid/search/JQGridSearchRuleParser.java"/>
+			<include name="com/nci/dcs/common/web/jquery/jqgrid/search/SearchFilters.java"/>
+			<include name="com/nci/dcs/common/web/jquery/jqgrid/search/SearchRule.java"/>
+			<include name="com/nci/dcs/data/model/Jx.java"/>
+			<include name="com/nci/dcs/data/model/Zw.java"/>
+			<include name="com/nci/dcs/official/dao/OrganizationInfoDao.java"/>
+			<include name="com/nci/dcs/official/dao/PersonsDao.java"/>
+			<include name="com/nci/dcs/official/dto/OrganizationKeyValue.java"/>
+			<include name="com/nci/dcs/official/dto/PersonsKeyValue.java"/>
+			<include name="com/nci/dcs/official/model/OrganizationInfo.java"/>
+			<include name="com/nci/dcs/official/model/Persons.java"/>
+			<include name="com/nci/dcs/official/service/OrganizationInfoService.java"/>
+			<include name="com/nci/dcs/official/service/PersonsService.java"/>
+			<include name="com/nci/dcs/system/dao/DictionaryDetailDao.java"/>
+			<include name="com/nci/dcs/system/dao/DictionaryInfoDao.java"/>
+			<include name="com/nci/dcs/system/dao/UserDao.java"/>
+			<include name="com/nci/dcs/system/model/Authorization.java"/>
+			<include name="com/nci/dcs/system/model/Bmb.java"/>
+			<include name="com/nci/dcs/system/model/DictionaryDetail.java"/>
+			<include name="com/nci/dcs/system/model/DictionaryInfo.java"/>
+			<include name="com/nci/dcs/system/model/DictionaryKeyValue.java"/>
+			<include name="com/nci/dcs/system/model/PhotoUpload.java"/>
+			<include name="com/nci/dcs/system/model/Role.java"/>
+			<include name="com/nci/dcs/system/model/User.java"/>
+			<include name="com/nci/dcs/system/service/DictionaryInfoService.java"/>
+			<include name="log4j.properties"/>
+		</fileset>
+		<fileset id="report.webapp" dir="${webapp}" description="webapp目录下需要的文件">
+			<include name="css/**"/>
+			<include name="META-INF/**"/>
+			<include name="reportFiles/**"/>
+			<include name="WEB-INF/*"/>
+			<include name="WEB-INF/config/customFunctions.properties"/>
+			<exclude name="WEB-INF/tld"/>
+			<exclude name="WEB-INF/lib"/>
+			<exclude name="WEB-INF/classes"/>
+			<include name="js/**"/>
+			<exclude name="js/ezmap/**"/>
+			<exclude name="js/cmap/**"/>
+			<include name="images/**"/>
+			<include name="data/jzgl/bbgl/fxrySsTj/showReport.jsp"/>
+			<include name="data/jzgl/bbgl/jzgztj/tb_Report.jsp"/>
+			<include name="data/jzgl/bbgl/tb_Report.jsp"/>
+			<include name="data/jzgl/bbgl/ygztzj/tb_Report.jsp"/>
+			<include name="data/jzgl/dagl/notice.jsp"/>
+			<include name="data/jzgl/showReport.jsp"/>
+			<include name="data/jzgl/toolbar.jsp"/>
+			<include name="jre-6u24-windows-i586.exe"/>
+			<include name="runqianReport4Applet.jar"/>
+			<include name="error.jsp"/>
+		</fileset>
+		
+		<filterset id="filter.local" filtersfile="${build.ant.dir}/local.properties" />
+		<filterset id="filter.remote" filtersfile="${build.ant.dir}/remote.properties" />
+		<path id="classpath">
+			<fileset dir="${j2eelib.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="${lib}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+		<patternset id="no.java">
+			<exclude name="**/*.java" />
+		</patternset>
+	</target>
+	<target name="report.property" description="独立报表程序过滤文件集">
+		<property name="build.war.dir" value="${build.base}/report" />
+		<property name="build.war.file" value="${build.war.dir}/${name}.war" />
+	</target>
+	<target name="report.copy" description="独立报表程序过滤文件集">
+		<copy todir="${build.src}" overwrite="true" encoding="UTF-8">
+			<fileset refid="report.src" />
+		</copy>
+		<copy tofile="${build.src}/remoteReport.properties" file="${src}/remoteReport.ant.properties" filtering="true" preservelastmodified="false" encoding="utf-8" overwrite="true">
+			<filterset refid="filter.local"/>
+		</copy>
+		<copy todir="${build.webapp}" overwrite="true" encoding="UTF-8">
+			<fileset refid="report.webapp"/>
+		</copy>
+		<copy file="${webapp}/WEB-INF/web.report.xml" tofile="${build.webapp}/WEB-INF/web.xml" preservelastmodified="false" overwrite="true" encoding="UTF-8"/>
+	</target>
+	
+	<target name="full.property" description="独立报表程序过滤文件集">
+		<property name="build.war.dir" value="${build.base}/full" />
+		<property name="build.war.file" value="${build.war.dir}/${name}.war" />
+	</target>
+	<target name="full.copy" description="独立报表程序过滤文件集">
+		<copy todir="${build.src}" overwrite="true" encoding="UTF-8">
+			<fileset dir="${src}" />
+		</copy>
+		<copy todir="${build.src}" overwrite="true" encoding="UTF-8">
+			<fileset dir="${xmpp}" />
+		</copy>
+		<copy tofile="${build.src}/remoteReport.properties" file="${src}/remoteReport.ant.properties" filtering="true" preservelastmodified="false" encoding="utf-8" overwrite="true">
+			<filterset refid="filter.local"/>
+		</copy>
+		<copy todir="${build.webapp}" overwrite="true" encoding="UTF-8">
+			<fileset dir="${webapp}">
+				<exclude name="WEB-INF/lib/*.jar"/>
+				<exclude name="WEB-INF/classes/**"/>
+			</fileset>
+		</copy>
+	</target>
+	<target name="remoteReport.property" description="独立报表程序过滤文件集">
+		<property name="build.war.dir" value="${build.base}/remoteReport" />
+		<property name="build.war.file" value="${build.war.dir}/${name}.war" />
+	</target>
+	<target name="remoteReport.copy" description="独立报表程序过滤文件集">
+		<copy todir="${build.src}" overwrite="true" encoding="UTF-8">
+			<fileset dir="${src}" />
+		</copy>
+		<copy todir="${build.src}" overwrite="true" encoding="UTF-8">
+			<fileset dir="${xmpp}" />
+		</copy>
+		<copy tofile="${build.src}/remoteReport.properties" file="${src}/remoteReport.ant.properties" filtering="true" preservelastmodified="false" encoding="utf-8" overwrite="true">
+			<filterset refid="filter.remote"/>
+		</copy>
+		<copy todir="${build.webapp}" overwrite="true" encoding="UTF-8">
+			<fileset dir="${webapp}">
+				<exclude name="WEB-INF/lib/*.jar"/>
+				<exclude name="WEB-INF/classes/**"/>
+			</fileset>
+		</copy>
+		<copy file="${webapp}/WEB-INF/web.remote.xml" tofile="${build.webapp}/WEB-INF/web.xml" preservelastmodified="false" overwrite="true"/>
+	</target>
+	
+	<target name="compile" description="编译 java 文件，拷贝 properties 属性配置文件到编译后的路径下">
+		<javac srcdir="${build.src}" destdir="${build.classes}" includeantruntime="on" encoding="utf-8" source="1.6" target="1.6" optimize="false" deprecation="false" nowarn="true" debug="on" debuglevel="lines,vars,source" includeAntRuntime="off" includeJavaRuntime="false" description="编译临时源码目录中的.java文件">
+			<compilerarg value="-Xlint:deprecation" />
+			<compilerarg value="-Xlint:unchecked" />
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${build.classes}" description="拷贝src文件中除.java文件外的其他文件">
+			<fileset dir="${build.src}">
+				<patternset refid="no.java" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="war" description="将资源文件和编译的class打成war包">
+		<war warfile="${build.war.file}" webxml="${build.webapp}/WEB-INF/web.xml">
+			<lib dir="${lib}" />
+			<classes dir="${build.classes}" />
+			<fileset dir="${build.webapp}">
+				<exclude name="${build.webapp.classes}" />
+			</fileset>
+		</war>
+	</target>
+
+
+	<target name="prepare" description="创建打包需要的路径，拷贝源文件到打包路径下">
+		<delete dir="${build.src}" />
+		<delete dir="${build.webapp}" />
+		<delete dir="${build.classes}" />
+		<delete dir="${build.war.dir}" />
+		
+		<mkdir dir="${build.src}" />
+		<mkdir dir="${build.webapp}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.war.dir}" />
+	</target>
+
+	<target name="build.report" depends="init,report.property,prepare,report.copy,compile,war"/>
+	<target name="build.full" depends="init,full.property,prepare,full.copy,compile,war"/>
+	<target name="build.remote" depends="init,remoteReport.property,prepare,remoteReport.copy,compile,war"/>
+	
+	<target name="clean" depends="init" description="清除打包用临时文件">
+		<delete dir="${build.src}" />
+		<delete dir="${build.webapp}" />
+		<delete dir="${build.webapp.classes}" />
+	</target>
+</project>

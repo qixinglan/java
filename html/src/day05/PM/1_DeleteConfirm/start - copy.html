@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head><title>确认对话框</title>
+		<meta charset="utf-8"/>
+		<script>
+			function update(){	
+				var r=confirm("是否继续更新");
+				if(r)
+					alert("提交成功");
+				return r;    <!--是否中止事件操作，调用该方法时必须  return 方法名（）-->
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input name="user"/>
+			<input type="submit" value="更新" onclick="return update()"/><!-- /*会先执行update（）再执行submit*/ -->
+		</form>
+	</body>
+</html>

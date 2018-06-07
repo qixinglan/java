@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+	<head><title>html5 drag and drop</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="index.css"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<p>Drag members to either the Racers or Volunteers list.</p>
+		<ul id="members">
+			<li draggable="true" data-age="38">Brian Albers</li>
+			<li draggable="true" data-age="25">Frank Salim</li>
+			<li draggable="true" data-age="47">Jennifer Clark</li>
+			<li draggable="true" data-age="18">John Kemble</li>
+			<li draggable="true" data-age="20">Lorraine Gaunce</li>
+			<li draggable="true" data-age="30">Mark Wang</li>
+			<li draggable="true" data-age="41">Morgan Stephen</li>
+			<li draggable="true" data-age="39">Peter Lubbers</li>
+			<li draggable="true" data-age="33">Vanessa Combs</li>
+			<li draggable="true" data-age="54">Vivian Lopez</li>
+		</ul>
+
+		<div class="dropList">
+			<fieldset id="racersField">
+				<legend>Racers (by Age):</legend>
+				<ul id="racers"></ul>
+			</fieldset>
+		</div>
+		<div class="dropList">
+			<fieldset id="volunteersField">
+				<legend>Volunteers (by Name):</legend>
+				<ul id="volunteers"></ul>
+			</fieldset>
+		</div>
+	</body>
+</html>

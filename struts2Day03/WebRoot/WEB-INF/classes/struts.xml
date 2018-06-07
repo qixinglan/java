@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+<package name="one" namespace="/hello" extends="struts-default">
+<interceptors>
+<interceptor name="first" class="com.tarena.interceptor.FirstInterceptor"></interceptor>
+<interceptor name="second" class="com.tarena.interceptor.SecondInterceptor"></interceptor>
+<interceptor-stack name="MyStack">
+<interceptor-ref name="first"></interceptor-ref>
+<interceptor-ref name="second"></interceptor-ref>
+<interceptor-ref name="defaultStack"></interceptor-ref>
+</interceptor-stack>
+</interceptors>
+<action name="struts2" class="com.tarena.action.Action" method="helloStruts2">
+<!-- <interceptor-ref name="first"></interceptor-ref> -->
+<!-- <interceptor-ref name="second"></interceptor-ref> -->
+<interceptor-ref name="MyStack"></interceptor-ref>
+<result name="ok">/WEB-INF/jsp/helloStruts2.jsp</result>
+</action>
+<action name="toUpload" >
+<result name="success">/WEB-INF/jsp/upload.jsp</result>
+</action>
+<action name="upload" class="com.tarena.action.UploadAction" >
+<result name="error">/WEB-INF/jsp/error.jsp</result>
+<result name="ok">/WEB-INF/jsp/ok.jsp</result>
+</action>
+</package>
+</struts>

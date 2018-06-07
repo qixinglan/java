@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	window.onload(getXhr());
+	function getXhr(){
+	var Xhr=null;
+	if(window.XMLHttpRequest){
+		Xhr=new XMLHttpRequest;
+		}
+	else{
+		Xhr=new ActiveXObject('Microsoft.XMLHttp')
+		}
+		alert(Xhr);
+	}
+	</script>
+  </head>
+  
+  <body>
+    <br>
+  </body>
+</html>

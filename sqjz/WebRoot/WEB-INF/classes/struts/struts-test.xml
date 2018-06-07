@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="dxpt" extends="extend-json-default" namespace="/data/test/dxpt">
+		<action name="send"
+			class="com.nci.dcs.webservices.dxpt.action.TestDXPTAction" method="send">
+		</action>
+		<action name="presend"
+			class="com.nci.dcs.webservices.dxpt.action.TestDXPTAction" method="presend">
+		</action>
+	</package>
+	<package name="xmpp" extends="extend-json-default" namespace="/data/test/xmpp">
+		<action name="list"
+			class="com.nci.dcs.webservices.dxpt.action.TestXmppAction" method="view">
+			<result name="success">/data/test/xmppTest.jsp</result>
+		</action>
+		<action name="input"
+			class="com.nci.dcs.webservices.dxpt.action.TestXmppAction" method="input">
+			<result name="success">/data/test/xmppTest.jsp</result>
+		</action>
+		<action name="search" class="com.nci.dcs.webservices.dxpt.action.TestXmppAction"
+			method="search">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="sessionSearch" class="com.nci.dcs.webservices.dxpt.action.TestXmppAction"
+			method="sessionSearch">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="view" class="com.nci.dcs.webservices.dxpt.action.TestXmppAction"
+			method="detail">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+		<action name="configReload" class="com.nci.dcs.webservices.dxpt.action.TestXmppAction"
+			method="configReload">
+			<result type="json">
+				<param name="root">jqgridPage</param>
+			</result>
+		</action>
+	</package>
+</struts>

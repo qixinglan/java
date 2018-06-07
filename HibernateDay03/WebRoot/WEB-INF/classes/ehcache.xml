@@ -1,0 +1,39 @@
+<ehcache>
+
+    <!-- 
+    	缓存到硬盘时的缓存路径,java.io.tmpdir表示
+    	系统默认缓存路径。
+     -->
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- 
+    	默认缓存配置。
+    	maxElementsInMemory：
+    		二级缓存课可容纳最大对象数。
+    	eternal：
+    		是否保持二级缓存中对象不变。
+    	timeToIdleSeconds：
+    		允许对象空闲的时间，即对象最后一次访问起，超过该时间即失效。
+    	timeToLiveSeconds：
+    		允许对象存活的时间，即对象创建起，超过该时间即失效。
+    	overflowToDisk：
+    		内存不足时，是否允许使用硬盘缓存，写入路径参见diskStore。
+     -->
+    <defaultCache
+        maxElementsInMemory="300"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="300"
+        overflowToDisk="true"
+        />
+
+	<!-- 自定义缓存配置 -->
+    <cache name="myCache"
+        maxElementsInMemory="2000"
+        eternal="false"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+
+</ehcache>

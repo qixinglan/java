@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<context-param>
+			<param-name>useCAS</param-name>
+			<param-value>false</param-value>
+	</context-param>
+	<context-param>
+			<param-name>logoutUrl</param-name>
+			<param-value>http://10.204.0.24/sfj1_gb/sso_logout</param-value>
+	</context-param>
+	<filter>
+		<filter-name>CASFilter</filter-name>
+			<filter-class>edu.yale.its.tp.cas.client.filter.CASFilter</filter-class>
+			<init-param>
+					<param-name>edu.yale.its.tp.cas.client.filter.loginUrl</param-name>
+					<param-value>http://10.204.0.24/sfj1_gb/sso_login</param-value> <!-- https 8443 -->
+			</init-param>
+			<init-param>
+					<param-name>edu.yale.its.tp.cas.client.filter.validateUrl</param-name>
+					<param-value>http://10.204.0.24/sfj1_gb/serviceValidate</param-value>
+			</init-param>
+			<init-param>
+					<param-name>edu.yale.its.tp.cas.client.filter.serverName</param-name>
+					<param-value>10.204.1.193:8080</param-value>
+			</init-param>
+	</filter>
+	<filter-mapping>
+			<filter-name>CASFilter</filter-name>
+			<url-pattern>/SSOLogin.action</url-pattern>
+	</filter-mapping> 
+	<!-- Spring ApplicationContext配置文件的路径,可使用通配符，多个路径用,号分隔 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+
+	<!-- Character Encoding Filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<!-- Hibernate Open Session in View Filter -->
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+
+
+	<!--
+	<filter>
+		<filter-name>AccessController</filter-name>
+		<filter-class>cn.com.jit.assp.ias.sp.saml11.AccessController</filter-class>
+		<init-param>
+			<param-name>SPConfig</param-name>
+			<param-value>/WEB-INF/config/JITAgentConfig.xml</param-value>
+		</init-param>
+	</filter>
+	-->
+	
+	<!-- Struts2 Filter -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	
+	<filter>
+		<filter-name>struts2-cleanup</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+	</filter>
+
+	<!-- spring session cope Filter -->
+	<filter>
+		<filter-name>RequestContexFilter</filter-name>
+		<filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+	</filter>
+	
+	<!-- Login Filter -->
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.nci.dcs.filter.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 
+	<filter-mapping>
+		<filter-name>AccessController</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+	 -->
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/SSOLogin.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/data/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/facade/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/sys/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>struts2-cleanup</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>RequestContexFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Spring ApplicationContext 载入 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	
+	<!-- 启动加载搜索初始化功能 -->
+	<!-- DWR servlet,生产环境应该Debug为false -->
+	<!-- 获取路径,支持普通类获取绝对路径 -->
+	<servlet>
+		<servlet-name>Path</servlet-name>
+		<servlet-class>com.nci.dcs.common.utils.PathUtils</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+  
+<!--  	<servlet>
+	    <servlet-name>reportServlet</servlet-name>
+	    <servlet-class>com.runqian.report4.view.ReportServlet</servlet-class>
+	    <init-param>
+	      <param-name>configFile</param-name>
+	      <param-value>/WEB-INF/reportConfig.xml</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>reportServlet</servlet-name> 
+		<url-pattern>/reportServlet</url-pattern>
+	</servlet-mapping> -->
+		
+	<jsp-config>
+		<taglib>
+		<taglib-uri>/WEB-INF/runqianReport4.tld</taglib-uri> <taglib-location>/WEB-INF/runqianReport4.tld</taglib-location> 
+		</taglib>
+	</jsp-config>
+
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.root</param-value>
+	</context-param>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/common/500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/common/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/common/error.jsp</location>
+	</error-page>
+	
+	<!-- added by Jennie on 14/01/26 out of testing -->
+	<mime-mapping>
+		<extension>docx</extension>
+		<mime-type>application/vnd.openxmlformats</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xlsx</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>rar</extension>
+		<mime-type>application/octet-stream</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>zip</extension>
+		<mime-type>application/x-zip-compressed</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>pdf</extension>
+		<mime-type>application/pdf</mime-type>
+	</mime-mapping>
+	<servlet>
+		<servlet-name>ServiceAgent</servlet-name>
+		<servlet-class>
+			org.bjit.serviceadapter.agent.ServiceAgent
+		</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<description>user</description>
+			<param-name>user</param-name>
+			<param-value>bjssfj</param-value>
+		</init-param>
+		<init-param>
+			<description>password</description>
+			<param-name>password</param-name>
+			<param-value>bjssfj123</param-value>
+		</init-param>
+		<init-param>
+			<description>图片引擎JS API</description>
+			<param-name>EzServer/EzMapAPI</param-name>
+			<param-value>
+				http://172.26.15.45/service/ImageEngine/EzServer/EzMapAPI
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>图片引擎(Vector)</description>
+			<param-name>EzServer/EzMap</param-name>
+			<param-value>
+				http://172.26.15.45/service/ImageEngine/EzServer/EzMap
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>图片引擎(Raster)</description>
+			<param-name>EzServerSate/EzMap</param-name>
+			<param-value>
+				http://172.26.15.45/service/ImageEngine/EzServerSate/EzMap
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>图片引擎(VectorRaster)</description>
+			<param-name>EzServerVR/EzMap</param-name>
+			<param-value>
+				http://172.26.15.45/service/ImageEngine/EzServerVR/EzMap
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>交通流量图片引擎(EzServerTRA)</description>
+			<param-name>EzServerTRA/EzMap</param-name>
+			<param-value>
+				http://172.26.15.45/service/EzServerTRA/EzMap
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>建筑图片引擎(EzServer25D)</description>
+			<param-name>EzServer25D/EzMap</param-name>
+			<param-value>
+				http://172.26.15.45/service/EzServer25D/EzMap
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>地址查询</description>
+			<param-name>AddrCode/cmd</param-name>
+			<param-value>
+				http://172.26.15.45/service/AddrCode/cmd
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>政务信息图层WFS</description>
+			<param-name>GovEMap/wfs</param-name>
+			<param-value>
+				http://172.26.15.45/service/GovEMap/wfs
+			</param-value>
+		</init-param>
+		<init-param>
+			<description>政务信息图层</description>
+			<param-name>GovEMap/wms</param-name>
+			<param-value>
+				http://172.26.15.45/service/GovEMap/wms
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>BjFile</param-name>
+			<param-value>
+				http://172.26.15.45/
+			</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/Themepic</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServer/EzMapAPI</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServer/EzMap</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServerSate/EzMap</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServerVR/EzMap</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServer25D/EzMap</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServerDEM/EzMap</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/EzServerTRA/EzMap</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/AddrCode/cmd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/BjFile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/GovEMap/wfs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServiceAgent</servlet-name>
+		<url-pattern>/GovEMap/wms</url-pattern>
+	</servlet-mapping>
+</web-app>

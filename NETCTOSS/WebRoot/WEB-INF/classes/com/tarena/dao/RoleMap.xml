@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.RoleMapper">
+<select id="findRole" parameterType="com.tarena.dao.RolePage" resultMap="roleMap">
+select * from (
+select r.*,rownum n from (
+select * from role_info order by role_id) 
+r) where n &lt;#{end} and n&gt;#{begin}
+</select>
+<select id="selectModules" 
+		parameterType="int" 
+		resultType="com.tarena.dao.Module">
+		select * from module_info where module_id in (
+			select module_id from role_module
+			where role_id=#{role_id}
+		)
+	</select>
+	<resultMap id="roleMap" type="com.tarena.dao.Role">
+		<id column="role_id" property="role_id" />
+		<collection ofType="com.tarena.dao.Module"
+			property="modules" javaType="java.util.ArrayList"
+			column="role_id" select="selectModules">
+		</collection>
+	</resultMap>
+	
+	<select id="findTotalRows"
+		resultType="int">
+		select count(*) from role_info
+	</select>
+	<select id="findAllModule" resultType="com.tarena.dao.Module">
+	select * from module_info
+	</select>
+	<!-- 用了主键映射 -->
+	<insert id="insertRole" parameterType="com.tarena.dao.Role" >
+	<selectKey keyProperty="role_id" order="BEFORE" resultType="int">
+	select role_seq.nextval from dual
+	</selectKey>
+	insert into role_info values(#{role_id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR})
+	</insert>
+	
+	
+	
+	<insert id="insertRoleModule" parameterType="hashmap">
+	insert into role_module values (#{role_id,jdbcType=INTEGER},#{module_id,jdbcType=INTEGER})
+	</insert>
+	<delete id="deleteRole" parameterType="int">
+	delete from role_info where role_id=#{id}
+	</delete>
+	<delete id="deleteRoleModule" parameterType="int">
+	delete from role_module where role_id=#{id}
+	</delete>
+	<select id="findByName" parameterType="String" resultType="com.tarena.dao.Role">
+	select * from role_info where name=#{name}
+	</select>
+	<select id="findByRole_id" parameterType="int" resultMap="roleMap">
+	select * from role_info where role_id=#{id}
+	</select>
+	<update id="updateRole" parameterType="com.tarena.dao.Role">
+	update role_info set name=#{name,jdbcType=VARCHAR} where role_id=#{role_id,jdbcType=INTEGER}
+	</update>
+</mapper>

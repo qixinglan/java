@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>emp1</display-name>
+  <servlet>
+  <servlet-name>addEmp</servlet-name>
+  <servlet-class>web.addEmp</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>listemp</servlet-name>
+  <servlet-class>web.listemp</servlet-class></servlet>
+  <servlet-mapping>
+  <servlet-name>addEmp</servlet-name>
+  <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>listemp</servlet-name>
+  <url-pattern>/listemp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>fixemp</servlet-name>
+  <servlet-class>web.fixemp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>fixemp</servlet-name>
+  <url-pattern>/fixemp</url-pattern>
+  </servlet-mapping>
+</web-app>

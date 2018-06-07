@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.tarena.dao.EmpDao">
+
+	<!-- if -->
+	<!-- 查询部门下的所有员工 -->
+	<select id="findByDept" 
+		parameterType="com.tarena.entity.Condition"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+		<if test="deptno != null">
+			where deptno=#{deptno}
+		</if>
+	</select>
+	
+	<!-- choose -->
+	<!-- 查询大于当前收入的员工 -->
+	<select id="findBySalary"
+		parameterType="com.tarena.entity.Condition"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+		<choose>
+			<when test="salary > 2500">
+				where sal>#{salary}
+			</when>
+			<otherwise>
+				where sal>=2500
+			</otherwise>
+		</choose>
+	</select>
+	
+	<!-- where -->
+	<!-- 查询当前部门下,大于当前收入的员工 -->
+	<select id="findByDeptAndSalary"
+		parameterType="com.tarena.entity.Condition"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+		<where>
+			<if test="deptno != null">
+				and deptno=#{deptno}
+			</if>
+			<if test="salary != null">
+				and sal>#{salary}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 使用trim代替where -->
+	<!-- 查询当前部门下,大于当前收入的员工 -->
+	<select id="findByDeptAndSalary2"
+		parameterType="com.tarena.entity.Condition"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+		<trim prefix="where" prefixOverrides="and">
+			<if test="deptno != null">
+				and deptno=#{deptno}
+			</if>
+			<if test="salary != null">
+				and sal>#{salary}
+			</if>
+		</trim>
+	</select>	
+	
+	<!-- set -->
+	<update id="update"
+		parameterType="com.tarena.entity.Emp">
+		update t_emp
+		<set>
+			<if test="ename!=null">
+				ename=#{ename},
+			</if>
+			<if test="job!=null">
+				job=#{job},
+			</if>
+		</set>
+		where empno=#{empno}
+	</update>
+	
+	<!-- 使用trim代替set -->
+	<update id="update2"
+		parameterType="com.tarena.entity.Emp">
+		update t_emp
+		<trim prefix="set" suffixOverrides=",">
+			<if test="ename!=null">
+				ename=#{ename},
+			</if>
+			<if test="job!=null">
+				job=#{job},
+			</if>
+		</trim>
+		where empno=#{empno}
+	</update>
+	
+	<!-- foreach -->
+	<!-- 根据ID查询员工 -->
+	<select id="findByIds"
+		parameterType="com.tarena.entity.Condition"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp where empno in 
+		<foreach collection="empnos" 
+			open="(" close=")" separator="," item="id">
+			#{id}
+		</foreach>
+	</select>
+	
+</mapper>

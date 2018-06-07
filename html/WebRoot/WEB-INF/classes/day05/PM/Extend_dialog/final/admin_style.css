@@ -1,0 +1,112 @@
+﻿body{
+	background-color: #0063a0;
+	background-image:url("images/body_bg.png");
+}
+div{font-size:12px; margin:0 auto;}
+
+#header,#footer{width:960px}
+#header{
+	height:61px; 
+	text-align:right;
+	background-image:url("images/top_bg.png");
+} 
+#header a{
+	text-decoration:none;
+	line-height:61px;
+	margin-right:40px;
+}
+#header a:hover{
+	font-size:14px; 
+	font-weight: bold; 
+	text-decoration: underline; 
+}
+#header a:active{ color:red; }
+#header img{float:left;}
+
+#navi{
+	width:100%;height:91px;
+	background-image:url("images/navigation.png");
+}
+#main{
+	background-color: #e8f3f8;
+	border:5px solid #8ac1db;	
+	width:950px;height:410px;
+	position:relative;
+} 
+#footer{height:50px}
+#footer p{text-align:center;}
+#footer p,#header a{color:#fff;}
+
+.subdiv{width:910px}
+
+#operate{height:30px;text-align:right;}  
+#data{height:340px}  
+#pages{height:28px}
+
+#footer p{text-align:center}
+
+#pages{height:28px; text-align:center}
+#pages a{
+	text-decoration:none; 
+	border:1px solid #97b9c9;
+	line-height:28px;
+	padding:5px 10px;
+}
+#pages a:hover{background-color: #cddde4;}
+#pages a.current_page{
+	background-color: #8ac1db; 
+	color: #FFF; 
+}
+
+input.btn_add{ 
+	height:26px; 
+	width:73px; 
+	background-image:url("images/btn_bg.png");
+	color: #fff;		
+	border:0;		
+	cursor: pointer; 
+}
+input.btn_add:hover{ background-position:center; }  
+input.btn_add:active{ background-position:bottom; }
+
+#datalist th,#datalist td{ border: 1px solid #CCC;}
+#datalist{
+	background-color:white; 
+	width: 900px; 
+	margin: 0 auto; 
+	border-collapse : collapse}
+#datalist th{background: #fbedce; height:35px}
+#datalist td{
+	height:32px; 	
+	text-align:center
+}
+#datalist tr:hover{ background-color: lightBlue;}
+
+input.btn_modify, input.btn_delete{ 
+	cursor:pointer; 
+	background:none; 
+	border:0;
+	background-repeat:no-repeat;
+	padding-left:15px;
+	background-position:left center;
+}
+input.btn_modify{ background-image:url("images/modification.png"); }
+input.btn_delete{ background-image:url("images/delete.png"); }
+
+#navi ul{width:960px; margin:0 auto; list-style-type:none;}
+#navi a{
+	color:#fff;
+	display:block; width: 78px; height: 87px;
+	line-height:87px; text-align:center;
+	padding-top:3px;
+}
+#navi ul li{float:left;}
+#navi a:hover{padding-top:1px}
+
+#result_info{ position:absolute; top:90px; left:250px;display:none; }
+
+#adv{
+	background-image:url("images/guanggao.png");
+	width:174px; height:139px;
+	position:fixed; bottom:100px;right:10px;
+}

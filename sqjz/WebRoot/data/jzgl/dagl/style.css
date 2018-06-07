@@ -1,0 +1,92 @@
+.tabpage-menu{
+	 width:160px;
+	 border-right: 1px solid #e5e5e5;
+	 vertical-align: top;
+	 min-height: 300px;
+	 background-color: #f7f7f7;
+}
+
+.tabpage-content{
+	text-align: center;
+	padding: 5px;
+	vertical-align: top;
+}
+
+.tabpage-group-menu{
+	
+}
+
+.tabpage-items-menu{
+	border-top: solid 1px #e5e5e5;
+	border-bottom: solid 1px #e5e5e5;
+	height: 39px;
+	line-height: 38px;
+	font-size: 14px;
+	background: -webkit-linear-gradient(#fff,#f2f2f2);
+	background: -moz-linear-gradient(#fff,#f2f2f2);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffffff, endColorstr=#f2f2f2);
+}
+
+
+.tabpage-items-menu a{
+	margin-left: 20px;
+	color: #666;
+}
+
+.tabpage-items-submenu a{
+	margin-left: 40px;
+	line-height: 34px;
+	height: 35px;
+	color: #666;
+}
+
+.tabpage-group-submenu{
+	font-size: 12px;
+}
+
+.tabpage-items-submenu{
+	line-height: 34px;
+	height: 35px;
+	font-size: 12px;
+}
+
+.tabpage-subitems-split{
+	margin: 0 20px;
+	border-top: dotted 1px #dde3e9;
+	border-bottom: dotted 1px #fff;
+	height: 0;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+}
+.tabpage-items-submenu-selected{
+	font-weight: bold;
+}
+
+.address-td-value{
+	min-width: 150px;
+	max-width: 150px;
+}
+
+.address-table{
+	/*margin: 0 auto;*/
+	max-width: 1000px;
+}
+
+.address-tr{
+	
+}
+
+.address-td-label{
+	width: auto;
+}
+.address-label{
+	border-right:none;
+	text-align: left;
+	background-color: transparent;
+}
+.address-value{
+	padding-right:2px !important;
+	padding-left:2px !important;
+}
+

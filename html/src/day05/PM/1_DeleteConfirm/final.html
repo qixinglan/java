@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head><title>确认对话框</title>
+		<meta charset="utf-8"/>
+		<script>
+			function update(){	
+				var result = confirm("go on updating?");	
+				return result;
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input name="user"/>
+			<input type="submit" value="更新" onclick="return update();"/>
+		</form>
+	</body>
+</html>

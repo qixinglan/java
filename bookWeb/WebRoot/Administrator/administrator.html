@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>administrator.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+var xhr=null;
+var txt=null;
+function f1(){
+xhr=getXhr();
+xhr.open('get',encodeURI("http://127.0.0.1:8081/bookWeb/adlogin.do?aname="+document.getElementById("administrator").value+"&apwd="+document.getElementById("password").value),true);
+xhr.onreadystatechange=f2;
+xhr.send(null);
+}
+function f2(){
+if(xhr.readyState==4){
+if(xhr.status=200){
+txt=xhr.responseText;
+if(txt==""){
+window.location.href="http://127.0.0.1:8081/bookWeb/a.do";
+}else{
+document.getElementById("info").innerText=txt;
+}
+}
+}
+}
+
+function getXhr(){
+	if(window.XMLHttpRequest){
+		Xhr=new XMLHttpRequest;
+		}
+	else{
+		Xhr=new ActiveXObject('Microsoft.XMLHttp')
+		}
+		return Xhr;
+}
+// function check(){
+// alert("a");
+// alert(txt);
+// if(txt==""){
+// alert("c");
+// return true;
+// }
+// else{
+// alert("d");
+// return false;
+// }
+// }
+</script>
+
+  </head>
+  
+  <body>
+  	<form method="post" onSubmit="return false;" >
+  	
+    <table align="center" >
+    <caption>管理员登陆</caption>
+    <tr><td>管理员用户名：</td><td><input id="administrator"/></td>
+    </tr>
+    <tr>
+    <td>密码：</td><td><input id="password" type="password"/></td>
+    </tr>
+    <tr>
+    <td><input type="submit" value="登陆"  onclick="f1()"/></td>
+    <td><span id="info" style="color:red"></span></td>
+    </tr>
+    
+    </table> 
+   </form>
+  </body>
+</html>

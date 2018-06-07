@@ -1,0 +1,39 @@
+table{width:600px}
+/*鐖跺厓绱犱笅鐨勭1涓紝绗琻涓紝鏈�悗涓�釜td瀛愬厓绱�/
+td:first-child{width:60px}
+/*IE涓嶆敮鎸乶th-child*/
+td:nth-child(2){width:200px}
+/*IE*/
+td:first-child+td{width:180px}
+td:last-child{width:340px}
+td span{color:red}
+
+.vali_Info{
+    /* 椤甸潰鍒濆锛岄獙璇佹秷鎭笉鏄剧ず */
+	display:none;
+}
+
+input.txt_focus{
+	border-top:2px solid black;
+	border-left:2px solid black;
+}
+
+.vali_success,.vali_fail{
+	background-repeat:no-repeat;
+    background-position:left center;
+	display:block;
+}
+/* 楠岃瘉娑堟伅锛氶獙璇侀�杩囨椂鐨勬牱寮�*/
+div.vali_success{
+    background-image:url("images/ok.png");
+}
+/* 楠岃瘉娑堟伅锛氶獙璇佸け璐ユ椂鐨勬牱寮�*/
+div.vali_fail{
+    background-image:url("images/warning.png");
+    border:1px solid red;
+    background-color:#ddd;
+    color:Red;
+    padding-left:30px;
+}
+
+

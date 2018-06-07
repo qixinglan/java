@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	  xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+	    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">    
+	
+<!-- 	Quartz方式的定时任务 -->
+	<!-- 第一种 -->
+	<!-- 1spring配置文件中配置作业类JobDetailBean -->
+	<bean id="quartz0" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<!-- jobClass属性即我们在java代码中定义的任务类，jobDataAsMap属性即该任务类中需要注入的属性值。 -->
+		<property name="jobClass" value="test.quartz0"></property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout" value="5000" />
+				<entry key="i" value="5" />
+			</map>
+		</property>
+	</bean>
+	<!-- 2配置作业调度的触发方式（触发器） -->
+	<!-- Quartz的作业触发器有两种，分别是 org.springframework.scheduling.quartz.SimpleTriggerBean 
+		org.springframework.scheduling.quartz.CronTriggerBean -->
+	<!-- 第一种SimpleTriggerBean，只支持按照一定频度调用任务，如每隔30分钟运行一次。 配置方式如下： -->
+	<bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="quartz0" />
+		<property name="startDelay" value="0" /><!-- 调度工厂实例化后，经过0秒开始执行调度 -->
+		<property name="repeatInterval" value="2000" /><!-- 每2秒调度一次 -->
+	</bean>
+	<!-- 第二种CronTriggerBean，支持到指定时间运行一次，如每天12:00运行一次等。 配置方式如下： -->
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="quartz0" />
+		<!-- 每天11:32运行一次 -->
+		<property name="cronExpression" value="0 32 11 * * ?" />
+	</bean>
+	<!-- 3配置调度工厂 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="simpleTrigger" />
+				<ref bean="cronTrigger" />
+
+			</list>
+		</property>
+	</bean>
+<!-- 第二种 -->
+	<bean id="quartz1"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 有两个关键属性：targetObject指定任务类，targetMethod指定运行的方法。 -->
+		<property name="targetObject">
+			<bean class="test.quartz1" />
+		</property>
+		<property name="targetMethod" value="doTask" />
+		<property name="concurrent" value="false" /><!-- 作业不并发调度 -->
+	</bean>
+	<!--触发器和调度工厂和上面一样，不再写了 -->
+	
+	
+<!-- java本身的定时任务 -->
+	<bean id="javaTimeTask" class="test.javaTimeTask">
+		<property name="name" value="javaTimeTask" />
+	</bean>
+	<bean id="methodInvokingTask"
+		class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+		<property name="targetObject" ref="javaTimeTask" />
+		<property name="targetMethod" value="doTask" />
+	</bean>
+	<bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="delay" value="0" /><!-- 0秒后开始执行 -->
+		<property name="period" value="1000" /><!-- 每隔1秒执行一次 -->
+		<property name="timerTask">
+			<ref bean="methodInvokingTask" />
+		</property>
+	</bean>
+	<bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean"
+		lazy-init="false">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref local="scheduledTask" />
+			</list>
+		</property>
+	</bean>
+
+<!-- spring—task   spring自带的定时任务    -->
+<!-- 配置文件式 -->
+ <task:scheduled-tasks>   
+ <!-- ref参数指定的即任务类，method指定的即需要运行的方法，cron及cronExpression表达式 -->
+        <task:scheduled ref="springTask1" method="doSpringTask" cron="0 45 12 * * ?"/>   
+</task:scheduled-tasks>  
+<context:component-scan base-package=" test " />  <!-- spring扫描注解 -->
+<!-- 注解式   识别@Scheduled注解 -->
+ <task:annotation-driven/>
+</beans>

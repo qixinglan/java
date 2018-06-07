@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.tarena.entity.Service" 
+		table="service">
+		<id name="serviceId" 
+			column="service_id" type="integer">
+			<generator class="sequence">
+				<param name="sequence">
+					service_seq
+				</param>
+			</generator>
+		</id>
+		<!-- 由于实体类中去掉了accountId属性所以也要去掉 -->
+<!-- 		<property name="accountId"  -->
+<!-- 			column="account_id" type="integer"/> -->
+		<property name="unixHost" 
+			column="unix_host" type="string"/>
+		<property name="osUserName" 
+			column="os_username" type="string"/>
+		<property name="loginPassword" 
+			column="login_passwd" type="string"/>
+		<property name="status" 
+			column="status" type="string"/>
+		<property name="createDate" 
+			column="create_date" type="timestamp"/>
+		<property name="pauseDate" 
+			column="pause_date" type="timestamp"/>
+		<property name="closeDate" 
+			column="close_date" type="timestamp"/>
+		<property name="costId" 
+			column="cost_id" type="integer"/>
+			<!-- 配置关联属性 
+			name 指定了属性名
+			column指定了关联字段-->
+		<many-to-one
+		name="account"
+		column="account_id"
+		class="com.tarena.entity.Account" />
+		</class>
+		
+</hibernate-mapping>

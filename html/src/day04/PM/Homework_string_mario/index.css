@@ -1,0 +1,87 @@
+﻿body{
+	background-image:url(images/mario_bg.gif);
+	background-position:0px bottom;
+	background-repeat:no-repeat;
+	height:600px;
+	position:relative;
+}
+#mario{
+	background-image:url(images/mario_run_self.gif);
+	width:20px;
+	height:36px;
+	position:absolute;
+	top:540px;
+	left:0px;
+	cursor:pointer;
+}
+#dialog{
+	background-image:url(images/dialog.gif);
+	width:640px;
+	height:275px;
+	top:50px;
+	left:0px;
+	position:fixed;
+	background-repeat:no-repeat;
+	display:none;
+}
+
+#msg{
+	width:470px;
+	margin-left:120px;
+	margin-top:15px;
+	margin-bottom:10px;
+	height:165px;
+	font-size:20px;
+	font-weight:bold;
+	overFlow-y:scroll;
+	border-left:2px solid gray;
+	border-top:2px solid gray;
+}
+#operate{
+	width:450px;
+	margin-left:120px;
+	height:35px;
+	text-align:center;
+}
+input.txtInput{
+	border-top:2px solid blue;
+	border-left:2px solid blue;
+	font-size:18px;
+	font-weight:bold;
+	width:20em;
+}
+strong,span{
+	color:red;
+}
+p{
+	color:green;
+	text-align:center;
+	font-size:20px;
+}
+#btnOK{
+	display:none;
+}
+#end{
+	background-image:url(images/mario_end.gif);
+	width:256px;
+	height:223px;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-128px;
+	margin-top:-111px;
+	display:none;
+	z-index:100;
+}
+#fail{
+	background-image:url(images/mario_fail.gif);
+	width:256px;
+	height:224px;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-128px;
+	margin-top:-112px;
+	display:none;
+	z-index:100;
+}

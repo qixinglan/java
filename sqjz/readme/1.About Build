@@ -1,0 +1,47 @@
+1.由于需要将报表系统独立部署，在原系统上修改部分内容，并增加配置文件，使程序在访问报表页面时，
+定位到另一台服务器（独立报表应用）上；在本工程的独立报表应用中，设计为包含报表需要的内容，在打
+包时，修改部分配置文件，并将需要的文件打包即可。
+
+本文档下面执行以下约定：
+	全功能打包：程序的所有功能都在一台服务器上实现，在访问报表页面时，服务器直接调用本服务器报表系统显示
+			页面，可以在系统测试、第三方测试使用。
+	报表功能打包：程序只有报表功能，访问本系统的报表页面时，服务器调用本服务器报表功能显示报表。
+	远程报表打包：程序包含除报表外的所有功能，在访问报表页面时，系统将返回另一台服务器的连接给客户端。
+注：工程默认打包为全功能打包！
+
+2.配置文件
+	全功能配置文件 :	WebRoot/WEB-INF/web.xml
+					src/applicationContext.xml
+					src/remoteReport.properties	(需要将文件中的report.remote改为false)
+	报表功能配置文件:WebRoot/WEB-INF/web.report.xml
+					src/applicationContext-report-alone.xml
+					src/remoteReport.properties (需要将文件中的report.remote改为false)
+	远程报表配置文件:WebRoot/WEB-INF/web.xml
+					src/applicationContext.xml
+					src/remoteReport.properties	(需要将文件中的report.remote改为true，并修改report.remote.url)
+
+3.打包方法
+	全功能应用打包：
+		a.修改remoteReport.properties。
+		b.确认web.xml文件的内容。
+		c.正常打包即可。
+	报表功能打包：
+		a.修改remoteReport.properties。
+		b.确认web.xml文件的内容。
+		c.将附件中的文件拷贝打包。
+	远程报表打包：
+		a.修改remoteReport.properties。
+		b.确认web.xml文件的内容。
+		c.正常打包即可。
+4.remoteReport.properties说明
+	report.remote		true 远程报表；其他任何值  本地报表；
+	report.remote.url	远程报表系统的地址，如 http://ip:port/contextroot/，需要以"/"结尾
+5.ant打包
+	build.report	报表功能打包
+	build.full		全功能打包
+	build.remote	远程报表打包
+6.注意事项
+	远程报表应用和报表功能应用在同一域名时可能会发生session覆盖，如果不在同一个域，无需处理；如果两个应用在同一个域中，建议修改session的cookie值。
+
+
+附A：报表功能文件清单：

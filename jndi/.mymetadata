@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="jndi"
+  id="myeclipse.1465551380723"
+  context-root="/jndi"
+  j2ee-spec="6.0"
+  archive="jndi.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

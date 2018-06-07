@@ -1,0 +1,58 @@
+.table {
+	margin-bottom: 0px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table_header td {
+	background: url(tableheader-bg.gif) no-repeat left top;
+	padding: 5px 10px;
+	color: rgb(70, 122, 167);
+	border-top: 1px solid #CBD6DE;
+	border-bottom: 1px solid #ADBECB;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.table_header td a:link,.table_header td a:visited {
+	text-decoration: underline;
+	color: rgb(70, 122, 167);
+}
+
+.table_header td a:hover {
+	text-decoration: underline;
+	color: #73A822;
+}
+
+.table_header td {
+	border: 1px solid #CBD6DE;
+}
+
+.row1 td,.row2 td,.row_hover td,.paging_row td {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	color: #666666;
+	border: 1px solid #CBD6DE;
+	height: 30px
+}
+
+.row1 td {
+	background: #ffffff;
+}
+
+.row2 td {
+	background: #eeeeee;
+}
+
+.row_hover td {
+	background: #FBFACE;
+	color: #000000;
+}
+
+input.edit{
+	border-width: 0px;
+	background-color: #ffffcc;
+	width: 200px
+}

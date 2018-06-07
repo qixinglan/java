@@ -1,0 +1,13 @@
+<?xml  version="1.0" encoding="UTF-8" ?>
+<contacts>
+<contact id="1">
+<name>   Tom</name>
+<phone>119</phone>
+<address><![CDATA[<北京>]]></address>
+</contact>
+<contact id="2">
+<name>Jerry</name>
+<phone>110</phone>
+<address>&lt;</address>
+</contact>
+</contacts>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JITAgentConfig>
+
+  <!--Agent自身相关配置－－J2EE,IIS,Apache共用-->
+  <AgentSettings>
+    <!--当网关服务器不可用时采取的处理，Enable:Agent是否关心网关服务器不可用的情况-->
+    <OffLineStrategy Enable="true">
+      <!--没有网关可用时ByPass？-->
+      <!--Permit:不认证，允许直接访问应用系统-->
+      <!--Deny:禁止访问应用系统，自动转到错误页面-->
+      <AccessWhenNoGatewayAvailable>Permit</AccessWhenNoGatewayAvailable>
+      <!--检测网关可用状态间隔时间，秒-->
+      <TestPeriod>300000000</TestPeriod>
+    </OffLineStrategy>
+
+    <!--Token相关-->
+    <TokenSettings>
+      <!--在验证Token时允许的误差，秒-->
+      <MaxDiscrepancy>180</MaxDiscrepancy>
+    </TokenSettings>
+
+    <!-- *非开发人员慎改* 本地会话设置-->
+    <LocalSession>
+      <!--最大空闲时间，秒-->
+      <MaxIdleTime>30</MaxIdleTime>
+      <!--最大使用时间，秒-->
+      <LiveTime>60</LiveTime>
+      <!--会话Cookie-->
+      <Cookie>
+        <!--应用服务器域名，可不配置，默认为空-->
+        <Domain></Domain>
+        <!--是否使用安全Cookie，需要应用服务器配置ssl-->
+        <Secure>false</Secure>
+        <!--cookie路径，默认为/-->
+        <Path>/</Path>
+      </Cookie>
+    </LocalSession>
+  </AgentSettings>
+
+
+  <!--Agent自身相关配置－－J2EE Agent专用配置项-->
+  <J2EEAgentSettings>
+    <!--当前Agent版本-->
+    <Version>2.2.0</Version>
+    <!--用户身份信息的键名-->
+    <UserInfoKeyName>_jit_userinfo</UserInfoKeyName>
+    <!--用户身份信息存放位置-->
+    <UserInfoScope>session</UserInfoScope>
+    <!-- 本地错误页面 -->
+    <ErrorPage>/error.jsp</ErrorPage>
+    <!--调试日志-->
+    <DebugLog>
+      <!--是否输出调试日志-->
+      <OutputDebugLog>true</OutputDebugLog>
+    </DebugLog>
+    <!-- 不需要做身份认证的列表 -->
+	<NotAuthenticate>
+		<URI>/error.jsp</URI>
+	</NotAuthenticate>
+  </J2EEAgentSettings>
+
+
+  <!--Agent自身相关配置－－IIS Agent专用配置项-->
+  <IISAgentSettings>
+    <!--需要拦截的URI，最多可以使用一个"*"号通配符-->
+    <FilterURI>
+      <uri>/demo/asp/*.asp</uri>
+      <uri>/index.asp</uri>
+      <uri>/demo/index.asp</uri>
+      <uri>/hello.*</uri>
+    </FilterURI>
+    <!--回应给客户端的错误页面-->
+    <ErrorResponseURL>http://mail.应用.com/JITAgentError.html</ErrorResponseURL>
+    <!--调试日志-->
+    <DebugLog>
+      <!--是否输出调试日志-->
+      <OutputDebugLog>true</OutputDebugLog>
+    </DebugLog>
+  </IISAgentSettings>
+
+
+  <!--Agent自身相关配置－－Apache Agent专用配置项-->
+  <ApacheAgentSettings>
+    <!--需要拦截的URI，最多可以使用一个"*"号通配符Apache-->
+    <FilterURI>
+      <uri>/demo/asp/*.asp</uri>
+      <uri>/index.asp</uri>
+      <uri>/demo/index.asp</uri>
+      <uri>/hello.*</uri>
+    </FilterURI>
+    <!--回应给客户端的错误页面-->
+    <ErrorResponseURL>http://mail.应用.com/JITAgentError.html</ErrorResponseURL>
+    <!--调试日志-->
+    <DebugLog>
+      <!--是否输出调试日志-->
+      <OutputDebugLog>true</OutputDebugLog>
+    </DebugLog>
+    
+  </ApacheAgentSettings>
+
+
+  <!--网关服务器配置，可以配多个网关从而使得 Agent 在一个网关不能连通时尝试其它网关-->
+  <GatewayList>
+    <!--第一个网关服务器配置-->
+    <Gateway order="0">
+      <!--服务器可用检测配置，CorrectAck:可用时服务器的应答-->
+      <AvailableTesting CorrectAck="I am live!">http://10.5.36.11:6180/test</AvailableTesting>
+      <!--重定向单向SSL认证地址-->
+	  <!--重定向双向SSL认证地址 https://10.10.0.177:4443/saml11/LoginService?method=ssl_tls_client&amp;needCertAuthen=on -->
+      <LoginURL>https://10.5.36.11/</LoginURL>
+      <!--SMAL查询的URL，如果是http地址则为明文传输，如果是https地址则为单向SSL传输-->
+      <IdpQuery>
+      	<IdpUrl>http://10.5.36.11:6180/saml11/query</IdpUrl>
+      	<IdpUrl>http://10.5.36.11:80/saml11/query</IdpUrl>      	        
+      </IdpQuery>      
+    </Gateway>
+    <!--第二个网关服务器配置-->
+    <!--Gateway order="1"-->
+      <!--服务器可用检测配置，CorrectAck:可用时服务器的应答-->
+      <!--AvailableTesting CorrectAck="I am fine!">http://10.10.0.177:6180/test</AvailableTesting-->
+      <!--重定向认证地址-->
+      <!--LoginURL>https://10.10.0.177/</LoginURL-->
+      <!--SMAL查询的URL，如果是http地址则为明文传输，如果是https地址则为单向SSL传输-->
+      <!--IdpQuery>
+        <IdpUrl>https://10.10.0.177:6180/saml11/query</IdpUrl>
+        <IdpUrl>https://10.10.0.177:6180/saml11/query</IdpUrl>
+        <IdpUrl>https://10.10.0.177:6180/saml11/query</IdpUrl>
+      </IdpQuery>   
+    </Gateway-->
+    <!--第三个网关服务器配置......-->
+  </GatewayList>
+
+
+  <!--运行时工作流程相关配置-->
+  <WorkFlowSettings>
+    <!--访问控制，CheckAccessAuthority:是否到服务器检查访问权限-->
+    <AccessControl CheckAccessAuthority="false"></AccessControl>
+    <!--用户属性查询-->
+    <!--Query="all": 查询所有用户属性-->
+    <!--Query="portion": 查询QueryList列表中指定的属性条目-->
+    <!--Query="none": 不查询任何用户属性-->
+    <UserAttributes Query="all">
+      <QueryList>
+        <Attr name = "X509Certificate.SubjectDN" namespace = "http://www.jit.com.cn/cinas/ias/ns/saml/saml11/X.509">X509SUBJECT</Attr>
+        <Attr name = "X509Certificate.IssuerDN" namespace = "http://www.jit.com.cn/cinas/ias/ns/saml/saml11/X.509">X509ISSUER</Attr>
+        <Attr name = "X509Certificate.SerialNumber" namespace = "http://www.jit.com.cn/cinas/ias/ns/saml/saml11/X.509">X509SN</Attr>
+      </QueryList>
+    </UserAttributes>
+    
+    <!--解析证书扩展域配置，该项功能需要配置查询用户证书属性信息  -->
+    <CertParseSetting>
+		<!--解析证书国标五项扩展 Enable属性值为true表示启用，取值为false表示不启用-->
+		<StanExpParsing>
+			<!-- 个人社会保险号 -->
+			<InsuranceNumberParsing Enable="false" />
+			<!-- 企业工商注册号 -->
+			<ICRegistrationNumberParsing Enable="false" />
+			<!-- 企业税号 -->
+			<TaxationNumberParsing Enable="false" />
+			<!-- 企业组织机构代码 -->
+			<OrganizationCodeParsing Enable="false" />
+			<!-- 个人身份标识号（护照号֤��ǩ���㷨、居民身份证号֤��ǩ���㷨、军官证号֤��ǩ���㷨） -->
+			<IdentifyCodeParsing Enable="false" />
+		</StanExpParsing>
+		<!--解析证书自定义扩展 Enable属性值为true表示启用，取值为false表示不启用-->
+	    <SelfExpParsing Enable="false">
+	    	<selfExpOid name = "X509Certificate.testOid" namespace = "http://www.jit.com.cn/cinas/ias/ns/saml/saml11/X.509/extensions">1.1.1</selfExpOid>
+	    </SelfExpParsing>
+    </CertParseSetting>
+  </WorkFlowSettings>
+
+</JITAgentConfig>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.tarena.dao.EmpDao">
+
+	<!-- 查询全部的员工 -->
+	<select id="findAll" 
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp
+	</select>
+	
+	<!-- 保存一条员工数据 -->
+	<insert id="save"
+		parameterType="com.tarena.entity.Emp">
+		insert into t_emp values(
+			emp_seq.nextval,
+			#{ename,jdbcType=VARCHAR},
+			#{job,jdbcType=VARCHAR},
+			#{mgr,jdbcType=NUMERIC},
+			#{hiredate,jdbcType=DATE},
+			#{sal,jdbcType=NUMERIC},
+			#{comm,jdbcType=NUMERIC},
+			#{empno,jdbcType=NUMERIC}
+		)
+	</insert>
+	
+	<!-- 根据ID查询一条员工数据 -->
+	<select id="findById"
+		parameterType="java.lang.Integer"
+		resultType="com.tarena.entity.Emp">
+		select * from t_emp where empno=#{id}
+	</select>
+	
+	<!-- 修改一条员工数据 -->
+	<update id="update"
+		parameterType="com.tarena.entity.Emp">
+		update t_emp set
+			ename=#{ename,jdbcType=VARCHAR},
+			job=#{job,jdbcType=VARCHAR},
+			mgr=#{mgr,jdbcType=NUMERIC},
+			hiredate=#{hiredate,jdbcType=DATE},
+			sal=#{sal,jdbcType=NUMERIC},
+			comm=#{comm,jdbcType=NUMERIC},
+			deptno=#{deptno,jdbcType=NUMERIC}
+		where empno=#{empno,jdbcType=NUMERIC}
+	</update>
+	
+	<!-- 删除一条员工数据 -->
+	<delete id="delete"
+		parameterType="java.lang.Integer">
+		delete from t_emp where empno=#{id}
+	</delete>
+	
+</mapper>

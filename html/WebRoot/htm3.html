@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>求职申请</title>
+<script>
+function f1(e){
+alert(e.innerText);
+}
+</script>
+</head>
+<body>
+<form>
+<table>
+<caption>---&gt;&gt;求职申请&lt;&lt;---</caption>
+<tr><td>用户名:</td><td><input /></td></tr>
+<tr><td>密码:</td><td><input type="password"></td></tr>
+<tr><td>籍贯:</td><td><select name="address" ><option value="bejing">北京</option><option value="shanghai" selected>上海</option><option option="guangzhou">广州</option></select></td></tr>
+<tr><td>性别:</td><td><input type="radio" name="sex" id="man"/><label for="man">男</label><input type="radio" name="sex" id="wom"/><label for="wom">女</label><input type="radio" name="sex" checked id="mix"><label for="mix">不透露</label></td></tr>
+<tr><td>头像:</td><td><input type="file" /></td></tr>
+<tr><td colspan="2"><fieldset><legend>工作城市</legend>愿意到以下城市工作:
+<input type="checkbox">北京<input type="checkbox">上海<input type="checkbox">广州<input type="checkbox">深圳</td>
+</fieldset>
+</tr>
+<tr><td></td><td></td></tr>
+<tr valign="top"><td >留言:</td><td><textarea rows="10" cols="20"></textarea></td></tr>
+<tr><td></td><td><input type="submit" value="提交"/>&nbsp;&nbsp;<input type="reset"/></td></tr>
+<tr><td></td><td><input type="checkbox" checked/>不公开个人信息</td></tr>
+</table>
+</form>
+<p onclick="f1(this)" class="ss"><span>sss</span>点击</p>
+</body>
+</html>

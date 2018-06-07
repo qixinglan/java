@@ -1,0 +1,30 @@
+﻿<html>
+    <head>
+	    <title>var parse</title>
+		<meta charset="utf-8"/>
+	    
+	</head>
+	<body style="font-size:18px; font-weight:bold;">
+		var s1 = "a";    var s2 = "b";<br/>
+		var n1 = 1;    var n2 = 2;<br/>   
+		<br/>
+		alert(n1 + s2);<br/>
+		<br/>
+		var b1 = true;    var b2 = false;   <br/>
+		<br/>
+		alert(b1 + b1);<br/>
+		<br/>
+		alert(n2 + b1);<br/>
+		<br/>
+		alert(s1 + b1); 
+		<script>
+			var s1 = "a";    var s2 = "b";
+			var n1 = 1;    var n2 = 2;   
+			alert(n1 + s2);//1b，因为数字 + 字符串：数字转换为字符串
+			var b1 = true;    var b2 = false;   
+			alert(b1 + b1); //2，因为布尔值转换为数值1或0
+			alert(n2 + b1); //3，因为数字 + 布尔值：true转换为1，false转换为0
+			alert(s1 + b1); //atrue，因为字符串 + 布尔值：布尔值转换为字符串true或false
+		</script>
+	</body>
+</html>

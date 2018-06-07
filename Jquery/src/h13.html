@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>
+</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+$().ready(function(){
+$("#myForm :text[name*=username]").focus(function(){
+$(this).css("background-color","yellow");});
+$("#myForm :text[name*=username]").blur(function(){
+$(this).css("background-color","white");
+});
+$(document).keypress(function(event){
+if(event.keyCode=="13"){
+alert("确认")
+}
+});
+});
+</script>
+</head>
+<body >
+<form id="myForm" action="one.html">
+<label>userName</label><input type="text" name="username" value="请输入用户名"/><span style="display:none;color:red"></span><br/>
+<label>password</label><input type="password" name="password"><br/>
+<input type="submit" value="login" >
+</form>
+</body>
+</html>

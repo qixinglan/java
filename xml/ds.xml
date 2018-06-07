@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datesource type="oracle">
+  <user>orcl</user>
+  <pwd>123</pwd>
+</datesource>

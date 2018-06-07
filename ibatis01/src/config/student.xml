@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+<sql id="studentsql">select * from student</sql>
+<insert id="saveStu" parameterClass="vo.Student">
+	insert into student(sid,sname,sex,age,address) values(#sid#,#sname#,#sex#,#age#,#address#)
+</insert>
+<delete id="delStu" parameterClass="int">
+delete  from student where sid=#id#
+</delete>
+<update id="updateStu">
+update student set age=age+1
+</update>
+<update id="updateStuBySexAndAge" parameterClass="vo.Student"> 
+update student set address='济南' where sex=#sex# and age=#age#
+</update>
+<select id="findStu" resultClass="vo.Student">
+<include refid="studentsql"/>
+</select>
+<select id="findStuBySname" parameterClass="String" resultClass="vo.Student">
+<include refid="studentsql"/>where sname like '%$sname%$'
+</select>
+<select id="findStuByAddress" parameterClass="java.util.List" resultClass="vo.Student">
+<include refid="studentsql"/>where address in <iterate open="(" close=")" conjunction=",">
+#[]#
+</iterate>
+</select>
+<select id="findStuByAddress2" parameterClass="jsva.util.List" resultClass="vo.Student">
+<include refid="studentsql"/>where address in <iterate open="(" close=")" conjunction=",">
+#[].addresss#
+</iterate>
+</select>
+</sqlMap>

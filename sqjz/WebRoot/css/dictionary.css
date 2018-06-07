@@ -1,0 +1,20 @@
+.dict-field{
+	display: inline-block;
+	height: 28px !important;
+	line-height: 28px;
+	padding-left: 5px;
+	padding-right: 15px;
+	text-align: center;
+}
+
+.dict-field-bordered{
+	border: 1px solid #bdbdbd;
+}
+
+.dict-field-radio{
+	margin: 0 0 0 10px !important;
+}
+
+.dict-field-checkbox{
+	margin: 0 0 0 10px !important;
+}

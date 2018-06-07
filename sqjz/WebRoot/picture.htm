@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+    <TITLE>身份证领取核验</TITLE>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body onbeforeunload="closeself()">
+<div id="loading">
+    <div class="loading-indicator"><span id="loading-msg">加载中...</span></div>
+</div>
+<div data-widt="TitleBar" data-widp="id:'ttb_main',width:'100%',label:'身份证领取核验'"></div>
+<SCRIPT>
+        function ini()
+        {
+            var fpo =document.all.takePhotoCtl;
+            fpo.FormTag(1);
+
+        }
+</SCRIPT>
+<form id="form1" method="post" data-widt="Form" action="">
+    <TABLE align="center" width='100%' cellSpacing="0" class="table">
+        <tr>
+            <td align="center">
+                <OBJECT id='takePhotoCtl'  border="0" classid='clsid:0703B4E1-987A-45CF-9E25-0A7A0B0447AC' height="30"></OBJECT>
+            </td>
+        </tr>
+<tr>
+    <TD><INPUT value = 拍照 onclick=ini()  type=button> </TD>
+</tr>
+     </TABLE>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿<html>
+	<head><title>isNaN</title>
+		<meta charset="utf-8"/>
+		<script>
+			alert("isNaN('')=" + isNaN('')); //false - 不对空置进行验证
+			alert("isNaN(22.5)=" + isNaN(22.5)); //false - 22.5 is a number
+			alert("isNaN('10')=" + isNaN('10')); //false - can be converted to number 10
+			alert("isNaN('1234blue')=" + isNaN('1234blue')); //true - cannot be converted to a number
+			alert("isNaN(true)=" + isNaN(true)); //false - can be converted to number
+			alert("isNaN(NaN)=" + isNaN(NaN)); //true
+			alert(NaN == NaN); //false
+		</script>
+	</head>
+	<body></body>
+</html>

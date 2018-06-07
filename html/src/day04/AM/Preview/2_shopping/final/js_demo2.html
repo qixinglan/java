@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>购物车</title>
+        <meta charset="utf-8" />
+        <script src="js_demo2.js"></script>
+        <link type="text/css" rel="Stylesheet" href="myStyle.css" />
+    </head>
+    <body>
+            <table id="shoppingCart">
+                <tr>
+                    <td style="width:100px;">商品名称</td>
+                    <td style="width:100px;">价格</td>
+                    <td style="width:150px;">数量</td>
+                    <td style="width:100px;">小计</td>
+                </tr>
+                <tr>
+                    <td>book1</td>
+                    <td>10.00</td>
+                    <td>
+                        <input class="btn" type="button" value="-" onclick="count(this)"/>
+                        <input class="txt" type="text" value="1" readonly/>
+                        <input class="btn" type="button" value="+" onclick="count(this)"/>
+                    </td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td>book2</td>
+                    <td>5.00</td>
+                    <td>
+                        <input class="btn" type="button" value="-" onclick="count(this)"/>
+                        <input class="txt" type="text" value="1" readonly/>
+                        <input class="btn" type="button" value="+" onclick="count(this)"/>
+                    </td>
+                    <td>5.00</td>
+                </tr>
+                <tr>               
+                    <td style="text-align:right;" colspan="3">总计：</td>     
+                    <td>15.00</td>
+                </tr>
+            </table>
+    </body>
+</html>

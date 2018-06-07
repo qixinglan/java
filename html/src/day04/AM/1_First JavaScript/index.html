@@ -1,0 +1,26 @@
+<html>
+    <head>
+		<title>Javascript day01</title>
+		<meta charset="utf-8"/>
+		<!--Step2:在head中新建节点<script></script>，将step1中的alert语句拷贝到script节点中。提示内容改为Hello World from script node on loading!-->
+		<!--Step3:如果把整个script标签，剪切到body中的第一个按钮下方，再看效果！实验完，请将script标签剪切回head中-->
+		<!--Step4:在script节点中先使用双斜线注释将刚才的alert语句注释掉（这点和Java一样）。再使用function关键字定义方法，firstMethod()，并在方法体中定义alert语句，提示信息为Hello World from <script> on click!-->
+		<!--Step5:在第二个按钮的onclick事件中，指定方法为firstMethod()。记住带括号-->
+
+		<!--Step6:新建.js文件保存javascript代码，并在页面中引入外部的js文件。具体步骤：
+    	    Step6.1：在网页同目录，新建普通文本文件，保存为index.js。
+    	    Step6.2：将firstMethod方法复制到js文件中。修改方法名为secondMethod ，修改提示内容为from js file。
+   		    Step6.3：在head中script元素的下方，创建一个新的script元素，并在开始标签中，加入src属性，指向index.js文件。-->
+		<!--Step7:在第三个按钮的onclick事件中，指定方法为js文件中的secondMethod()。-->
+		
+	
+		<script  src="index.js" >
+		 </script>
+	</head>
+	<body>
+        <!-- Step1:在第一个按钮中使用onclick属性定义当用户点击按钮时要执行的语句：alert('Hello World!');用于在网页上弹出一个浏览器自带的警告框。引号中的部分是在警告框中显示的提示内容文本。-->
+	    <input type="button" value="first button" onclick="alert('你好! ')"/>
+		<input type="button" value="second button" onclick="func()"/>
+        <input type="button" value="third button" onclick="func()"/>
+	</body>
+</html>

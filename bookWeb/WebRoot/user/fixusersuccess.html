@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>registsuccess.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   
+
+  </head>
+  
+  <body>
+    <script> 
+var t=3;//设定跳转的时间 
+setInterval("refer()",1000); //启动1秒定时 
+function refer(){ 
+if(t==0){ 
+location="http://127.0.0.1:8081/bookWeb/login/login.html"; //#设定跳转的链接地址 
+} 
+document.getElementById('show').innerHTML="修改成功。。。。。"+t+"秒后跳转到登录界面"; // 显示倒计时 
+t--; // 计数器递减 
+ 
+} 
+</script> 
+<span id="show"></span> 
+  </body>
+   
+</html>

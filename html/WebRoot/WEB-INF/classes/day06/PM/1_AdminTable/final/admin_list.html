@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>管理员列表</title>
+        <meta charset="utf-8" />
+        <link rel="Stylesheet" href="style.css" />
+        <script src="admin.js"></script> 
+    </head>
+    <body>
+        <!--主要区域-->
+        <div id="main">
+            <!--删除和修改的操作提示-->
+            <div id="operate_result_info">
+                <img src="images/close.png"  onclick="this.parentNode.style.display='none';" />
+                <span class="success">删除失败！数据并发错误。</span>
+            </div> 
+            <!--数据区域-->     
+            <div id="data"> 
+				<form>
+                <table id="datalist">
+                    <tr>
+                        <th>
+                            <input type="checkbox" onclick="selectAdmins(this);" />
+                            <span>全选</span>
+                        </th>
+                        <th>管理员ID</th>
+                        <th>姓名</th>                            
+                        <th>拥有角色</th>
+                        <th></th>
+                    </tr>                      
+                    <tr>
+                        <td><input type="checkbox" name="chkRow" /></td>
+                        <td>1</td>
+                        <td>贾强</td>                            
+                        <td>超级管理员、角色管理员、账单管理员</td>
+                        <td class="td_modi">
+                            <input type="button" value="修改" class="btn_modify"/>
+                            <input type="button" value="删除" class="btn_delete"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="chkRow"/></td>
+                        <td>2</td>
+                        <td>贾强</td>
+                        <td>超级管理员、帐务账号管理员</td>
+                        <td class="td_modi">
+                            <input type="button" value="修改" class="btn_modify"/>
+                            <input type="button" value="删除" class="btn_delete"/>
+                        </td>
+                    </tr>                                     
+                </table>
+				</form>
+            </div>
+        </div>
+    </body>
+</html>

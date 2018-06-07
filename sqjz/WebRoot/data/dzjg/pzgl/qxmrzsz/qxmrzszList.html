@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>区县默认值设置</title>
+		<link rel="stylesheet" href="../../../../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../../css/common.css" />
+		<link rel="stylesheet" href="../../../../css/color.css" />
+		<link rel="stylesheet" href="../../../../css/button.css" />
+		<link rel="stylesheet" href="../../../../css/index.css" />
+		<link href="../../../../js/grid/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" src="../../../../js/jquery.min.js"></script>
+		<script language="javascript" src="../../../../js/jquery.extends.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../../js/grid/jquery.jqGrid.min.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../../js/grid/grid.locale-cn.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../../js/grid/jqgrid.custom.js" type="text/javascript"></script>
+		<script language="javascript" src="../../../../js/grid/jquery.jqGrid.src.js" type="text/javascript"></script>
+		<!-- lhgdialog -->
+		<script language="javascript" src="../../../../js/dialog/lhgdialog.min.js?skin=blue" type="text/javascript"></script>
+		<!-- 下拉框 start-->
+		<link href="../../../../js/combobox/css/jquery.simple.tree.css" rel="stylesheet" type="text/css" />
+		<script src="../../../../js/combobox/js/jquery.simple.tree.js" type="text/javascript"></script>
+		<link href="../../../../js/triggerfield/css/jquery.triggerfield.css" rel="stylesheet" type="text/css" />
+		<script src="../../../../js/triggerfield/js/jquery.triggerfield.js" type="text/javascript"></script>
+		<script src="../../../../js/combobox/js/jquery.combobox.js" type="text/javascript"></script>
+		<!-- 下拉框 end-->
+    <script language="javascript" src="../../../../js/common.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#dtbh").click(function(){
+					$.dialog({ 
+				    id: 'testID',
+    				title:'地图标绘',
+				    content: 'url:../biaohui.html',
+				    ok: function(){
+        			cancel: true; 
+    				}, 
+    				okVal:"保存",
+    				cancelVal: '取消', 
+    				cancel: true 
+					}).max();
+				});
+				addColor();
+				$(".dwjk-box5").click(function(){
+					$.dialog({ 
+				    id: 'box12',
+					width: '700px', 
+		    		height: '230px', 
+    				title:'系统默认值设置查看页面',
+				    content: 'url:qxmrzszView.html',
+				    
+    				cancelVal: '取消', 
+    				cancel: true 
+					});
+				});
+			   //增加行
+			  $(".addImg").click(function(){  
+			      var tbody = $("#userLine")
+			      var rowIndex = tbody.children().length;
+			      var tr = $("#add_template").val();
+			      tbody.append(tr);
+			      //order(); 
+			      addColor();
+			      //$.parser.parse();
+			      //给新增加行的第一个输入框获得焦点
+			      var newAdd = $("#userLine tr:last>td:eq(1)>input:eq(0)");
+			      newAdd.focus();
+			  });
+			  //删除行
+			   $(".deleteImg").live("click",function(){ 
+			    var tr =$(this).parent().parent();
+			    tr.remove();
+			    //order();
+			    addColor(); 
+			   });
+			 });
+			  //给表格添加序号   
+			  function order(){
+			     var uTable = document.getElementById("userLine");
+			     for(var i=0;i<uTable.rows.length;i++){
+			       uTable.rows[i].cells[0].innerHTML = (i+1);
+			     }
+			  } 
+			  
+			  //奇偶行变色
+			    function addColor(){
+			      var t=document.getElementById("userLine").getElementsByTagName("tr");
+			      var a = "#FFFFFF"; //奇数行背景
+			      var b = "#FBFBFB"; //偶数行背景
+			      for(var i=0;i<t.length;i++){
+			        t[i].style.backgroundColor=(t[i].sectionRowIndex%2==0)?a:b;
+			      }
+			    }
+			  
+			 function changeSz(value){
+			 			if(value == 1){
+			 				  $("#hidden1").hide();
+			 				  $("#hidden2").hide();
+			 			}
+			 			if(value == 2){
+			 				  $("#hidden1").show();
+			 				  $("#hidden2").hide();
+			 			}
+			 			if(value == 3){
+			 					$("#hidden1").hide();
+			 				  $("#hidden2").show();
+			 			}
+			 	}
+				function openWcl(obj){
+						$.dialog({ 
+						    id: 'testID',
+						    width: '900px', 
+		    				height: '410px', 
+		    				title:'未处理报警信息',
+						    content: 'url:../../wclbjxx/wclbjxxList.html',
+						    //okVal:'保存',
+						   // ok: function(){ 
+		        		//	return false; 
+		    				//}, 
+		    				cancelVal: '关闭', 
+		    				cancel: true 
+						});
+					}
+			
+			
+		</script>
+		</head>
+
+<body>
+<div class="header">
+	<div class="header-top">
+    	<div class="header-left"></div>
+        <div class="header-right"><div class="header-box1"><a href="javascript:void(0);">使用帮助</a><a class="tc" href="javascript:void(0);">退出系统</a></div>
+        	<div class="header-box2"><a onClick="openWcl(this)" class="xx-box"><marquee direction="left" onMouseOut="this.start()" onMouseOver="this.stop()" scrollamount="5"><span>您有3条未处理报警信息</span></marquee></a>&nbsp;&nbsp&nbsp;&nbsp;欢迎您，<label>admin</label> 现在是<label> 2013年2月22日 9:00  星期五</label></div>
+        </div>
+    </div>
+    <div class="header-nav"> <span class="top-box"></span> <a class="return-sy" href="../../../index1.html"></a>
+    <ul id="menu">
+              <li><a href="javascript:void(0);">办公管理</a></li>
+              <li><a href="javascript:void(0);">矫正管理</a></li>
+              <li><a href="javascript:void(0);">电子监管</a>
+              	<div>
+                  <ul>
+					            <li><a href="../../../dwjk/dwjk.html">定位监控</a></li>
+					            <li><a href="../../../dzjg/lsbjxxgl/lsbjxxglList.html">历史报警信息管理</a></li>
+					            <li><a href="../../../dzjg/zhcx/zhcx.html">综合查询</a></li>
+					            <li class="menu-submenu"><a href="javascript:void(0);">配置管理</a>
+                      <div>
+               						 <ul>
+		                          <li><a href="../../pzgl/xtmrzsz/xtmrzszList.html">系统默认值设置</a></li>
+		                          <li><a href="../../pzgl/qxmrzsz/qxmrzszList.html">区县默认值设置</a></li>
+		                          <li><a href="../../pzgl/bjlxsz/bjlxszList.html">报警类型设置</a></li>
+		                          <li><a href="../../pzgl/jjbjqkszSj/jjbjqkszSjEdit.html">聚集报警排除情况市局设置</a></li>
+		                          <li><a href="../../pzgl/jjbjqkszQxj/jjbjqkszQxjEdit.html">聚集报警排除情况区县局设置</a></li>
+		                          <li><a href="../../pzgl/jjbjqkszSfs/jjbjqkszSfsEdit.html">聚集报警排除情况司法所设置</a></li>
+		                          <li><a href="../../pzgl/jzrysz/jzryszList.html">社区服刑人员设置</a></li>
+                                   <li><a href="../../pzgl/jgsb/jgsbList.html">电子监管设备信息管理</a></li>
+		                          <li><a href="../../pzgl/ydzfzdxxgl/ydzfzdxxglList.html">移动执法终端信息管理</a></li>
+                          </ul>
+              				</div>
+                    </li>
+                 </ul>
+                </div>
+              </li>
+              
+              <li><a href="javascript:void(0);">系统管理</a></li>
+    </ul>
+  </div>
+</div>
+<div class="main">
+  <div class="breadcrumb-nav"> <span>您当前的位置：电子监管 -> 配置管理 -> 区县默认值设置</span> </div>
+  <div class="container-top">
+  
+   
+  </div>
+  <!--列表-->
+	<table style="width:100%">
+		<tr>
+			<td style="width:50%;text-align:right">
+				<span style="font-weight:bold;font-size:24px">平谷区</span>
+			</td>
+			<td style="width:50%;text-align:right">
+				<span style="margin-right:-10px"><input  type="button" class="bttn bicon-save" id="btnSave" value="保存" onclick="javascript:void(0);"/></span>
+			</td>
+		<tr>
+	</table>
+	
+	
+  	
+
+  <table class="comm-table">
+  	 <tr>
+              	<th>定位信息采集间隔：</th>
+                  <td colspan="3">
+                  		<table class="comm-table">
+								        <thead>
+								          <tr>
+								            <th width="30%" style="text-align:center;font-weight:bold">开始时间</th>
+								            <th width="30%" style="text-align:center;font-weight:bold">结束时间</th>
+								            <th width="30%" style="text-align:center;font-weight:bold">间隔（分钟）</th>
+								            <td width="10%" style="text-align:center;background:#fbfbfb;" ><img class="addImg" src="../../../../images/add-row.gif" style="cursor:hand;width:16px;height:16px"></td>
+								          </tr>
+								        </thead>
+								        <tbody id="userLine" class="buttonArea">
+								          <tr>
+								            <td style="text-align:left">
+								              	<input type="text" value="8:00"/>
+								            </td>
+								            <td style="text-align:center">
+								              	<input type="text" value="20:00"/>
+								            </td>
+								            <td style="text-align:center">
+								              	<input type="text" value="10"/>
+								            </td>
+								            <td style="text-align:center;">
+								            	  <img class="deleteImg" src="../../../../images/delete-row.gif" 
+            	                      style="cursor:hand;width:16px;height:16px">
+								            </td>
+								          </tr>
+								          <tr>
+								            <td style="text-align:left">
+								              	<input type="text" value="20:00"/>
+								            </td>
+								            <td style="text-align:center">
+								              	<input type="text" value="8:00"/>
+								            </td>
+								            <td style="text-align:center">
+								              	<input type="text" value="30"/>
+								            </td>
+								            <td style="text-align:center;width:5%">
+								            	  <img class="deleteImg" src="../../../../images/delete-row.gif" 
+            	                      style="cursor:hand;width:16px;height:16px">
+								            </td>
+								          </tr>
+								       </tbody>
+								      </table> 
+								      <textarea id="add_template" rows="" cols="" style="display:none">
+								        <tr>
+								            <td style="text-align:left">
+								              	<input type="text" value=""/>
+								            </td>
+								            <td style="text-align:center">
+								              	<input type="text" value=""/>
+								            </td>
+								            <td style="text-align:center">
+								              	<input type="text" value=""/>
+								            </td>
+								            <td style="text-align:center;">
+								            	  <img class="deleteImg" src="../../../../images/delete-row.gif" 
+            	                      style="cursor:hand;width:16px;height:16px">
+								            </td>
+								        </tr>
+								      </textarea>
+                  </td>
+              </tr>
+              <tr>
+              	<th>电子围栏：</th>
+                  <td colspan="3">
+                  		&nbsp;<input type="radio" id="dzwl" name="dzwl" onclick="changeSz(1)"/> 北京市全境
+                  		&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="dzwl" name="dzwl" checked="checked" onclick="changeSz(2)"/> 行政区划
+                  		&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="dzwl" name="dzwl" onclick="changeSz(3)"/> 标绘设置
+                  </td>
+              </tr>
+              <tr id="hidden1">
+              	<th></th>
+                  <td colspan="3">
+                  	  <table class="comm-table" style="border:0">
+                  		<tr>
+                  			<td colspan="3" style="border:0">
+	                  		<input type="checkbox" id="dzwlsz1" name="dzwlsz1" checked="checked"/> <label for="dzwlsz1">东城区</label>
+	                  		<input type="checkbox" id="bjlxsz2" name="dzwlsz2"/> <label for="dzwlsz2">西城区&nbsp;&nbsp;</label>
+	                  		<input type="checkbox" id="dzwlsz3" name="dzwlsz3"/> <label for="dzwlsz3">朝阳区&nbsp;&nbsp;</label>
+	                  		<input type="checkbox" id="dzwlsz4" name="dzwlsz4"/> <label for="dzwlsz4">海淀区</label>
+	                  		</td>
+                  		</tr>
+                  		<tr>
+                  			<td colspan="3" style="border:0">
+		                  		<input type="checkbox" id="dzwlsz5" name="dzwlsz5" checked="checked"/> <label for="dzwlsz5">丰台区</label>
+		                  		<input type="checkbox" id="dzwlsz6" name="dzwlsz6"/> <label for="dzwlsz6">石景山区</label>
+		                  		<input type="checkbox" id="dzwlsz7" name="dzwlsz7"/> <label for="dzwlsz7">门头沟区</label>
+												  <input type="checkbox" id="dzwlsz8" name="dzwlsz8"/> <label for="dzwlsz8">房山区</label>
+												</td>
+										  </tr>
+										  <tr>
+										  	<td colspan="3" style="border:0">
+											  <input type="checkbox" id="dzwlsz9" name="dzwlsz9"/> <label for="dzwlsz9">大兴区</label>
+											  <input type="checkbox" id="dzwlsz10" name="dzwlsz10"/> <label for="dzwlsz10">通州区&nbsp;&nbsp;</label>
+											  <input type="checkbox" id="dzwlsz11" name="dzwlsz11"/> <label for="dzwlsz11">顺义区&nbsp;&nbsp;</label>
+											  <input type="checkbox" id="dzwlsz12" name="dzwlsz12"/> <label for="dzwlsz12">昌平区</label>
+												</td>
+										  </tr>
+										  <tr>
+										  	<td colspan="3" style="border:0">
+											  <input type="checkbox" id="dzwlsz13" name="dzwlsz13"/> <label for="dzwlsz13">平谷区</label>
+											  <input type="checkbox" id="dzwlsz14" name="dzwlsz14"/> <label for="dzwlsz14">怀柔区&nbsp;&nbsp;</label>
+											  <input type="checkbox" id="dzwlsz15" name="dzwlsz15"/> <label for="dzwlsz15">密云区&nbsp;&nbsp;</label>
+											  <input type="checkbox" id="dzwlsz16" name="dzwlsz16"/> <label for="dzwlsz16">延庆区</label>
+												</td>
+										  </tr>
+										  </table>
+                  </td>
+              </tr>
+              <tr id="hidden2" style="display:none">
+              	<th></th>
+                  <td colspan="3" >
+                  		&nbsp;&nbsp;
+                  		<input type="button" class="bttn bicon-preview" id="dtbh" value="地图标绘" onclick="javascript:void(0);"/> 
+                  </td>
+              </tr>
+	</table>
+</div>
+<ul class="dwjk-box5">
+          <li>系统默认值</li>
+        
+        </ul>
+<div class="footer">北京市司法局版权所有  copyright @ 2009 Top & Ideal. All Rights Reserved  粤ICP备88888888号</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Document</title>
+		<meta charset="UTF-8">
+		<script src="form.js"></script>
+ </head>
+ <body>
+	<form>
+            <h2>增加管理员</h2>
+            <table width="600px">
+                <tr>
+                    <td width="80px" height="35px">姓名：</td>
+                    <td width="180px">
+						<input type="text" name="userName" onblur="validateUserName(this.value)"/>
+						<span>*</span>
+					</td>
+                    <td>10个字符以内的字母、数字和下划线的组合</td>
+                </tr>
+                <tr>                	
+                    <td height="35px">密码：</td>		    
+                    <td width="180px">
+						<input type="password" name="password"  onblur="validatePwd(this.value)"/>
+						<span>*</span>
+					</td>
+                    <td>6位数字</td>
+                </tr>
+                <tr>
+                    <td height="35"></td>
+                    <td colspan="2">
+                        <input type="submit" value="保存"  />
+                        <input type="reset" value="重填" />
+                    </td>
+                </tr>				
+	    </table>
+	</form>
+ </body>
+</html>

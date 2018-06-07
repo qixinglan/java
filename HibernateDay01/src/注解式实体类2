@@ -1,0 +1,164 @@
+实体和数据库之间存在某种映射关系，hibernate根据这种映射关系完成数据的存取。在程序中这种映射关系由映射文件（*.hbm.xml）或者Java注解(@)定义。
+
+本文以java注解的形式总结映射关系配置。
+
+
+
+实体类组件以及注解标签映射关系
+
+
+实体类-----------@Entity/@Table----------数据表
+
+Id--------------@Id----------主键
+
+普通属性---------@Column----------普通键
+
+集合属性---------@OneToMany/@ManyToOne/@ManyToMany/@OneToOne/@OneToMany----------外键
+
+
+
+将映射文件配置到hibernate配置文件
+
+
+Hibernate将通过配置文件(cfg.xml)定义实体和数据库关系映射
+
+<mapping class="com.test.Cat"/>
+
+
+主键映射
+
+
+.Hibernate推荐实体类有主键列并且有setter 和 getter，且主键数据类型使用引用类型。因为，基础数据类型不能为null值，hibernate中主键的null表明实体类是处在瞬时(Transient)状态，非null表示处持久化()状态。
+
+
+.用@Id声明为主键列，用@Column声明列名。
+
+.列名属性名相同时候@Column可以省略。
+
+.@GeneratedValue指定主键的生成策略
+
+
+Example:
+
+    @Id
+
+    @Column(name = "id")
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private Integer id;
+
+
+主键生成规则
+
+
+目前@注解支持4种生成策略：
+
+
+GenerationType.AUTO:根据数据库自己决定
+
+GenerationType.TABLE：使用指定表决定主键的取值
+
+GenerationType.SEQUENCE：使用sequence决定主键取值，适合支持sequence的数据库。
+
+GenerationType.IDENTITY：identity类型的主键
+
+
+
+普通属性配置
+
+
+.java@注解使用@Column和@Basic配置普通属性。两者都可以省略
+
+.@Column属性（声明字段约束）
+
+ 
+Nullable非空约束
+
+Unique   唯一约束
+
+ 
+Insertable 插入约束(是否允许插入)
+
+ 
+Updateable 更新约束（是否允许更新）
+
+ 
+Length    列长度
+
+ 
+ColumnDefinition 列类型
+
+Scale     整数长度
+
+ 
+Precision 小数点精度
+
+@Basic属性（声明加载方式）
+
+ 
+Fetch 是否延迟加载
+
+ 
+Optional 该列是否可以为null
+
+
+Example:
+
+     @Column(name = "salary", scale = 8, precision = 2)
+
+     @Basic(fetch = FetchType.LAZY, optional=true)
+
+     private double salary;
+
+
+日期属性配置
+
+
+日期属性也是普通属性
+
+除了@column和@Basic之外还可得使用@Temporal配置日期类型
+
+java.sql.Date/java.sql.Time/java.sql.Timestamp都是java.util.Date的子类。实体类中声明成java.util.Date就行了。Hibernate根据日期配置的具体类型操作数据库。
+
+
+Example:
+
+    @Temporal(TemporalType.TIMESTAMP)
+
+    // 日期类型（DATE, TIME还是TIMESTEMP）
+
+    @Column(name = "createDate")
+
+    private Date createDate;
+
+
+临时属性映射
+
+
+临时属性是实体类中方便运算的成员，不参与数据库的映射。防止hibernate把它和数据库进行映射导致产生异常，使用@Transient标记。
+
+可以配置在属性上也可以配置在对应的getter/setter方法上。
+
+
+Example：
+
+    @Transient
+
+    Public setterTemp (String temp){
+
+this.temp = temp;
+
+    }
+
+
+版本属性映射
+
+
+为了保证数据的准确性，程序必须保证只用一个线程同时访问数据。乐观锁和悲观锁是两种实现的方式。@Version是乐观锁的实现。版本列一般为数字列。
+
+Example：
+
+    @Version
+
+    Private int id;

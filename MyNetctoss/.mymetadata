@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="MyNetctoss"
+  id="myeclipse.1456971606113"
+  context-root="/MyNetctoss"
+  j2ee-spec="5.0"
+  archive="MyNetctoss.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

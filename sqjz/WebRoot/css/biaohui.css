@@ -1,0 +1,8 @@
+﻿@charset "utf-8";
+
+.biaohui {
+	background: url(../images/biaohui.jpg) repeat;
+	width: 1206px;
+	height: 632px;
+	margin-left: 15px;
+}

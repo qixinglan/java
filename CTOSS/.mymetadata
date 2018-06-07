@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="CTOSS"
+  id="myeclipse.1435389571469"
+  context-root="/CTOSS"
+  j2ee-spec="5.0"
+  archive="CTOSS.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

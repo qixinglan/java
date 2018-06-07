@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+ <servlet>
+ <servlet-name>up</servlet-name>
+ <servlet-class>web.update</servlet-class>
+ </servlet> 
+<servlet>
+<servlet-name>worker</servlet-name>
+<servlet-class>web.AddEmp</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>select</servlet-name>
+<servlet-class>web.ListEmpServlet</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>shanchu</servlet-name>
+<servlet-class>web.DelUser</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>fix</servlet-name>
+<servlet-class>web.fix</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>fix</servlet-name>
+<url-pattern>/fix</url-pattern></servlet-mapping>
+<servlet-mapping>
+<servlet-name>up</servlet-name>
+<url-pattern>/update</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>worker</servlet-name>
+<url-pattern>/add</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>select</servlet-name>
+<url-pattern>/se</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>shanchu</servlet-name>
+<url-pattern>/del</url-pattern>
+</servlet-mapping>
+
+</web-app>

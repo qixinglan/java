@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head><title>资产折旧计算</title>
+		<meta charset="utf-8"/>
+		<script src="index.js">
+	</script>
+	</head>
+	<body style="font-size:24px;">
+		录入资产采购时的价值：
+		<input id="txtPrice" type="text" value="10000" /><br />
+		录入折旧率：
+		<input id="txtRate" type="text" value="0.15" /><br />
+		录入计算年限：
+		<input id="txtYear" type="text" value="5" /><br />
+		<input type="button" value="计算" onclick="calculateDepreciation();" /><br/>
+		<textarea id="txtResult" cols="50" rows="7"></textarea>
+	</body>
+</html>

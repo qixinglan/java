@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* CSS Document */
+
+.btn-box {
+	margin-bottom:10px;
+}
+.bttn {
+	border:0;
+	display:inline-block;
+	font-size:14px;
+	line-height:22px;
+	color:#333;
+	text-align:center;
+	letter-spacing:3px;
+	text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align:middle;
+	cursor:pointer;
+	margin-right:10px;
+}
+[class^="bicon-"], [class*=" bicon-"] {
+	min-width:40px;
+	margin-bottom:0;
+	color:#fff;
+	height:26px;
+	padding-left:30px;
+	padding-right:10px;
+	font-size:14px;
+	border:1px solid #1A86C4;
+	background:#1f9af7 url(../images/icon2.png) no-repeat ;
+	/* background:#49A9E3 url(../images/icon2.png) no-repeat ; */
+}
+[class^="bicon-"], [class*=" bicon-"]:hover{
+	background:#1A86C4 url(../images/icon2.png) no-repeat ;
+}
+[class^="gicon-"], [class*=" gicon-"] {
+	min-width:40px;
+	margin-bottom:0;
+	color:#4b4a4a;
+	height:26px;
+	padding-left:30px;
+	padding-right:10px;
+	font-size:14px;
+	border:1px solid #bcbcbc;
+	background:#e3e3e3 url(../images/icon2-1.png) no-repeat ;
+}
+[class^="gicon-"], [class*=" gicon-"]:hover{
+	background:#d3d3d3 url(../images/icon2-1.png) no-repeat ;
+}
+/*新建*/
+.bicon-add ,.bicon-add:hover,.gicon-add ,.gicon-add:hover{
+	background-position: 0px -157px;
+}
+/*删除*/
+.bicon-delete,.bicon-delete:hover,.gicon-delete,.gicon-delete:hover {
+	background-position: 0px -34px;
+}
+
+/*返回*/
+.bicon-return,.bicon-return:hover,.gicon-return,.gicon-return:hover  {
+	background-position: 0px -397px;
+}
+/*保存*/
+.bicon-save,.bicon-save:hover,.gicon-save,.gicon-save:hover {
+	background-position: 0px -424px;
+}
+/*查询*/
+.bicon-search,.bicon-search:hover,.gicon-search,.gicon-search:hover{
+	background-position: 0px -65px;
+}
+/*确定*/
+.bicon-confirm,.bicon-confirm:hover,.gicon-confirm,.gicon-confirm:hover{
+	background-position: 0px -96px;
+}
+/*上一步*/
+.bicon-step,.bicon-step:hover,.gicon-step,.gicon-step:hover{
+	background-position: 0px -398px;
+}
+/*下一步*/
+.bicon-next,.bicon-next:hover,.gicon-next,.gicon-next:hover{
+	background-position: 0px -453px;
+}
+/*excel导出*/
+.bicon-excel,.bicon-excel:hover,.gicon-excel,.gicon-excel:hover{
+	background-position: -2px -555px;
+}
+/*启用*/
+.bicon-open,.bicon-open:hover,.gicon-open,.gicon-open:hover{
+	background-position: 3px -595px;
+}
+/*测试*/
+.bicon-test,.bicon-test:hover,.gicon-test,.gicon-test:hover{
+	background-position: 3px -634px;
+}
+/*预览*/
+.bicon-preview,.bicon-preview:hover,.gicon-preview,.gicon-preview:hover{
+	background-position: 3px -672px;
+}
+/*执行建表操作*/
+.bicon-create,.bicon-create:hover,.gicon-create,.gicon-create:hover{
+	background-position: -2px -715px;
+}
+/*导入*/
+.bicon-import ,.bicon-import:hover,.gicon-import ,.gicon-import:hover{
+	background-position: 2px -753px;
+}
+/*文件导入*/
+.bicon-file ,.bicon-file:hover,.gicon-file ,.gicon-file:hover{
+	background-position: -2px -795px;
+}
+/*选择*/
+.bicon-choose ,.bicon-choose:hover,.gicon-choose ,.gicon-choose:hover{
+	background-position: 2px -834px;
+}
+/*重置*/
+.bicon-reset  ,.bicon-reset:hover,.gicon-reset  ,.gicon-reset:hover{
+	background-position: 2px -874px;
+}
+/*授权*/
+.bicon-warrant ,.bicon-warrant:hover,.gicon-warrant ,.gicon-warrant:hover{
+	background-position: 2px -914px;
+}
+/*暂存*/
+.bicon-fend,.bicon-fend:hover,.gicon-fend ,.gicon-fend:hover{
+	background-position: 2px -954px;
+}
+/*发布*/
+.bicon-report,.bicon-report:hover,.gicon-report,.gicon-report:hover{
+	background-position: 3px -278px;
+}
+/*操作列小图标*/
+[class^="micon-"], [class*=" micon-"] {
+	padding:4px 2px;
+	padding-left:20px;
+	padding-right:5px;
+	background:url(../images/icon1.png) no-repeat;
+	border:1px solid transparent;
+	color:#757171 !important;
+	
+	
+}
+[class^="micon-"]:hover, [class*=" micon-"]:hover {
+	/* background:#fdfed3 url(../images/icon1.png) no-repeat; */
+	background:#008af0 url(../images/icon1.png) no-repeat;
+	border:1px solid #f5b647;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+/*停用*/
+.micon-stop,.micon-stop:hover {
+	background-position: -5px -261px;
+}
+/*新增*/
+.micon-add,.micon-add:hover {
+	background-position: -5px -26px;
+}
+/*编辑*/
+.micon-edit,.micon-edit:hover {
+	background-position: -5px -86px;
+}
+/*删除*/
+.micon-delete,.micon-delete:hover {
+	background-position: -5px -116px;
+}
+/*发布*/
+.micon-report ,.micon-report:hover{
+	background-position: -5px -145px;
+}
+/*启用*/
+.micon-open ,.micon-open:hover{
+	background-position: -5px -437px;
+}
+
+/*授权*/
+.micon-warrant ,.micon-warrant:hover{
+	background-position: -5px -757px;
+}
+
+/*执行建表操作*/
+.micon-create ,.micon-create:hover{
+	background-position: -5px -557px;
+}
+/*选择*/
+.micon-choose ,.micon-choose:hover{
+	background-position: -5px -675px;
+}
+/*预览*/
+.micon-preview ,.micon-preview:hover{
+	background-position: -5px -516px;
+}

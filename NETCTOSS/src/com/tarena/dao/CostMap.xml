@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.tarena.dao.CostMapper">
+
+<!-- 注意resultType写结果集映射的数据类型 -->
+<select id="findAllCost" resultType="com.tarena.dao.Cost">
+select * from cost
+</select>
+<insert id="addCost" parameterType="com.tarena.dao.Cost">
+insert into cost values(
+cost_seq.nextval,
+#{name,jdbcType=VARCHAR},
+#{base_duration,jdbcType=NUMERIC},
+#{base_cost,jdbcType=FLOAT},
+#{unit_cost,jdbcType=FLOAT},
+#{status,jdbcType=CHAR},
+#{descr,jdbcType=VARCHAR},
+#{createTime,jdbcType=DATE},
+#{startTime,jdbcType=DATE},
+#{costType,jdbcType=CHAR}
+)
+</insert>
+<select id="findCostById" parameterType="Integer" resultType="com.tarena.dao.Cost">
+select * from cost where cost_id=#{id}
+</select>
+<update id="updateCost" parameterType="com.tarena.dao.Cost">
+update cost set name=#{name,jdbcType=VARCHAR},
+base_duration=#{base_duration,jdbcType=NUMERIC},
+base_cost=#{base_cost,jdbcType=FLOAT},
+unit_cost=#{unit_cost,jdbcType=FLOAT},
+descr=#{descr,jdbcType=VARCHAR},
+costtype=#{costType,jdbcType=CHAR}
+where cost_id=#{cost_id,jdbcType=INTEGER}
+</update>
+<delete id="deleteCost" parameterType="Integer">
+delete from cost where cost_id=#{id}
+</delete>
+<select id="findByPage" parameterType="com.tarena.dao.costPage" resultType="com.tarena.dao.Cost">
+select * from(
+select t.*,rownum n from(
+select * from cost order by cost_id)t 
+where rownum &lt;#{end})  
+where n&gt;#{begin}
+</select>
+<select id="findTotalRows"	resultType="int">
+select count(*) from cost
+</select>
+</mapper>

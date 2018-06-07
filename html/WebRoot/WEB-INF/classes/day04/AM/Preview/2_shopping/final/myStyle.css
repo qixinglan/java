@@ -1,0 +1,22 @@
+/* ¹ºÎï³µ */
+table{
+    border-collapse:collapse;
+}
+td{
+    text-align:center;
+    height:30px;
+    border:1px solid gray;
+}
+input{
+    border:1px solid gray;
+    font-size:13pt;
+    line-height:18pt;
+}
+input.btn{
+    width:20px;
+    margin-left:0px;
+    margin-right:0px;
+}
+input.txt{
+    width:35px;
+}

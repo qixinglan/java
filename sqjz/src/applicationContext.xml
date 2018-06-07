@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+	default-lazy-init="true">
+	<!-- 
+	<bean id="taskManageListener" lazy-init="false" class="com.nci.dcs.data.tasklistener.TaskManageListener" 
+		init-method="initTimer"> 
+	</bean> 
+	-->
+	<import resource="xmppContext.xml" />  
+	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+	<context:component-scan base-package="com.nci.*" />
+	<!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@10.3.1.115:1521:sfjjk"></property>
+		<property name="user" value="sqjz"></property>
+		<property name="password" value="sqjz"></property>
+		<property name="minPoolSize" value="10" />
+		<property name="maxPoolSize" value="100" />
+		<property name="maxIdleTime" value="60"></property>
+		</bean>-->
+	 <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName"> <value>java:comp/env/jdbc/sfjjk</value> </property> 
+	</bean> 
+   
+	<!-- Spring工具类 -->
+	<bean id="springContextUtil" class="com.nci.dcs.common.utils.SpringContextUtil"
+		lazy-init="false" />
+	<!-- Hibernate SessionFatory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan"
+			value="com.nci.dcs.,com.nci.sfj.business.model,com.nci.sfj.webservice.model"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.release_mode">auto</prop>
+				<prop key="hibernate.connection.isolation">1</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+				<prop key="hibernate.jdbc.fetch_size">25</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Hibernate TransactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+	<tx:advice id="txAdvice">
+		<tx:attributes>
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="load*" read-only="true" />
+			<tx:method name="list*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- 生成服刑人员上报的xml数据 -->
+	<bean id="syncFxryTime" class="com.nci.dcs.jzgl.sync.job.SyncJob"></bean>
+	<bean id="syncFxryJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncFxryTime">
+		</property>
+		<property name="targetMethod" value="startTimer">
+		</property>
+	</bean>
+	<bean id="syncFxryTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="syncFxryJob"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 30 23 * * ? * </value>
+		</property>
+	</bean>
+	
+	<!-- 当时监控服务器状态 -->
+	<bean id="ctlServiceMonitor" class="com.nci.dcs.monitor.job.MonitorJob"></bean>
+	<bean id="ctlrunServiceMonitor"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="ctlServiceMonitor">
+		</property>
+		<property name="targetMethod" value="runServiceMonitor">
+		</property>
+	</bean>
+	<bean id="ctlrunNetworkMonitor"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="ctlServiceMonitor">
+		</property>
+		<property name="targetMethod" value="runNetworkMonitor">
+		</property>
+	</bean>
+	<bean id="ctlrunLbsMonitor"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="ctlServiceMonitor">
+		</property>
+		<property name="targetMethod" value="runLbsMonitor">
+		</property>
+	</bean>
+	<bean id="ctlrunDataBaseMonitor"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="ctlServiceMonitor">
+		</property>
+		<property name="targetMethod" value="runDataBaseMonitor">
+		</property>
+	</bean>
+	<bean id="ctlServiceMonitorTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="ctlrunServiceMonitor"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 0-23 * * ? * </value>
+		</property>
+	</bean>
+	<bean id="ctlNetworkMonitorTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="ctlrunNetworkMonitor"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 0-23 * * ? * </value>
+		</property>
+	</bean>
+	<bean id="ctlLbsMonitorTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="ctlrunLbsMonitor"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 0-23 * * ? * </value>
+		</property>
+	</bean>
+	<bean id="ctlDataBaseMonitorTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="ctlrunDataBaseMonitor"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 0-23 * * ? * </value>
+		</property>
+	</bean>
+	
+	<!-- 设置定时器调度 -->
+	<bean id="dlScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">
+		<property name="triggers">
+			<list>
+
+				<ref bean="deviceErrorTrigger" />
+				<ref bean="deviceLBSTrigger" />
+				<ref bean="syncFxryTrigger" />
+				<ref bean="ctlServiceMonitorTrigger" />
+				<ref bean="ctlNetworkMonitorTrigger" />
+				<ref bean="ctlLbsMonitorTrigger" />
+				<ref bean="ctlDataBaseMonitorTrigger" />
+
+			</list>
+		</property>
+		<property name="quartzProperties">
+			<props>
+				<prop key="org.quartz.threadPool.threadCount">3</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 配置执行计划安排 -->
+	<bean id="fingerPrintJob" class="com.nci.dcs.jzgl.fingerprint.job.FingerPrintJob"/> 
+	<bean id="resTaskJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="fingerPrintJob" />
+		<property name="targetMethod" value="getTaskJob" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="fingerPrintTaskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="resTaskJob" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="10000" />
+	</bean>
+
+</beans>

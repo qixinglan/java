@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>七星电子书登录</TITLE>
+
+<link href="../css/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+function checkUsername(){
+if($("#username").val()==""){
+$("#error").html("用户名不能为空").css("color","red")
+return false;
+}
+else{
+return true;
+}
+}
+function checkPassword(){
+if($("#password").val()==""){
+$("#error").html("密码不能为空").css("color","red")
+return false;
+}
+else{
+return true;
+}
+}
+function check(){
+return checkUsername()&&checkPassword();
+}
+</script>
+</HEAD>
+
+<BODY>
+	<div id="body">
+		<div id="title">
+			
+			<div id="logo"><a href="http://127.0.0.1:8081/bookWeb/main.do"><img src="../images/logo1.jpg" width=200 height=60 /></a></div>
+			<div id="wen" style="font-size:2em;color:black;font-weight:bold">七星电子书用户登录</div>
+		</div>
+		<div id="content">
+			<div id="left">
+				<div id="left_content">	
+				<form action="login.do" method="post" onsubmit="return check()">				
+					<table>
+						<tr>							
+							<td><img src="../images/user.png"><input id="username" name="username" type="text" onblur="checkUsername()"/></td>
+						</tr>
+						<tr>							
+							<td><img src="../images/pw.png"><input id="password"  name="password"type="password" onblur="checkPassword()"/></td>
+						</tr>
+						<tr>							
+							<td  id="error"><span></span></td>
+						</tr>
+						<tr>
+						<td align="center"><input type="submit" value="登录" /></td>
+						</tr>
+						<tr>
+						<td><a href="regist.jsp">新用户注册</a></td>
+						</tr>
+					</table>				
+				</form>		
+										
+			</div>
+			
+		</div>
+	</div>
+	</div>
+</BODY>
+</HTML>

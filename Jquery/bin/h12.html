@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<title>
+</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+$().ready(function(){
+$("#myForm :submit").click(function(){
+var username=$("#myForm :text[name*=username]").val();
+	if(username==""||username==null||username=="请输入用户名"){
+	$("#myForm>span:first:hidden").html("用户名必填").show();
+	return false;
+	}
+	else{
+	$("#myForm>span:first").hide();
+	return true;
+	}
+	
+});
+$("#myForm :text").blur(function(){
+var username=$("#myForm :text[name*=username]").val();
+	if(username==""||username==null||username=="请输入用户名"){
+	$("#myForm>span:first:hidden").html("用户名必填").show();
+	
+	}
+	else{
+	$("#myForm>span:first").hide();
+	
+	}
+	
+});
+});
+
+
+</script>
+</head>
+<body >
+<form id="myForm" action="one.html">
+<label>userName</label><input type="text" name="username" value="请输入用户名"/><span style="display:none;color:red"></span><br/>
+<label>password</label><input type="password" name="password"><br/>
+<input type="submit" value="login" >
+</form>
+</body>
+</html>

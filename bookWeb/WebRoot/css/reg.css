@@ -1,0 +1,174 @@
+body {
+	font-size: 12px;
+	color: #666;
+	font-family: "Arial,ËÎÌו";
+}
+
+body,div,ul,li,h1,h2,h3,form,input,textarea,p {
+	padding: 0;
+	margin: 0;
+}
+
+ul,li {
+	list-style: none;
+}
+
+table input {
+	outline: none;
+	border: 1px #c8c8c8 solid;
+	width: 200px;
+	height: 30px;
+}
+
+#n_bottom {
+	margin-left: 70px;
+	float: left;
+	width: 200px;
+}
+
+#n_bottom a {
+	margin-left: 15px;
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+}
+
+h1,h2,h3,h4,h5 {
+	font-size: inherit;
+	font-weight: normal;
+}
+
+em {
+	font-style: normal;
+}
+
+a {
+	color: #646464;
+	text-decoration: none;
+	outline: none;
+	font-size: 12px;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+a:active {
+	color: #646464;
+}
+
+table,table td,table th,table tr {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+#body {
+	width: 1000px;
+	height: 500px;
+	margin: 0px auto;
+}
+
+#title {
+	width: 1000px;
+	height: 60px;
+	background-color: #C22628;
+}
+
+#content {
+	width: 1000px;
+	height: 440px;
+}
+
+#left {
+	width: 560px;
+	height: 400px;
+	margin-top: 20px;
+	float: left;
+}
+
+#left_content {
+	width: 400px;
+	height: 300px;
+	margin: 40px 140px;
+}
+
+.n_right {
+	text-align: right;
+	width: 50px;
+}
+
+#n_reg {
+	margin-left: 90px;
+	float: left;
+	width: 200px;
+	margin-top: 30px;
+}
+
+#code {
+	float: left;
+	width: 100px;
+	height: 30px;
+	margin-top: -132px;
+	margin-left: 290px;
+}
+
+#code a {
+	text-decoration: underline;
+	color: #C22628;
+	margin-top: 10px;
+}
+
+#midline {
+	width: 5px;
+	height: 400px;
+	float: left;
+}
+
+#r_top {
+	width: 200px;
+	height: 50px;
+	margin-left: 60px;
+	float: left;
+	margin-top: 60px;
+}
+
+#r_top img {
+	margin-top: -16px;
+}
+
+#client {
+	width: 200px;
+	height: 50px;
+	margin-left: 0px;
+	float: left;
+	margin-top: 70px;
+}
+
+#client img {
+	margin-top: 10px;
+}
+
+#wen {
+	float: right;
+	margin-right: 130px;
+	margin-top: 22px;
+}
+
+#logo {
+	width: 300px;
+	float: left;
+}
+
+#wen a {
+	color: #ffffff;
+	font-size: 14px;
+	margin-left: 2px;
+	font-weight: bold;
+}

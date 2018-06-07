@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<title>下拉框示例代码</title>
+		
+		<!-- 
+			必须引入的文件：jquery-1.4.2.js、jquery.util.js、jquery.triggerfield.js、jquery.triggerfield.css。
+		 -->
+		<script type="text/javascript" src="../../jquery-1.4.2.js"></script>
+		<script type="text/javascript" src="../../jquery.util.js"></script>
+		<script type="text/javascript" src="../js/jquery.triggerfield.js"></script>
+		<script type="text/javascript" src="../../../calendar/WdatePicker.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../css/jquery.triggerfield.css" />
+		
+		<script>
+			$(function(){
+				$('#myDatePicker').triggerfield({
+					btnIcon : 'date_triggerIcon',
+					showClear : false,
+					open : function(){
+						$(this).focus();
+					}
+				}).bind('focus', function() {
+					WdatePicker({
+						isShowClear	: true,
+						readOnly	: true,
+						dateFmt		: 'yyyy-MM-dd HH:mm:ss',
+						minDate		: '%y-%M-%d %H:%m:%s'
+					});
+				});
+				
+				var $userSelect = $('#userSelect').triggerfield({
+					btnIcon : 'date_triggerIcon',
+					showClear : true,
+					emptyText : '--全部--',
+					open : function(){
+						alert('设置值为cs，显示值为测试');
+						$userSelect.triggerfield('setValue', {
+							text : '测试',
+							value : 'cs'
+						});
+					}
+				})
+				
+				// 显示下拉框选中的值。
+				$("#showComboxValue").click(function(){
+					var value = $userSelect.triggerfield('getValue');
+					alert("值为"+value[0]+";显示值为"+value[1]);
+				});
+			});
+		</script>
+	</head>
+	<body style="margin: 50px; padding: 50px;">
+		<br />
+		<br />
+		<br />
+		<!-- 下拉选择树。 -->
+		<div>
+		<form>
+			<table>
+				<tr>
+					<td>
+						<label>
+							选择日期：&nbsp;
+						</label>
+					</td>
+					<td>
+						<input type="text" id="myDatePicker" name="myDatePicker" readonly="readonly" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							选择人员：&nbsp;
+						</label>
+					</td>
+					<td>
+						<input type="text" id="userSelect" name="userSelect" readonly="readonly" />
+					</td>
+				</tr>
+			</table>
+			<input type="reset" value="重置"/>
+		</form>
+		</div>
+		<br />
+		<br />
+		<br />
+		<!-- 显示选中值按钮。 -->
+		<button id="showComboxValue" class="but">显示值</button>
+	</body>
+</html>
